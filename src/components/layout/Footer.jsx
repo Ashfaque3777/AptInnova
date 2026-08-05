@@ -58,7 +58,7 @@ function Footer() {
               <h2>Connect</h2>
 
               <div className="footer-links-horizontal">
-                <a href="/contact/">Contact</a>
+                <Link to="/contact/">Contact</Link>
 
                 <a
                   href="https://www.linkedin.com/company/aptinnova/about/?viewAsMember=true"

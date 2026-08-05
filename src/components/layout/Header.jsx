@@ -54,9 +54,9 @@ function Header() {
           <div className="nav-actions">
             <ThemeToggle />
 
-            <a href="/contact/" className="header-cta">
+            <Link to="/contact/" className="header-cta">
               Talk to us
-            </a>
+            </Link>
           </div>
         </nav>
       </PageContainer>
