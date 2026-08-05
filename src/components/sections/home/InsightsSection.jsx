@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
+
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
+import AIstrategyConsultingImage from "../../../assets/images/home/AIstrategyConsulting.webp";
+import LLMImage from "../../../assets/images/home/LLM.webp";
 
 const insightsData = [
   {
     category: "Business",
     categoryLink: "https://ai.aptinnova.com/category/business/",
-    image: "src/assets/images/home/AIstrategyConsulting.webp",
+    image: AIstrategyConsultingImage,
     imageLink:
       "https://ai.aptinnova.com/clip-barriers-in-unlocking-ais-real-potential-in-financial-services/",
     heading: "CLIP : Barriers in unlocking AI\u2019s",
@@ -19,7 +23,7 @@ const insightsData = [
   {
     category: "AI Practical Application",
     categoryLink: "https://ai.aptinnova.com/category/ai-practical-application/",
-    image: "src/assets/images/home/LLM.webp",
+    image: LLMImage,
     imageLink:
       "https://ai.aptinnova.com/smart-strategies-for-large-language-models-llms-memory-expansion/",
     heading: "Smart Strategies for Large Language Models",
@@ -31,15 +35,17 @@ const insightsData = [
   },
 ];
 
-function InsightsSection() {
+function InsightsSection({ showHeading = true, showViewMore = true }) {
   const headingRef = useScrollReveal();
 
   return (
     <section className="insights-section">
       <PageContainer>
-        <div className="insights-heading-wrapper reveal" ref={headingRef}>
-          <SectionHeading title="Gain Valuable Insights" align="center" />
-        </div>
+        {showHeading && (
+          <div className="insights-heading-wrapper reveal" ref={headingRef}>
+            <SectionHeading title="Gain Valuable Insights" align="center" />
+          </div>
+        )}
 
         <div className="insights-cards-grid">
           {insightsData.map((item, index) => (
@@ -83,11 +89,13 @@ function InsightsSection() {
           ))}
         </div>
 
-        <div className="insights-link-wrapper">
-          <a href="https://ai.aptinnova.com/blog-insights/" className="insights-view-more">
-            View more Articles &rarr;
-          </a>
-        </div>
+{showViewMore && (
+          <div className="insights-link-wrapper">
+            <Link to="/blog-insights/" className="insights-view-more">
+              View more Articles &rarr;
+            </Link>
+          </div>
+        )}
       </PageContainer>
     </section>
   );

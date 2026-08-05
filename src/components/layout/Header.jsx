@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PageContainer from "./PageContainer.jsx";
 import ThemeToggle from "../navigation/ThemeToggle.jsx";
 import { useScrollDirection } from "../../hooks/useScrollDirection.js";
+
 import headerLogoBlackbg from "../../assets/brand/headerLogoBlackbg.webp";
 import headerLogoWhitebg from "../../assets/brand/headerLogoWhitebg.webp";
 
@@ -47,7 +48,7 @@ function Header() {
                 </Link>
               </div>
             </div>
-            <a href="https://ai.aptinnova.com/blog-insights/">Insights</a>
+            <Link to="/blog-insights/">Insights</Link>
           </div>
 
           <div className="nav-actions">
