@@ -54,7 +54,7 @@ function Header() {
           <div className="nav-actions">
             <ThemeToggle />
 
-            <a href="https://ai.aptinnova.com/contact/" className="header-cta">
+            <a href="/contact/" className="header-cta">
               Talk to us
             </a>
           </div>

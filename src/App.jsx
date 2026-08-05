@@ -7,6 +7,7 @@ import InnoVethic from "./pages/InnoVethic.jsx";
 import Ainsteins from "./pages/Ainsteins.jsx";
 import AimpactLab from "./pages/AimpactLab.jsx";
 import Insights from "./pages/Insights.jsx"
+import Contact from "./pages/Contact.jsx";
 import Layout from "./components/layout/Layout.jsx";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/products/ainsteins/" element={<Ainsteins />} />
         <Route path="/products/aimpact-lab/" element={<AimpactLab />} />
         <Route path="/blog-insights/" element={<Insights />} />
+        <Route path="/contact/" element={<Contact />} />
       </Route>
     </Routes>
   );
