@@ -226,28 +226,36 @@ const productStructuredData = {
     "@type": "Audience",
     audienceType: "Students, educators, and academic institutions",
   },
-  url: "https://aptinnova.com/products/ainsteins/",
+  url: "/products/ainsteins/",
 };
 
 function Ainsteins() {
   return (
     <>
       <Helmet>
-        <title>ainsteins | Plug-and-Play AI Knowledge Assistant | AptInnova</title>
+        <title>
+          ainsteins | Plug-and-Play AI Knowledge Assistant | AptInnova
+        </title>
         <meta
           name="description"
           content="ainsteins is a plug-and-play AI knowledge assistant for institutions. Curated curriculum corpora, persona-aware chat, and source-cited answers help students learn with focus and teachers keep their voice."
         />
-        <meta property="og:title" content="ainsteins | Plug-and-Play AI Knowledge Assistant" />
+        <meta
+          property="og:title"
+          content="ainsteins | Plug-and-Play AI Knowledge Assistant"
+        />
         <meta
           property="og:description"
           content="AI-powered learning on your own curriculum, with persona-aware chat and source-cited answers. Built for students, educators, and academic institutions."
         />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content="https://aptinnova.com/products/ainsteins/" />
+        <meta property="og:url" content="/products/ainsteins/" />
         <meta property="og:image" content={ainsteinsImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ainsteins | Plug-and-Play AI Knowledge Assistant" />
+        <meta
+          name="twitter:title"
+          content="ainsteins | Plug-and-Play AI Knowledge Assistant"
+        />
         <meta
           name="twitter:description"
           content="AI-powered learning on your own curriculum, with persona-aware chat and source-cited answers."
@@ -262,8 +270,15 @@ function Ainsteins() {
         description="Plug-and-play AI knowledge assistant for institutions. Curated curriculum corpora, persona-aware chat, and source-cited answers for learning that stays grounded in your curriculum."
         heroImage={ainsteinsImage}
         actions={[
-          { label: "Talk to our team", to: "https://ai.aptinnova.com/contact/" },
-          { label: "Visit ainsteins.com", href: "https://ainsteins.com", variant: "secondary" },
+          {
+            label: "Talk to our team",
+            to: "/contact/",
+          },
+          {
+            label: "Visit ainsteins.com",
+            href: "https://ainsteins.com",
+            variant: "secondary",
+          },
         ]}
       >
         <ProductIntro
@@ -297,8 +312,12 @@ function Ainsteins() {
           title="Ready to bring ainsteins to your Institution?"
           description="Talk to our team about AI-powered learning on your curriculum, or explore more on the ainsteins site."
           actions={[
-            { label: "Contact us", to: "https://ai.aptinnova.com/contact/" },
-            { label: "Visit ainsteins.com", href: "https://ainsteins.com", variant: "secondary" },
+            { label: "Contact us", to: "/contact/" },
+            {
+              label: "Visit ainsteins.com",
+              href: "https://ainsteins.com",
+              variant: "secondary",
+            },
           ]}
         />
 

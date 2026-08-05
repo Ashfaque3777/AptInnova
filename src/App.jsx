@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 
+import Layout from "./components/layout/Layout.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Services from "./pages/Services.jsx";
 import InnoVethic from "./pages/InnoVethic.jsx";
 import Ainsteins from "./pages/Ainsteins.jsx";
 import AimpactLab from "./pages/AimpactLab.jsx";
-import Insights from "./pages/Insights.jsx"
+import Insights from "./pages/Insights.jsx";
 import Contact from "./pages/Contact.jsx";
-import Layout from "./components/layout/Layout.jsx";
 
 function App() {
   return (

@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 /**
@@ -36,17 +37,26 @@ function ProductSpotlight({
               <SectionHeading title={title} description={description} />
             </div>
 
-            <div className="product-spotlight-paragraphs reveal reveal-delay-1" ref={contentRef}>
+            <div
+              className="product-spotlight-paragraphs reveal reveal-delay-1"
+              ref={contentRef}
+            >
               {paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
           </div>
 
-          <ul className="product-spotlight-highlights reveal reveal-delay-1" ref={highlightsRef}>
+          <ul
+            className="product-spotlight-highlights reveal reveal-delay-1"
+            ref={highlightsRef}
+          >
             {highlights.map((item) => (
               <li className="product-spotlight-highlight" key={item.title}>
-                <div className="product-spotlight-highlight-icon" aria-hidden="true">
+                <div
+                  className="product-spotlight-highlight-icon"
+                  aria-hidden="true"
+                >
                   {item.icon}
                 </div>
                 <div>

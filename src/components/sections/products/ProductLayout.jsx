@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import Button from "../../ui/Button.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 /**
@@ -29,7 +30,6 @@ function ProductLayout({
         <PageContainer>
           <div className="product-hero-grid">
             <div className="product-hero-copy reveal" ref={contentRef}>
-
               <h1>{title}</h1>
 
               {description && (
@@ -52,7 +52,10 @@ function ProductLayout({
               )}
             </div>
 
-            <div className="product-hero-image reveal reveal-delay-1" ref={imageRef}>
+            <div
+              className="product-hero-image reveal reveal-delay-1"
+              ref={imageRef}
+            >
               <img
                 src={heroImage}
                 alt={title}
@@ -71,4 +74,3 @@ function ProductLayout({
 }
 
 export default ProductLayout;
-

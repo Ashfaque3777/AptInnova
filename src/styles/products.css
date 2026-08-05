@@ -96,7 +96,6 @@
   }
 }
 
-
 /* Product intro */
 .product-intro {
   padding-block: var(--space-24);
@@ -196,7 +195,6 @@
   }
 }
 
-
 /* Product audience */
 .product-audience {
   padding-block: var(--space-24);
@@ -274,7 +272,6 @@
     grid-template-columns: 1fr;
   }
 }
-
 
 /* Product capabilities */
 .product-capabilities {
@@ -361,7 +358,6 @@
   }
 }
 
-
 /* Product workflow */
 .product-workflow {
   padding-block: var(--space-24);
@@ -435,7 +431,6 @@
     padding: var(--space-6);
   }
 }
-
 
 /* Product spotlight */
 .product-spotlight {
@@ -567,7 +562,6 @@
   }
 }
 
-
 /* Product video */
 .product-video-section {
   padding-block: var(--space-24);
@@ -590,7 +584,6 @@
 
   background: var(--color-background);
 }
-
 
 /* Product CTA */
 .product-cta {
@@ -648,7 +641,6 @@
     width: 100%;
   }
 }
-
 
 /* Product pagination */
 .product-pagination {
@@ -807,4 +799,3 @@
     display: none;
   }
 }
-

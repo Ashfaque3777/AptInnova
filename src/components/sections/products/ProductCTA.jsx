@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import Button from "../../ui/Button.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 /**
@@ -42,4 +43,3 @@ function ProductCTA({ title, description, actions = [] }) {
 }
 
 export default ProductCTA;
-

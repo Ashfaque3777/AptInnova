@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
+
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
+
 import LLM from "../../../assets/images/home/LLM.webp";
 
 const blogUrl =
@@ -17,7 +21,7 @@ function InsightsHero() {
         </div>
 
         <article className="insight-card insights-hero-card">
-          <a href={blogUrl} className="insight-image-link">
+          <Link to={blogUrl} className="insight-image-link">
             <div className="insight-image-wrapper">
               <img
                 src={LLM}
@@ -25,24 +29,24 @@ function InsightsHero() {
                 className="insight-image insight-hero-image"
               />
             </div>
-          </a>
+          </Link>
 
           <div className="insight-hero-content">
             <div>
-              <a
-                href="https://ai.aptinnova.com/category/ai-practical-application/"
+              <Link
+                to="https://ai.aptinnova.com/category/ai-practical-application/"
                 className="insight-category-btn"
               >
                 AI Practical Application
-              </a>
+              </Link>
             </div>
 
-            <a href={blogUrl} className="insight-heading-link">
+            <Link to={blogUrl} className="insight-heading-link">
               <h3 className="insight-card-heading insight-hero-card-heading">
                 Smart Strategies for Large Language Models (LLMs) Memory
                 Expansion
               </h3>
-            </a>
+            </Link>
 
             <div className="insight-meta">
               <div className="insight-avatar">
@@ -67,9 +71,9 @@ function InsightsHero() {
               (short-term memory) for any given prompt. By default,
             </p>
 
-            <a href={blogUrl} className="insight-continue-link">
+            <Link to={blogUrl} className="insight-continue-link">
               Continue reading
-            </a>
+            </Link>
           </div>
         </article>
       </PageContainer>

@@ -1,6 +1,7 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
 import Button from "../../ui/Button.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 const contactHighlights = [
@@ -44,10 +45,10 @@ function ServicesContactCTA() {
           </ul>
 
           <div className="services-contact-cta-actions">
-            <Button to="https://ai.aptinnova.com/contact/" variant="primary">
+            <Button to="/contact/" variant="primary">
               Contact Us
             </Button>
-            <Button to="https://ai.aptinnova.com/contact/" variant="secondary">
+            <Button to="/contact/" variant="secondary">
               Request a Consultation
             </Button>
           </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import PageContainer from "./PageContainer.jsx";
 import ThemeToggle from "../navigation/ThemeToggle.jsx";
+
 import { useScrollDirection } from "../../hooks/useScrollDirection.js";
 
 import headerLogoBlackbg from "../../assets/brand/headerLogoBlackbg.webp";
@@ -33,10 +34,12 @@ function Header() {
             <Link to="/about/">About</Link>
             <Link to="/services/">Services</Link>
             <div className="nav-dropdown">
-              <Link className="nav-dropdown-trigger">
-                Products
-              </Link>
-              <div className="nav-dropdown-menu" role="menu" aria-label="Products">
+              <Link className="nav-dropdown-trigger">Products</Link>
+              <div
+                className="nav-dropdown-menu"
+                role="menu"
+                aria-label="Products"
+              >
                 <Link to="/products/innovethic/" role="menuitem">
                   InnoVethic
                 </Link>

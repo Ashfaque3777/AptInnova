@@ -249,21 +249,29 @@ function AimpactLab() {
   return (
     <>
       <Helmet>
-        <title>A(i)MPACT Lab | Sovereign AI Experimentation Sandbox | AptInnova</title>
+        <title>
+          A(i)MPACT Lab | Sovereign AI Experimentation Sandbox | AptInnova
+        </title>
         <meta
           name="description"
           content="A(i)MPACT Lab is a sovereign sandbox for sector-grounded AI experimentation. Brings AI, Digital Twin, and XR prototyping into one space to validate, iterate, and stress-test ideas before real-world deployment. Currently in Beta."
         />
-        <meta property="og:title" content="A(i)MPACT Lab | Sovereign AI Experimentation Sandbox" />
+        <meta
+          property="og:title"
+          content="A(i)MPACT Lab | Sovereign AI Experimentation Sandbox"
+        />
         <meta
           property="og:description"
           content="A sovereign sandbox for sector-grounded AI experimentation. AI, Digital Twin, and XR prototyping in one space. Currently in Beta, available on demand."
         />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content="https://aptinnova.com/products/aimpact-lab/" />
+        <meta property="og:url" content="/products/aimpact-lab/" />
         <meta property="og:image" content={aimpactLabImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="A(i)MPACT Lab | Sovereign AI Experimentation Sandbox" />
+        <meta
+          name="twitter:title"
+          content="A(i)MPACT Lab | Sovereign AI Experimentation Sandbox"
+        />
         <meta
           name="twitter:description"
           content="A sovereign sandbox for sector-grounded AI experimentation. AI, Digital Twin, and XR prototyping in one space."
@@ -278,8 +286,12 @@ function AimpactLab() {
         description="A sovereign sandbox environment for sector-grounded AI experimentation. AI, Digital Twin, and XR prototyping in one space to validate, iterate, and stress-test ideas before real-world deployment."
         heroImage={aimpactLabImage}
         actions={[
-          { label: "Request access", to: "https://ai.aptinnova.com/contact/" },
-          { label: "Visit AIforAll Global", href: "https://aiforallglobal.org/incubation-factory", variant: "secondary" },
+          { label: "Request access", to: "/contact/" },
+          {
+            label: "Visit AIforAll Global",
+            href: "https://aiforallglobal.org/incubation-factory",
+            variant: "secondary",
+          },
         ]}
       >
         <ProductIntro
@@ -331,8 +343,15 @@ function AimpactLab() {
           title="Ready to Experiment in the Sandbox?"
           description="A(i)MPACT Lab is in Beta and available on demand. Talk to our team or explore the Incubation Factory at AIforAll Global."
           actions={[
-            { label: "Request access", to: "https://ai.aptinnova.com/contact/" },
-            { label: "Visit Incubation Factory", href: "https://aiforallglobal.org/incubation-factory", variant: "secondary" },
+            {
+              label: "Request access",
+              to: "/contact/",
+            },
+            {
+              label: "Visit Incubation Factory",
+              href: "https://aiforallglobal.org/incubation-factory",
+              variant: "secondary",
+            },
           ]}
         />
 

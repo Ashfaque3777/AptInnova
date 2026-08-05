@@ -106,11 +106,7 @@ function ServicesList() {
               <p className="service-card-subtitle">{service.subtitle}</p>
 
               <div className="service-card-image">
-                <img
-                  src={service.image}
-                  alt={service.heading}
-                  loading="lazy"
-                />
+                <img src={service.image} alt={service.heading} loading="lazy" />
               </div>
 
               <p className="service-card-description">{service.description}</p>
@@ -132,4 +128,3 @@ function ServicesList() {
 }
 
 export default ServicesList;
-

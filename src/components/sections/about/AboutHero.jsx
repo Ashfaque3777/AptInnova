@@ -1,5 +1,7 @@
 import PageContainer from "../../layout/PageContainer.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
+
 import heroAbout1 from "../../../assets/images/about/heroAbout-1.webp";
 import heroAbout2 from "../../../assets/images/about/heroAbout-2.webp";
 

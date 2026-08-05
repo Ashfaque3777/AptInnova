@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
+
 import innovethic from "../../../assets/images/products/innovethic/InnoVethic.webp";
 import aimpactLab from "../../../assets/images/products/aimpact-lab/aimpactLab.webp";
 import ainsteins from "../../../assets/images/products/ainsteins/ainsteins.webp";

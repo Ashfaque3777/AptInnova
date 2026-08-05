@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
+
 import AIstrategyConsultingImage from "../../../assets/images/home/AIstrategyConsulting.webp";
 import LLMImage from "../../../assets/images/home/LLM.webp";
 
@@ -50,11 +52,11 @@ function InsightsSection({ showHeading = true, showViewMore = true }) {
         <div className="insights-cards-grid">
           {insightsData.map((item, index) => (
             <article key={index} className="insight-card">
-              <a href={item.categoryLink} className="insight-category-btn">
+              <Link to={item.categoryLink} className="insight-category-btn">
                 {item.category}
-              </a>
+              </Link>
 
-              <a href={item.imageLink} className="insight-image-link">
+              <Link to={item.imageLink} className="insight-image-link">
                 <div className="insight-image-wrapper">
                   <img
                     src={item.image}
@@ -62,11 +64,11 @@ function InsightsSection({ showHeading = true, showViewMore = true }) {
                     className="insight-image"
                   />
                 </div>
-              </a>
+              </Link>
 
-              <a href={item.headingLink} className="insight-heading-link">
+              <Link to={item.headingLink} className="insight-heading-link">
                 <h3 className="insight-card-heading">{item.heading}</h3>
-              </a>
+              </Link>
 
               <div className="insight-meta">
                 <div className="insight-avatar">
@@ -79,9 +81,9 @@ function InsightsSection({ showHeading = true, showViewMore = true }) {
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                   </svg>
                 </div>
-                <a href={item.authorLink} className="insight-author">
+                <Link to={item.authorLink} className="insight-author">
                   {item.author}
-                </a>
+                </Link>
                 <span className="insight-dot">&middot;</span>
                 <span className="insight-date">{item.date}</span>
               </div>
@@ -89,7 +91,7 @@ function InsightsSection({ showHeading = true, showViewMore = true }) {
           ))}
         </div>
 
-{showViewMore && (
+        {showViewMore && (
           <div className="insights-link-wrapper">
             <Link to="/blog-insights/" className="insights-view-more">
               View more Articles &rarr;

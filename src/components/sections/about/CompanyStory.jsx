@@ -1,6 +1,8 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
+
 import expertiseImg from "../../../assets/images/about/ourExpertise.webp";
 
 function CompanyStory() {
@@ -17,7 +19,10 @@ function CompanyStory() {
           />
         </div>
 
-        <div className="expertise-layout reveal reveal-delay-1" ref={contentRef}>
+        <div
+          className="expertise-layout reveal reveal-delay-1"
+          ref={contentRef}
+        >
           <div className="expertise-content">
             <p>
               The AptInnova team is a blend of seasoned AI strategists,

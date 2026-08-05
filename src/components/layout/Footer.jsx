@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import PageContainer from "./PageContainer.jsx";
+
 import footerLogoBlackbg from "../../assets/brand/footerLogoBlackbg.webp";
 
 function Footer() {
@@ -32,9 +33,7 @@ function Footer() {
                 <Link to="/about/">About</Link>
                 <Link to="/services/">Services</Link>
                 <div className="nav-dropdown">
-                  <Link className="nav-dropdown-trigger">
-                    Products
-                  </Link>
+                  <Link className="nav-dropdown-trigger">Products</Link>
                   <div
                     className="nav-dropdown-menu"
                     role="menu"

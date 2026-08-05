@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 /**
@@ -45,4 +46,3 @@ function ProductWorkflow({ title, description, steps = [] }) {
 }
 
 export default ProductWorkflow;
-

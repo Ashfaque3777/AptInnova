@@ -1,7 +1,9 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
 import Button from "../../ui/Button.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
+
 import aiForAllImg from "../../../assets/images/about/AIforALL.webp";
 
 function AboutPartnership() {
@@ -15,7 +17,10 @@ function AboutPartnership() {
           <SectionHeading title="AIforAll" align="center" />
         </div>
 
-        <div className="about-partnership-content-wrapper reveal reveal-delay-1" ref={contentRef}>
+        <div
+          className="about-partnership-content-wrapper reveal reveal-delay-1"
+          ref={contentRef}
+        >
           <p>
             AptInnova is the proud Partner of <b>Stichting AIforAll Global</b>,
             a dutch non-profit initiative focusing on Human-Centered AI.

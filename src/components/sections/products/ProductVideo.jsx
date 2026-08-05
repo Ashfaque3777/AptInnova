@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 /**
@@ -12,7 +13,7 @@ import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
  * @param {string}   poster     - Poster image shown before playback.
  * @param {string}   label      - Accessible label for the video.
  */
-function ProductVideo({  title, description, src, poster, label }) {
+function ProductVideo({ title, description, src, poster, label }) {
   const headingRef = useScrollReveal();
   const videoRef = useScrollReveal();
 

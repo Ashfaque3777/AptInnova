@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 function HowWeWork() {
@@ -34,7 +35,7 @@ function HowWeWork() {
   return (
     <section className="section how-we-work-section">
       <PageContainer>
-<div ref={headingRef} className="reveal">
+        <div ref={headingRef} className="reveal">
           <SectionHeading
             title="From Opportunity to Implementation"
             align="center"

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import PageContainer from "../../layout/PageContainer.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 /* Left arrow icon (stroke style matches the site). */
@@ -63,7 +64,9 @@ function ProductPagination({ prev = null, next = null }) {
                 <IconArrowLeft />
               </span>
               <span className="product-pagination-text">
-                <span className="product-pagination-label">Previous product</span>
+                <span className="product-pagination-label">
+                  Previous product
+                </span>
                 <span className="product-pagination-name">{prev.name}</span>
               </span>
             </Link>
@@ -95,4 +98,3 @@ function ProductPagination({ prev = null, next = null }) {
 }
 
 export default ProductPagination;
-

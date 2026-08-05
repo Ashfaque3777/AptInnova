@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 /**
@@ -11,7 +12,7 @@ import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
  * @param {object[]} capabilities - Capability items:
  *   [{ icon: <svg/>, title, description }]
  */
-function ProductCapabilities({title, description, capabilities = [] }) {
+function ProductCapabilities({ title, description, capabilities = [] }) {
   const headingRef = useScrollReveal();
   const gridRef = useScrollReveal();
 
@@ -43,4 +44,3 @@ function ProductCapabilities({title, description, capabilities = [] }) {
 }
 
 export default ProductCapabilities;
-

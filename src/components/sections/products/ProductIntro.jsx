@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 /**
@@ -11,7 +12,7 @@ import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
  * @param {object[]} highlights   - Positioning highlight items:
  *   [{ icon: <svg/>, title, description }]
  */
-function ProductIntro({title, paragraphs = [], highlights = [] }) {
+function ProductIntro({ title, paragraphs = [], highlights = [] }) {
   const headingRef = useScrollReveal();
   const highlightsRef = useScrollReveal();
 
@@ -32,7 +33,10 @@ function ProductIntro({title, paragraphs = [], highlights = [] }) {
           <ul className="product-intro-highlights reveal" ref={highlightsRef}>
             {highlights.map((item) => (
               <li className="product-intro-highlight" key={item.title}>
-                <div className="product-intro-highlight-icon" aria-hidden="true">
+                <div
+                  className="product-intro-highlight-icon"
+                  aria-hidden="true"
+                >
                   {item.icon}
                 </div>
                 <div>
@@ -49,4 +53,3 @@ function ProductIntro({title, paragraphs = [], highlights = [] }) {
 }
 
 export default ProductIntro;
-

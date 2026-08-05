@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 import iconStrategy from "../../../assets/icons/strategy.svg";
@@ -25,21 +26,13 @@ function ServicesOverview() {
     <section className="services-overview-section section">
       <PageContainer>
         <div ref={headingRef} className="reveal">
-          <SectionHeading
-            title="What we Help with?"
-            align="center"
-          />
+          <SectionHeading title="What we Help with?" align="center" />
         </div>
 
         <div className="services-overview-grid">
           {overviewServices.map((service) => (
-            <article
-              className="services-overview-card"
-              key={service.title}
-            >
-              <span className="services-overview-number">
-                {service.number}
-              </span>
+            <article className="services-overview-card" key={service.title}>
+              <span className="services-overview-number">{service.number}</span>
 
               <div className="services-overview-card-content">
                 <div className="services-overview-icon">

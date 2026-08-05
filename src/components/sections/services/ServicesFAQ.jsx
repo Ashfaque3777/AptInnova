@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 const faqData = [
@@ -83,10 +84,7 @@ function ServicesFAQ() {
 
         <div className="faq-list">
           {faqData.map((item, index) => (
-            <details
-              className="faq-item"
-              key={index}
-            >
+            <details className="faq-item" key={index}>
               <summary className="faq-question">
                 <span className="faq-question-text">{item.question}</span>
                 <span className="faq-icon" aria-hidden="true">
@@ -116,4 +114,3 @@ function ServicesFAQ() {
 }
 
 export default ServicesFAQ;
-

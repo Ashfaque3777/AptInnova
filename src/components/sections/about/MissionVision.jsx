@@ -1,6 +1,8 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
+
 import missionImg from "../../../assets/images/about/mission.webp";
 import visionImg from "../../../assets/images/about/vision.webp";
 
@@ -18,7 +20,10 @@ function MissionVision() {
 
         <div className="mission-vision-grid">
           {/* Card 1: Mission */}
-          <div className="mission-vision-card reveal reveal-delay-1" ref={card1Ref}>
+          <div
+            className="mission-vision-card reveal reveal-delay-1"
+            ref={card1Ref}
+          >
             <div className="mission-vision-image">
               <img src={missionImg} alt="Mission" />
             </div>
@@ -30,7 +35,10 @@ function MissionVision() {
           </div>
 
           {/* Card 2: Vision */}
-          <div className="mission-vision-card reveal reveal-delay-2" ref={card2Ref}>
+          <div
+            className="mission-vision-card reveal reveal-delay-2"
+            ref={card2Ref}
+          >
             <p className="mission-vision-text">
               <strong>Vision:</strong> To be a leading catalyst in the
               widespread adoption of Generative AI, fostering a future where

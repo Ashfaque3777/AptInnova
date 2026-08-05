@@ -232,28 +232,39 @@ const productStructuredData = {
     "@type": "Audience",
     audienceType: "Banks and financial institutions",
   },
-  url: "https://aptinnova.com/products/innovethic/",
+  url: "/products/innovethic/",
 };
 
 function InnoVethic() {
   return (
     <>
       <Helmet>
-        <title>InnoVethic | Regulated AI Operations for European Banks | AptInnova</title>
+        <title>
+          InnoVethic | Regulated AI Operations for European Banks | AptInnova
+        </title>
         <meta
           name="description"
           content="InnoVethic delivers regulated AI operations for European banks: source-cited regulatory answers (EBA, ECB, DNB, AFM, FATF, BIS, IFRS), governed multi-step workflows, and every step on the audit trail. Sovereign AI, built in Europe."
         />
-        <meta property="og:title" content="InnoVethic | Regulated AI Operations for European Banks" />
+        <meta
+          property="og:title"
+          content="InnoVethic | Regulated AI Operations for European Banks"
+        />
         <meta
           property="og:description"
           content="Source-cited regulatory answers, governed workflows, and a complete audit trail for European banking. Sovereign AI, built in Europe."
         />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content="https://aptinnova.com/products/innovethic/" />
+        <meta
+          property="og:url"
+          content="/products/innovethic/"
+        />
         <meta property="og:image" content={innovethicImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="InnoVethic | Regulated AI Operations for European Banks" />
+        <meta
+          name="twitter:title"
+          content="InnoVethic | Regulated AI Operations for European Banks"
+        />
         <meta
           name="twitter:description"
           content="Source-cited regulatory answers, governed workflows, and a complete audit trail for European banking. Sovereign AI, built in Europe."
@@ -268,8 +279,15 @@ function InnoVethic() {
         description="Regulated AI operations for European banks. Source-cited regulatory answers, governed multi-step workflows, and every step on the audit trail."
         heroImage={innovethicImage}
         actions={[
-          { label: "Talk to our team", to: "https://ai.aptinnova.com/contact/" },
-          { label: "Visit innovethic.com", href: "https://innovethic.com", variant: "secondary" },
+          {
+            label: "Talk to our team",
+            to: "/contact/",
+          },
+          {
+            label: "Visit innovethic.com",
+            href: "https://innovethic.com",
+            variant: "secondary",
+          },
         ]}
       >
         <ProductIntro
@@ -303,8 +321,12 @@ function InnoVethic() {
           title="Ready to see InnoVethic in Action?"
           description="Talk to our team about regulated AI operations for your institution, or explore more on the InnoVethic site."
           actions={[
-            { label: "Contact us", to: "https://ai.aptinnova.com/contact/" },
-            { label: "Visit innovethic.com", href: "https://innovethic.com", variant: "secondary" },
+            { label: "Contact us", to: "/contact/" },
+            {
+              label: "Visit innovethic.com",
+              href: "https://innovethic.com",
+              variant: "secondary",
+            },
           ]}
         />
 
@@ -317,4 +339,3 @@ function InnoVethic() {
 }
 
 export default InnoVethic;
-

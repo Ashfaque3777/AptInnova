@@ -1,11 +1,11 @@
-import ContactHero from "../components/sections/contact/ContactHero.jsx"
+import ContactHero from "../components/sections/contact/ContactHero.jsx";
 
 function Contact() {
-    return (
-        <>
-        <ContactHero />
-        </>
-    )
+  return (
+    <>
+      <ContactHero />
+    </>
+  );
 }
 
 export default Contact;

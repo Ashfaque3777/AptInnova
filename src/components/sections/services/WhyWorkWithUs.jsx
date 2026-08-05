@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 const principles = [
@@ -32,18 +33,12 @@ function WhyWorkWithUs() {
     <section className="section wwu-section">
       <PageContainer>
         <div ref={headingRef} className="reveal">
-          <SectionHeading
-            title="Why Work with Us?"
-            align="center"
-          />
+          <SectionHeading title="Why Work with Us?" align="center" />
         </div>
 
         <div className="wwu-grid">
           {principles.map((principle) => (
-            <article
-              className="wwu-card"
-              key={principle.title}
-            >
+            <article className="wwu-card" key={principle.title}>
               <h3 className="wwu-card-title">{principle.title}</h3>
               <p className="wwu-card-description">{principle.description}</p>
             </article>

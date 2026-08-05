@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 /**
@@ -10,7 +11,7 @@ import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
  * @param {string}   description- Optional section description.
  * @param {string[]} audiences  - List of audience labels (e.g. "Compliance").
  */
-function ProductAudience({title, description, audiences = [] }) {
+function ProductAudience({ title, description, audiences = [] }) {
   const headingRef = useScrollReveal();
   const gridRef = useScrollReveal();
 
@@ -41,4 +42,3 @@ function ProductAudience({title, description, audiences = [] }) {
 }
 
 export default ProductAudience;
-
