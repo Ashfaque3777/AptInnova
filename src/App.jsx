@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
+import ScrollToTopOnRouteChange from "./components/ui/ScrollToTopOnRouteChange.jsx";
 import Layout from "./components/layout/Layout.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
@@ -12,18 +13,21 @@ import Contact from "./pages/Contact.jsx";
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about/" element={<About />} />
-        <Route path="/services/" element={<Services />} />
-        <Route path="/products/innovethic/" element={<InnoVethic />} />
-        <Route path="/products/ainsteins/" element={<Ainsteins />} />
-        <Route path="/products/aimpact-lab/" element={<AimpactLab />} />
-        <Route path="/blog-insights/" element={<Insights />} />
-        <Route path="/contact/" element={<Contact />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTopOnRouteChange />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about/" element={<About />} />
+          <Route path="/services/" element={<Services />} />
+          <Route path="/products/innovethic/" element={<InnoVethic />} />
+          <Route path="/products/ainsteins/" element={<Ainsteins />} />
+          <Route path="/products/aimpact-lab/" element={<AimpactLab />} />
+          <Route path="/blog-insights/" element={<Insights />} />
+          <Route path="/contact/" element={<Contact />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
