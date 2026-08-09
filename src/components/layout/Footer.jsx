@@ -1,10 +1,34 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 import PageContainer from "./PageContainer.jsx";
 
 import footerLogoBlackbg from "../../assets/brand/footerLogoBlackbg.webp";
 
 function Footer() {
+  const [productsOpen, setProductsOpen] = useState(false);
+  const productsRef = useRef(null);
+
+  /* Close the Products dropdown when the user clicks/taps anywhere
+     outside of it (or clicks the trigger again via the toggle handler). */
+  useEffect(() => {
+    if (!productsOpen) return undefined;
+
+    function handleOutsideClick(event) {
+      if (productsRef.current && !productsRef.current.contains(event.target)) {
+        setProductsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("touchstart", handleOutsideClick);
+    };
+  }, [productsOpen]);
+
   return (
     <footer className="site-footer">
       <PageContainer>
@@ -25,17 +49,29 @@ function Footer() {
             </p>
           </div>
 
-          <div className="footer-links-row">
+          <div
+            className={`footer-links-row${productsOpen ? " footer-links-row--open" : ""}`}
+          >
             <nav aria-label="Footer navigation" className="footer-links-column">
               <h2>Explore</h2>
 
               <div className="footer-links-horizontal">
                 <Link to="/about/">About</Link>
                 <Link to="/services/">Services</Link>
-                <div className="nav-dropdown">
-                  <Link className="nav-dropdown-trigger">Products</Link>
+                <div className="nav-dropdown" ref={productsRef}>
+                  <button
+                    type="button"
+                    className="nav-dropdown-trigger nav-dropdown-trigger--btn"
+                    aria-haspopup="menu"
+                    aria-expanded={productsOpen}
+                    aria-controls="footer-products-menu"
+                    onClick={() => setProductsOpen((prev) => !prev)}
+                  >
+                    Products
+                  </button>
                   <div
-                    className="nav-dropdown-menu"
+                    id="footer-products-menu"
+                    className={`nav-dropdown-menu${productsOpen ? " nav-dropdown-menu--open" : ""}`}
                     role="menu"
                     aria-label="Products"
                   >

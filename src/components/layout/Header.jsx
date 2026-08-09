@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import PageContainer from "./PageContainer.jsx";
 import ThemeToggle from "../navigation/ThemeToggle.jsx";
+import MobileMenu from "../navigation/MobileMenu.jsx";
 
 import { useScrollDirection } from "../../hooks/useScrollDirection.js";
 
@@ -60,6 +61,8 @@ function Header() {
             <Link to="/contact/" className="header-cta">
               Talk to us
             </Link>
+
+            <MobileMenu />
           </div>
         </nav>
       </PageContainer>

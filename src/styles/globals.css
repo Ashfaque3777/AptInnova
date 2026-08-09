@@ -1,18 +1,33 @@
+/* ============================================================
+   GLOBAL STYLESHEET
+   Imported after tokens.css so design tokens are available
+   everywhere. Contains base/reset rules and shared page section
+   styles used across the whole site.
+   ============================================================ */
+
+/* Import the design tokens (colors, type scale, spacing, etc.) */
 @import "./tokens.css";
 
+/* ---------- Reset & Base ---------- */
+
+/* Apply the border-box box model to every element and pseudo-element
+   so padding and borders are included in an element's total width. */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Enable smooth scrolling when jumping to in-page anchors. */
 html {
   scroll-behavior: smooth;
 }
 
+/* Base body defaults: background/color from tokens, typography setup,
+   and a smooth transition when the theme (light/dark) is toggled. */
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 320px; /* smallest supported viewport for mobile */
 
   background: var(--color-background);
   color: var(--color-text-primary);
@@ -26,6 +41,8 @@ body {
     color var(--duration-normal) ease;
 }
 
+/* Make form controls inherit the base font so they never look
+   inconsistent with surrounding text. */
 body,
 button,
 input,
@@ -34,6 +51,7 @@ select {
   font: inherit;
 }
 
+/* Media elements are block-level and never overflow their container. */
 img,
 svg,
 video {
@@ -41,69 +59,62 @@ video {
   max-width: 100%;
 }
 
+/* Remove the mobile tap highlight flash on interactive elements. */
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Links inherit text color and lose the default underline by default. */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Buttons have no default border and show a pointer cursor. */
 button {
   border: 0;
   cursor: pointer;
 }
 
+/* Keyboard-only focus indicator for accessibility (outlined ring). */
 :focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
 }
 
+/* Highlighted/selected text uses the brand primary color. */
 ::selection {
   background: var(--color-primary);
   color: #ffffff;
 }
 
-/* skip link */
-.skip-link {
-  position: fixed;
-  top: var(--space-4);
-  left: var(--space-4);
-  z-index: 1000;
+/* ---------- Layout: Page Container ---------- */
 
-  padding: var(--space-3) var(--space-4);
-
-  background: var(--color-primary);
-  color: #ffffff;
-
-  border-radius: var(--radius-md);
-
-  transform: translateY(-200%);
-  transition: transform var(--duration-fast) ease;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
-
-/* page container */
+/* Centers content and constrains its width to the container max-width,
+   while reserving responsive side padding on smaller screens. */
 .page-container {
   width: min(
     calc(100% - (var(--container-padding) * 2)),
     var(--container-max-width)
   );
 
+  /* Center horizontally */
   margin-inline: auto;
 }
 
-/* header css */
+/* ============================================================
+   Header
+   ============================================================ */
+
+/* Sticky header with a semi-transparent, blurred background so content
+   scrolls beneath it while staying readable. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
 
+  /* 92% background color + 8% transparent for a subtle glass effect */
   background: color-mix(in srgb, var(--color-background) 92%, transparent);
 
   backdrop-filter: blur(4px);
@@ -111,10 +122,12 @@ button {
   transition: transform 0.3s ease;
 }
 
+/* Slides the header out of view (used when scrolling down). */
 .site-header--hidden {
   transform: translateY(-100%);
 }
 
+/* Nav bar layout: logo on the left, actions on the right. */
 .site-nav {
   display: flex;
   align-items: center;
@@ -123,11 +136,13 @@ button {
   min-height: 76px;
 }
 
+/* Header logo sizing (desktop). */
 .site-logo img {
   width: 350px;
   height: auto;
 }
 
+/* Theme-specific logos: show the light-theme logo by default… */
 .header-logo-light-theme {
   display: block;
 }
@@ -136,6 +151,7 @@ button {
   display: none;
 }
 
+/* …and swap to the dark-theme logo when the dark theme is active. */
 [data-theme="dark"] .header-logo-light-theme {
   display: none;
 }
@@ -144,6 +160,7 @@ button {
   display: block;
 }
 
+/* Circular theme (light/dark) toggle button. */
 .theme-toggle {
   width: 35px;
   height: 35px;
@@ -171,6 +188,7 @@ button {
   box-shadow: 0 6px 20px rgba(93, 39, 228, 0.5);
 }
 
+/* Desktop navigation links (horizontal row). */
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -190,17 +208,19 @@ button {
   color: var(--color-text-primary);
 }
 
-/* products dropdown */
+/* Products dropdown (desktop) */
 .nav-dropdown {
-  position: relative;
+  position: relative; /* anchors the absolutely-positioned menu */
 }
 
+/* Dropdown trigger: label + chevron icon. */
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
 }
 
+/* Builds a small chevron using bordered box corners. */
 .nav-dropdown-trigger::after {
   content: "";
   width: 8px;
@@ -209,16 +229,19 @@ button {
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
 
+  /* Rotate to point down */
   transform: translateY(-2px) rotate(45deg);
 
   transition: transform var(--duration-fast) ease;
 }
 
+/* Flip the chevron upward when the dropdown is open. */
 .nav-dropdown:hover .nav-dropdown-trigger::after,
 .nav-dropdown:focus-within .nav-dropdown-trigger::after {
   transform: translateY(1px) rotate(225deg);
 }
 
+/* Dropdown menu panel (hidden by default, revealed on hover/focus). */
 .nav-dropdown-menu {
   position: absolute;
   top: calc(100% + 0.75rem);
@@ -235,6 +258,7 @@ button {
 
   box-shadow: var(--shadow-md);
 
+  /* Hidden state: invisible + slightly offset downward */
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50%) translateY(8px);
@@ -245,6 +269,7 @@ button {
     visibility var(--duration-fast) ease;
 }
 
+/* Show the menu when hovering the trigger or focusing within it. */
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
   opacity: 1;
@@ -252,6 +277,7 @@ button {
   transform: translateX(-50%) translateY(0);
 }
 
+/* Individual dropdown link items. */
 .nav-dropdown-menu a {
   display: block;
 
@@ -287,12 +313,14 @@ button {
   height: 0.75rem;
 }
 
+/* Right-side header actions (theme toggle + CTA button). */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: var(--space-4);
 }
 
+/* Primary call-to-action button in the header. */
 .header-cta {
   padding: 0.65rem 1rem;
 
@@ -314,7 +342,7 @@ button {
   transform: translateY(-1px);
 }
 
-/* responsive header */
+/* Responsive header: hide desktop nav & CTA on small screens. */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none;
@@ -329,7 +357,11 @@ button {
   }
 }
 
-/* footer css - always dark theme */
+/* ============================================================
+   Footer (always dark theme)
+   ============================================================ */
+
+/* Footer uses a fixed dark palette regardless of the active theme. */
 .site-footer {
   margin-top: var(--space-32);
   padding-block: var(--space-16);
@@ -340,6 +372,7 @@ button {
   color: #f5f7fa;
 }
 
+/* Footer content stacked vertically and centered. */
 .footer-grid {
   display: flex;
   flex-direction: column;
@@ -348,6 +381,7 @@ button {
   text-align: center;
 }
 
+/* Brand block (logo + tagline). */
 .footer-brand {
   display: flex;
   flex-direction: column;
@@ -358,7 +392,7 @@ button {
 .footer-logo {
   width: 110px;
   margin: 0 auto var(--space-4);
-  pointer-events: none;
+  pointer-events: none; /* the wrapping link handles clicks */
 }
 
 .footer-brand a {
@@ -366,6 +400,7 @@ button {
   width: 110px;
 }
 
+/* Gentle pulse animation on the footer logo when hovered. */
 .footer-brand a:hover {
   animation: pulse-logo 1s ease-in-out infinite;
 }
@@ -389,6 +424,7 @@ button {
   line-height: 1.6;
 }
 
+/* Row that splits footer links into two vertical columns. */
 .footer-links-row {
   display: flex;
   justify-content: center;
@@ -411,6 +447,7 @@ button {
   color: #f5f7fa;
 }
 
+/* Horizontal footer links (e.g. Products dropdown). */
 .footer-links-horizontal {
   display: flex;
   gap: var(--space-8);
@@ -428,6 +465,7 @@ button {
   color: #f5f7fa;
 }
 
+/* Bottom bar with copyright / legal links. */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -458,9 +496,28 @@ button {
   color: #f5f7fa;
 }
 
-/* footer products dropdown (matches header dropdown behavior) */
+/* Footer products dropdown (matches header dropdown behavior) */
 .footer-links-horizontal .nav-dropdown {
   position: relative;
+}
+
+/* Footer "Products" trigger is a button — inherit link styling & chevron. */
+.footer-links-horizontal .nav-dropdown-trigger--btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  color: #c7d1dc;
+
+  font-size: var(--text-lg);
+  font-weight: 400;
+
+  transition: color var(--duration-fast) ease;
+}
+
+.footer-links-horizontal .nav-dropdown-trigger--btn:hover {
+  color: #f5f7fa;
 }
 
 .footer-links-horizontal .nav-dropdown-menu {
@@ -478,6 +535,13 @@ button {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
+/* Footer dropdown is toggled by click (not hover) on small screens. */
+.footer-links-horizontal .nav-dropdown-menu--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
 .footer-links-horizontal .nav-dropdown-menu a {
   color: #c7d1dc;
 }
@@ -488,7 +552,7 @@ button {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* responsive footer */
+/* Responsive footer: single column on small screens. */
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
@@ -499,7 +563,10 @@ button {
   }
 }
 
-/* hero layout */
+/* ============================================================
+   Hero
+   ============================================================ */
+
 .hero-section {
   position: relative;
   padding-top: clamp(8rem, 14vw, 4rem);
@@ -509,6 +576,7 @@ button {
   background-repeat: no-repeat;
 }
 
+/* Very subtle dark overlay to improve text contrast over the hero image. */
 .hero-section::before {
   content: "";
 
@@ -518,6 +586,7 @@ button {
   background: rgba(0, 0, 0, 0.02);
 }
 
+/* Two-column hero: wider text column + narrower visual column. */
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
@@ -526,12 +595,14 @@ button {
   min-height: min(680px, calc(100vh - 76px));
 }
 
+/* Hero text content sits above the overlay. */
 .hero-content {
   position: relative;
   z-index: 1;
   max-width: 680px;
 }
 
+/* Small uppercase label above the hero heading. */
 .eyebrow {
   margin: 0 0 var(--space-4);
 
@@ -543,6 +614,7 @@ button {
   text-transform: uppercase;
 }
 
+/* Large, fluid hero heading. */
 .hero-content h1 {
   max-width: 680px;
   margin-left: 30%;
@@ -555,6 +627,7 @@ button {
   letter-spacing: -0.04em;
 }
 
+/* Supporting paragraph under the hero heading. */
 .hero-description {
   max-width: 600px;
   margin: var(--space-8) 0 0;
@@ -565,6 +638,7 @@ button {
   line-height: 1.7;
 }
 
+/* Row of hero action buttons. */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -573,11 +647,12 @@ button {
   margin-top: var(--space-10);
 }
 
+/* Visual media in the hero is hidden by default. */
 .hero-visual {
   display: none;
 }
 
-/* hero responsive */
+/* Responsive hero: stack columns and fluid-sizing on small screens. */
 @media (max-width: 768px) {
   .hero-section {
     padding-block: var(--space-16);
@@ -597,12 +672,17 @@ button {
     align-items: stretch;
   }
 
+  /* Buttons fill full width on mobile */
   .button {
     width: 100%;
   }
 }
 
-/* button style */
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+/* Base button style shared by all variants. */
 .button {
   display: inline-flex;
   align-items: center;
@@ -681,11 +761,16 @@ button {
   margin-inline: auto;
 }
 
-/* cta card section */
+/* ============================================================
+   CTA Card
+   ============================================================ */
+
+/* Full-width CTA card section padding. */
 .cta-card-section {
   padding: var(--space-12) var(--space-16);
 }
 
+/* Two-part horizontal CTA card: content + link. */
 .cta-card {
   display: flex;
   align-items: center;
@@ -704,12 +789,14 @@ button {
   transform: scale(1.05);
 }
 
+/* Left group: icon + text. */
 .cta-card-left {
   display: flex;
   align-items: center;
   gap: var(--space-4);
 }
 
+/* Icon container for the CTA. */
 .cta-card-icon {
   display: grid;
   place-items: center;
@@ -746,6 +833,7 @@ button {
   line-height: 1.5;
 }
 
+/* CTA link on the right side. */
 .cta-card-link {
   display: inline-flex;
   align-items: center;
@@ -756,7 +844,11 @@ button {
   font-weight: 600;
 }
 
-/* service section style */
+/* ============================================================
+   Services
+   ============================================================ */
+
+/* Generic section vertical padding. */
 .section {
   padding-block: var(--space-12);
 }
@@ -877,13 +969,18 @@ button {
   }
 }
 
-/* product section style */
+/* ============================================================
+   Products
+   ============================================================ */
+
+/* Center the products section heading. */
 .products-section .section-heading {
   text-align: center;
   margin-inline: auto;
   margin-bottom: var(--space-16);
 }
 
+/* Vertical stack of product rows. */
 .products-list {
   display: flex;
   flex-direction: column;
@@ -900,6 +997,7 @@ button {
   text-align: left;
 }
 
+/* Large product title. */
 .product-layout-heading {
   margin: 0;
 
@@ -909,6 +1007,7 @@ button {
   letter-spacing: -0.02em;
 }
 
+/* Two-column body: image + content. */
 .product-layout-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -916,6 +1015,7 @@ button {
   align-items: center;
 }
 
+/* Reversed layout swaps the image/content order. */
 .product-layout-body--reversed .product-layout-image {
   order: 2;
 }
@@ -924,6 +1024,7 @@ button {
   order: 1;
 }
 
+/* Rounded, clipped product image container. */
 .product-layout-image {
   overflow: hidden;
 
@@ -945,6 +1046,7 @@ button {
   gap: var(--space-4);
 }
 
+/* Small badge above the product title. */
 .product-badge {
   display: inline-block;
   align-self: flex-start;
@@ -995,6 +1097,7 @@ button {
   opacity: 0.8;
 }
 
+/* Responsive: stack product columns on small screens. */
 @media (max-width: 768px) {
   .product-layout-body {
     grid-template-columns: 1fr;
@@ -1150,6 +1253,7 @@ button {
   font-weight: 600;
 }
 
+/* Responsive: 2 columns on tablet, 1 on mobile for "why" cards. */
 @media (max-width: 900px) {
   .why-cards-grid {
     flex-wrap: wrap;
@@ -1167,7 +1271,11 @@ button {
   }
 }
 
-/* partnership section style */
+/* ============================================================
+   Partnership
+   ============================================================ */
+
+/* Partnership section with a surface background. */
 .partnership-section {
   padding-block: var(--space-16);
 
@@ -1184,6 +1292,7 @@ button {
   letter-spacing: -0.03em;
 }
 
+/* Card with a large letter + supporting text. */
 .partnership-card {
   display: flex;
   align-items: stretch;
@@ -1201,6 +1310,7 @@ button {
   box-shadow: var(--shadow-md);
 }
 
+/* Large decorative letter on the left. */
 .partnership-card-a {
   display: flex;
   align-items: center;
@@ -1253,6 +1363,7 @@ button {
   opacity: 0.8;
 }
 
+/* Responsive: stack partnership card on small screens. */
 @media (max-width: 700px) {
   .partnership-card {
     flex-direction: column;
@@ -1272,7 +1383,11 @@ button {
   }
 }
 
-/* contact cta section */
+/* ============================================================
+   Contact CTA
+   ============================================================ */
+
+/* Centered CTA section with a heading, description, and form. */
 .contact-cta-section {
   padding-block: var(--space-24);
 
@@ -1306,6 +1421,7 @@ button {
   line-height: 1.6;
 }
 
+/* Inline email signup form. */
 .contact-cta-form {
   display: flex;
   gap: var(--space-2);
@@ -1362,13 +1478,17 @@ button {
   background: var(--color-primary-hover);
 }
 
+/* Responsive: stack form fields on small screens. */
 @media (max-width: 600px) {
   .contact-cta-form {
     flex-direction: column;
   }
 }
 
-/* insights section */
+/* ============================================================
+   Insights
+   ============================================================ */
+
 .insights-section {
   padding-block: var(--space-24);
 
@@ -1380,6 +1500,7 @@ button {
   margin-bottom: var(--space-16);
 }
 
+/* Two-column insights card grid. */
 .insights-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1481,6 +1602,7 @@ button {
   color: var(--color-primary);
 }
 
+/* Author / date meta row. */
 .insight-meta {
   display: flex;
   align-items: center;
@@ -1559,6 +1681,7 @@ button {
   opacity: 0.8;
 }
 
+/* Responsive: single column on small screens. */
 @media (max-width: 700px) {
   .insights-cards-grid {
     grid-template-columns: 1fr;
@@ -1593,9 +1716,6 @@ button {
   flex-direction: column;
   align-items: center;
   padding: 0 var(--space-16);
-}
-
-.insight-hero-category-button {
 }
 
 .insight-hero-card-heading {
@@ -1657,13 +1777,17 @@ button {
   transform: scaleX(1);
 }
 
-/* newsletter section */
+/* ============================================================
+   Newsletter
+   ============================================================ */
+
 .newsletter-section {
   padding-block: var(--space-24);
 
   background: var(--color-surface);
 }
 
+/* Centered newsletter signup card. */
 .newsletter-card {
   display: flex;
   flex-direction: column;
@@ -1687,6 +1811,7 @@ button {
     box-shadow var(--duration-normal) ease;
 }
 
+/* Highlight the card with a primary ring on hover. */
 .newsletter-card:hover {
   border-color: var(--color-primary);
   box-shadow:
@@ -1728,7 +1853,11 @@ button {
   }
 }
 
-/* Scroll Reveal Animation */
+/* ============================================================
+   Scroll Reveal Animation
+   ============================================================ */
+
+/* Elements start hidden & offset downward until scrolled into view. */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -1762,7 +1891,11 @@ button {
   transition-delay: 0.6s;
 }
 
-/* Scroll to Top Button */
+/* ============================================================
+   Scroll to Top Button
+   ============================================================ */
+
+/* Fixed "back to top" button, hidden by default. */
 .scroll-to-top {
   position: fixed;
   bottom: 1rem;
@@ -1785,6 +1918,7 @@ button {
 
   cursor: pointer;
 
+  /* Hidden state */
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
@@ -1796,6 +1930,7 @@ button {
     box-shadow 0.2s ease;
 }
 
+/* Visible state (added when user scrolls down). */
 .scroll-to-top--visible {
   opacity: 1;
   transform: translateY(0);
@@ -1816,7 +1951,10 @@ button {
   height: 22px;
 }
 
-/* about hero style */
+/* ============================================================
+   About Hero
+   ============================================================ */
+
 .about-hero {
   display: flex;
   align-items: center;
@@ -1851,6 +1989,7 @@ button {
   line-height: 1.5;
 }
 
+/* Unequal two-column image grid (small + large). */
 .about-hero-images {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
@@ -1955,6 +2094,7 @@ button {
   justify-items: center;
 }
 
+/* Center the 5th (last) belief card on its own row. */
 .beliefs-grid > .belief-card:last-child:nth-child(5) {
   grid-column: 2 / 3;
 }
@@ -2027,6 +2167,7 @@ button {
   line-height: 1.6;
 }
 
+/* Responsive beliefs grid: 2 columns on tablet. */
 @media (max-width: 768px) {
   .beliefs-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2038,6 +2179,7 @@ button {
   }
 }
 
+/* 1 column on small mobile. */
 @media (max-width: 480px) {
   .beliefs-grid {
     grid-template-columns: 1fr;
@@ -2048,7 +2190,10 @@ button {
   }
 }
 
-/* about partnership style */
+/* ============================================================
+   About Partnership
+   ============================================================ */
+
 .about-partnership {
   background: var(--color-surface);
   padding: var(--space-24) 0;
@@ -2084,7 +2229,10 @@ button {
   object-fit: cover;
 }
 
-/* mission vision section style */
+/* ============================================================
+   Mission & Vision
+   ============================================================ */
+
 .mission-vision-section {
   margin: var(--space-12) var(--space-32);
 }
@@ -2146,7 +2294,10 @@ button {
   }
 }
 
-/* about contact cta style */
+/* ============================================================
+   About Contact CTA
+   ============================================================ */
+
 .about-contact-cta {
   text-align: center;
   background: var(--color-surface);
@@ -2173,11 +2324,15 @@ button {
   max-width: 600px;
 }
 
-/* how we work style */
+/* ============================================================
+   How We Work
+   ============================================================ */
+
 .how-we-work-section {
   padding: var(--space-20) 0;
 }
 
+/* Four-step process grid. */
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2224,7 +2379,10 @@ button {
   }
 }
 
-/* why work with us section */
+/* ============================================================
+   Why Work With Us
+   ============================================================ */
+
 .wwu-section {
   padding-block: var(--space-20);
   background: var(--color-surface);
@@ -2297,7 +2455,11 @@ button {
   }
 }
 
-/* services style */
+/* ============================================================
+   Services Page
+   ============================================================ */
+
+/* Services hero header. */
 .services-hero {
   background: var(--color-surface);
   padding-bottom: var(--space-16);
@@ -2362,6 +2524,7 @@ button {
   border-color: var(--color-primary);
 }
 
+/* Large faint number on the left of each overview card. */
 .services-overview-number {
   flex-shrink: 0;
 
@@ -2505,6 +2668,7 @@ button {
   max-width: 680px;
 }
 
+/* "What we offer" block inside a service card. */
 .offer-section {
   width: 100%;
   text-align: left;
@@ -2544,6 +2708,7 @@ button {
   line-height: 1.6;
 }
 
+/* Custom primary-colored bullet. */
 .offer-list li::before {
   content: "•";
 
@@ -2572,7 +2737,10 @@ button {
   }
 }
 
-/* FAQ section */
+/* ============================================================
+   FAQ
+   ============================================================ */
+
 .faq-section {
   padding-block: var(--space-24);
   background: var(--color-surface);
@@ -2611,6 +2779,7 @@ button {
   content: "";
 }
 
+/* Clickable question row. */
 .faq-question {
   display: flex;
   align-items: center;
@@ -2637,6 +2806,7 @@ button {
   flex: 1;
 }
 
+/* Expand/collapse icon indicator. */
 .faq-icon {
   flex-shrink: 0;
   display: grid;
@@ -2650,6 +2820,7 @@ button {
   transition: transform var(--duration-fast) ease;
 }
 
+/* Rotate the icon when the item is expanded. */
 .faq-item[open] .faq-icon {
   transform: rotate(90deg);
 }
@@ -2687,7 +2858,10 @@ button {
   }
 }
 
-/* services contact cta section */
+/* ============================================================
+   Services Contact CTA
+   ============================================================ */
+
 .services-contact-cta {
   padding-top: var(--space-24);
 
@@ -2712,6 +2886,7 @@ button {
   line-height: 1.7;
 }
 
+/* Three highlight cards. */
 .services-contact-cta-highlights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2798,7 +2973,10 @@ button {
   }
 }
 
-/* contact hero section */
+/* ============================================================
+   Contact Hero
+   ============================================================ */
+
 .contact-hero {
   padding-block: var(--space-24);
 }
@@ -3015,5 +3193,1007 @@ button {
 
   .contact-hero-form-row {
     flex-direction: column;
+  }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE (320px min viewport)
+   ------------------------------------------------------------
+   These rules are appended at the end so they take precedence.
+   They only affect small screens and never alter desktop/tablet
+   layouts, branding, animations, or existing functionality.
+   ============================================================ */
+
+/* ---------- Global overflow safety ---------- */
+html,
+body {
+  /* `clip` (over `hidden`) prevents any right-side horizontal scrollbar
+     while keeping the page fully scrollable vertically. */
+  overflow-x: clip;
+}
+
+/* Ensure full-bleed sections and the app root never exceed the viewport
+   width, eliminating right-side horizontal overflow. */
+#root,
+main,
+.page-container,
+section {
+  max-width: 100%;
+}
+
+/* Prevent flex/grid children from forcing horizontal overflow via
+   long unbreakable text (e.g. URLs, long words). */
+.hero-content,
+.hero-actions,
+.product-intro-copy,
+.product-spotlight-copy,
+.cta-card-left,
+.footer-brand,
+.partnership-card-content,
+.insight-hero-content,
+.contact-hero-card-content,
+.service-card,
+.newsletter-card {
+  min-width: 0;
+}
+
+/* ---------- Mobile hamburger menu ---------- */
+
+/* Hamburger toggle: hidden on desktop, shown on mobile. */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  cursor: pointer;
+
+  transition: background-color var(--duration-fast) ease;
+}
+
+.menu-toggle:hover {
+  background: var(--color-surface);
+}
+
+.menu-toggle-bar {
+  display: block;
+  width: 18px;
+  height: 1px;
+
+  border-radius: 2px;
+  background: var(--color-text-primary);
+
+  transition:
+    transform var(--duration-normal) ease,
+    opacity var(--duration-normal) ease;
+}
+
+/* Animate the hamburger into a close (X) icon when the menu is open.
+   - top & bottom bars rotate 45deg / -45deg to form the X
+   - middle bar fades out. */
+.menu-toggle--open .menu-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle--open .menu-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle--open .menu-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile menu panel: hidden by default, slides down when open. */
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: block;
+
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    z-index: 60;
+
+    max-height: calc(100vh - 76px);
+    overflow-y: auto;
+
+    padding: var(--space-4) var(--space-6) var(--space-8);
+
+    background: var(--color-surface-elevated);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+
+    transition:
+      opacity var(--duration-normal) ease,
+      transform var(--duration-normal) ease,
+      visibility var(--duration-normal) ease;
+  }
+
+  .mobile-menu--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .mobile-menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+
+    width: 100%;
+
+    padding: 0.9rem var(--space-4);
+
+    border-radius: var(--radius-md);
+
+    color: var(--color-text-primary);
+    font-size: var(--text-lg);
+    font-weight: 600;
+
+    text-align: left;
+
+    transition:
+      background-color var(--duration-fast) ease,
+      color var(--duration-fast) ease;
+  }
+
+  .mobile-menu-link:hover {
+    background: var(--color-surface);
+    color: var(--color-primary);
+  }
+
+  .mobile-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu-chevron {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+
+    transform: translateY(-2px) rotate(45deg);
+
+    transition: transform var(--duration-fast) ease;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-chevron {
+    transform: translateY(1px) rotate(225deg);
+  }
+
+  /* Submenu is fully hidden by default (no residual space), so the
+     nav gaps stay even between the top-level links. */
+  .mobile-menu-submenu {
+    display: none;
+
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .mobile-menu-submenu--open {
+    display: flex;
+  }
+
+  .mobile-menu-link--sub {
+    padding-left: var(--space-8);
+
+    font-size: var(--text-base);
+    font-weight: 500;
+  }
+
+  .mobile-menu-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: var(--space-4);
+    padding: var(--space-4) var(--space-4) 0;
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .mobile-menu-theme-label {
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+    font-weight: 600;
+  }
+}
+
+/* ---------- Header / logo / touch targets ---------- */
+@media (max-width: 480px) {
+  .site-nav {
+    min-height: 60px;
+  }
+
+  /* Header logo increased by 20% (110px -> 132px). */
+  .site-logo img {
+    width: 132px;
+  }
+
+  /* Ensure theme toggle & scroll-to-top are easy to tap. */
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Mobile menu panel aligns with the shorter header. */
+  .mobile-menu {
+    top: 60px;
+    max-height: calc(100vh - 60px);
+  }
+}
+
+/* Larger scroll-to-top touch target on mobile. */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ---------- Hero (Home) ---------- */
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: var(--space-16);
+  }
+
+  /* Remove the desktop-only right margin so heading fills the width. */
+  .hero-content h1 {
+    margin-left: 0;
+    font-size: clamp(2.2rem, 15vw, 3.5rem);
+    line-height: 1.25;
+  }
+}
+
+/* ---------- About hero ---------- */
+@media (max-width: 480px) {
+  .about-hero {
+    min-height: auto;
+    padding-block: var(--space-12);
+  }
+
+  .about-hero h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .about-hero-description {
+    max-width: 100%;
+    font-size: var(--text-lg);
+  }
+
+  .about-hero-images {
+    padding: var(--space-10) 0;
+  }
+}
+
+/* ---------- Services hero ---------- */
+@media (max-width: 480px) {
+  .services-hero-content h1 {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+
+  .services-hero-content p {
+    max-width: 100%;
+    font-size: var(--text-lg);
+  }
+}
+
+/* ---------- Fixed side-padding sections ---------- */
+
+/* Beliefs section: hugely oversized side padding (space-32 = 8rem). */
+@media (max-width: 480px) {
+  .beliefs-section {
+    padding: var(--space-16) var(--space-4);
+  }
+
+  .belief-card {
+    padding: var(--space-6) var(--space-5);
+  }
+}
+
+/* Mission & Vision: oversized side margin (space-32). */
+@media (max-width: 480px) {
+  .mission-vision-section {
+    margin: var(--space-8) 0;
+  }
+
+  .mission-vision-card {
+    width: 100%;
+  }
+}
+
+/* Insights hero content: oversized side padding. */
+@media (max-width: 480px) {
+  .insights-hero-card {
+    max-width: 100%;
+  }
+
+  .insight-hero-content {
+    padding: 0 var(--space-4);
+  }
+
+  .insight-hero-card-heading {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* CTA card: reduce section padding & stack card vertically. */
+@media (max-width: 600px) {
+  .cta-card-section {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .cta-card-left {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .cta-card-link {
+    align-self: flex-start;
+  }
+}
+
+/* About partnership content: allow full width. */
+@media (max-width: 480px) {
+  .about-partnership-content-wrapper {
+    max-width: 100%;
+  }
+
+  .about-partnership-content-wrapper p {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Contact CTA content: don't clip at 90%. */
+@media (max-width: 480px) {
+  .contact-cta-content {
+    max-width: 100%;
+  }
+
+  .contact-cta-content h2 {
+    font-size: var(--text-4xl);
+  }
+}
+
+/* ---------- Services page ---------- */
+
+/* Overview cards: reduce padding so titles fit at 320px. */
+@media (max-width: 480px) {
+  .services-overview-card {
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .services-overview-card-content {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .services-overview-title {
+    font-size: var(--text-lg);
+  }
+}
+
+/* Service cards: ensure text wraps and content fits. */
+@media (max-width: 480px) {
+  .service-card {
+    padding: var(--space-6) var(--space-3);
+  }
+
+  .service-card-heading {
+    font-size: var(--text-xl);
+    line-height: 1.25;
+  }
+
+  .offer-list li {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* ---------- Products (home) ---------- */
+@media (max-width: 480px) {
+  .product-layout-heading {
+    font-size: var(--text-3xl);
+  }
+
+  .product-layout-title {
+    font-size: var(--text-xl);
+  }
+}
+
+/* ---------- Footer ---------- */
+@media (max-width: 768px) {
+  .footer-links-row {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-12);
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    margin-top: var(--space-16);
+    padding-block: var(--space-12);
+  }
+
+  .footer-bottom {
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+  }
+
+  /* Stack footer horizontal links vertically on very small screens. */
+  .footer-links-horizontal {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  /* Footer dropdown panels become full-width static blocks. */
+  .footer-links-horizontal .nav-dropdown {
+    width: 100%;
+  }
+
+  .footer-links-horizontal .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    min-width: 0;
+    width: 100%;
+    margin-top: var(--space-3);
+  }
+}
+
+/* ---------- Contact page ---------- */
+@media (max-width: 480px) {
+  .contact-hero-card {
+    gap: var(--space-6);
+  }
+
+  .contact-hero-image {
+    max-height: 200px;
+  }
+
+  .contact-hero-field {
+    font-size: var(--text-base);
+  }
+
+  .contact-hero-submit {
+    min-height: 48px;
+  }
+}
+
+/* ---------- FAQ ---------- */
+@media (max-width: 480px) {
+  .faq-question {
+    font-size: var(--text-base);
+  }
+}
+
+/* ---------- Newsletter ---------- */
+@media (max-width: 480px) {
+  .newsletter-card {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .newsletter-heading {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* ---------- 320px specific micro-adjustments ---------- */
+@media (max-width: 340px) {
+  .page-container {
+    --container-padding: 0.75rem;
+  }
+
+  .site-logo img {
+    /* Header logo increased by 20% at 320px (132px -> 158px).
+       Previously 114px was smaller than the 132px mobile logo, so the
+       increase had no visible effect at 320px. */
+    width: 158px;
+  }
+
+  .nav-actions {
+    gap: var(--space-2);
+  }
+
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Only at 320px viewport: hide the header theme toggle so it appears
+     exclusively in the mobile navigation panel. The mobile menu toggle
+     (inside .mobile-menu-footer) is unaffected. */
+  .nav-actions > .theme-toggle {
+    display: none;
+  }
+
+  /* ---------- Home Hero heading: reduce font size by 30% & position
+     upward by 50% from its current spot ---------- */
+  .hero-content h1 {
+    font-size: clamp(1.54rem, 10.5vw, 2.45rem);
+
+    position: relative;
+    margin-bottom: 100%;
+  }
+
+  /* ---------- ServicesOverview: reduce number, title, icon & icon-box
+     by 10%, and make number->icon and icon->title gaps even ---------- */
+  .services-overview-number {
+    font-size: 1.69rem;
+  }
+
+  .services-overview-title {
+    font-size: 1.01rem;
+  }
+
+  .services-overview-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .services-overview-icon img {
+    width: 21.6px;
+    height: 21.6px;
+  }
+
+  .services-overview-card {
+    gap: 0.75rem;
+  }
+
+  .services-overview-card-content {
+    gap: 0.75rem;
+  }
+
+  /* ---------- CTA Card: center items, shrink image & text ---------- */
+  .cta-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .cta-card-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .cta-card-link {
+    align-self: center;
+  }
+
+  /* Reduce CTA image BOX (85px -> 68px) by 20%. */
+  .cta-card-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  /* Reduce CTA icon image by 20% (55px -> 44px). */
+  .cta-card-icon img {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* CTA heading: 0.875rem + 10% = 0.96rem. */
+  .cta-card-text h3 {
+    font-size: 0.96rem;
+  }
+
+  /* CTA paragraph: 0.79rem + 10% = ~0.87rem. */
+  .cta-card-text p {
+    font-size: 0.87rem;
+  }
+
+  /* CTA link: 0.79rem + 10% = ~0.87rem. */
+  .cta-card-link {
+    font-size: 0.87rem;
+  }
+
+  /* ---------- Services: reduce title 30% & description 20% ---------- */
+  .services-section .section-heading h2 {
+    /* True 30% reduction from base 2rem. The previous clamp only
+       reached ~1.6rem (~20% off) at 320px. */
+    font-size: 1.4rem;
+  }
+
+  /* Reduce services description (text-xl 1.25rem) by 20% -> 1rem. */
+  .services-section .section-heading > p:last-child {
+    font-size: 1rem;
+  }
+
+  /* Reduce services CARD title (text-2xl 1.5rem) by 30% -> 1.05rem. */
+  .services-section .service-card-header h3 {
+    font-size: 1.05rem;
+  }
+
+  /* Reduce services CARD description (text-lg 1.125rem) by 20% -> 0.9rem. */
+  .services-section .service-card-description {
+    font-size: 0.9rem;
+  }
+
+  /* ---------- Products: center + reduce title/link 20%, desc 30% ---------- */
+  .product-layout-left {
+    text-align: center;
+  }
+
+  .product-layout-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-badge {
+    align-self: center;
+  }
+
+  /* Reduce product title (text-3xl 1.875rem) by 20% -> 1.5rem. */
+  .product-layout-heading {
+    font-size: 1.5rem;
+  }
+
+  /* Reduce product card title (text-xl 1.25rem) by 20% -> 1rem. */
+  .product-layout-title {
+    font-size: 1rem;
+  }
+
+  /* Reduce product link (text-xl 1.25rem) by 20% -> 1rem. */
+  .product-layout-link {
+    font-size: 1rem;
+  }
+
+  /* Product description: 0.79rem + 10% = ~0.87rem. */
+  .product-layout-description {
+    font-size: 0.87rem;
+  }
+
+  /* ---------- Insights: reduce card heading by 20% ---------- */
+  .insight-card-heading {
+    font-size: 1.2rem;
+  }
+
+  /* ---------- InsightsHero: stack image & content vertically and fit
+     the content inside the card (320px only) ---------- */
+
+  /* Stack the image on top and the content below it, filling the card
+     width instead of the default side-by-side row layout. */
+  .insights-hero-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Ensure the image link spans the full card width so the image never
+     overflows the card's inner (padded) area. */
+  .insights-hero-card > .insight-image-link {
+    width: 100%;
+  }
+
+  /* Let the content fill the full card width and remove the large
+     horizontal padding so everything fits inside the card. */
+  .insight-hero-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Keep the category button aligned to the start of the content block. */
+  .insight-hero-content .insight-category-btn {
+    align-self: flex-start;
+  }
+
+  /* Tighten the hero card heading so it wraps and fits the 320px width. */
+  .insight-hero-card-heading {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  /* Ensure the description wraps (not overflows) within the card. */
+  .insight-card-description {
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* ---------- Footer: Explore & Connect horizontal+centered by default
+     ---------- */
+  .footer-links-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+  }
+
+  /* Reduce footer logo image (110px) by 30% -> 77px. */
+  .footer-logo {
+    width: 77px;
+  }
+
+  /* Keep the wrapping link the same width as the reduced logo. */
+  .footer-brand a {
+    width: 77px;
+  }
+
+  /* Reduce footer brand paragraph (text-lg 1.125rem) by 20% -> 0.9rem. */
+  .footer-brand p {
+    font-size: 0.9rem;
+  }
+
+  .footer-links-column {
+    align-items: center;
+  }
+
+  /* Reduce Explore/Connect headings (text-xl 1.25rem) by 40% -> 0.75rem. */
+  .footer-links-column h2 {
+    font-size: 0.75rem;
+  }
+
+  .footer-links-horizontal {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  /* Reduce footer links (text-lg 1.125rem) by 40% -> 0.675rem. */
+  .footer-links-horizontal a {
+    font-size: 0.675rem;
+  }
+
+  /* Reduce Products trigger button (text-lg 1.125rem) by 40% -> 0.675rem. */
+  .footer-links-horizontal .nav-dropdown-trigger--btn {
+    font-size: 0.675rem;
+  }
+
+  .footer-links-horizontal .nav-dropdown {
+    width: auto;
+  }
+
+  /* Closed dropdown: absolutely positioned so it never takes layout space. */
+  .footer-links-horizontal .nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    min-width: 180px;
+    width: auto;
+  }
+
+  /* Reduce Products dropdown items (text-lg 1.125rem) by 40% -> 0.675rem. */
+  .footer-links-horizontal .nav-dropdown-menu a {
+    font-size: 0.675rem;
+  }
+
+  /* Open dropdown: static so it flows in the layout and pushes the
+     Connect column below (never behind it). The extra :hover selector
+     keeps it static even while hover rules are active. */
+  .footer-links-horizontal .nav-dropdown:hover .nav-dropdown-menu--open,
+  .footer-links-horizontal .nav-dropdown-menu--open {
+    position: static;
+    transform: none;
+    width: 100%;
+    min-width: 0;
+    margin-top: var(--space-3);
+  }
+
+  /* When Products is open: switch to vertical & centered. */
+  .footer-links-row--open {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  /* Make the Products dropdown wrapper full-width on its own line when
+     open, so the static menu spans the column and Connect sits below it. */
+  .footer-links-row--open .footer-links-horizontal .nav-dropdown {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Fix: keep the footer Products dropdown CLOSED even while the trigger
+     retains hover/focus. The generic `.nav-dropdown:hover` /
+     `.nav-dropdown:focus-within` rules (specificity 0,3,0) otherwise keep
+     the closed menu visible after the second click. `:not(.--open)`
+     guarantees this never affects the open state. */
+  .footer-links-horizontal
+    .nav-dropdown:hover
+    .nav-dropdown-menu:not(.nav-dropdown-menu--open),
+  .footer-links-horizontal
+    .nav-dropdown:focus-within
+    .nav-dropdown-menu:not(.nav-dropdown-menu--open) {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* ============================================================
+   320px About Page Design Adjustments
+   ------------------------------------------------------------
+   These rules only apply at the 320px min viewport. They are
+   pure CSS (JSX stays untouched) and never affect desktop,
+   tablet, or larger mobile layouts.
+   ============================================================ */
+@media (max-width: 340px) {
+  /* ---------- AboutHero: hide heroAbout2, heroAbout1 = bg, black heading ---------- */
+
+  /* Use heroAbout-1 as the section's background image, rendered on a
+     ::before pseudo-element so it can be blurred without affecting the
+     text content above it. */
+  .about-hero {
+    position: relative;
+    min-height: 70vh;
+
+    overflow: hidden;
+  }
+
+  .about-hero::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+
+    background-image: url("../assets/images/about/heroAbout-1.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Blur the background image only. scale prevents blur edge fade. */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    transform: scale(1.1);
+  }
+
+  /* Keep the section content above the blurred background. */
+  .about-hero .page-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Heading color becomes black (readable over the light hero image). */
+  .about-hero h1 {
+    color: #000000;
+  }
+
+  .about-hero p {
+    color: #000000;
+  }
+
+  /* Hide both inline hero images (heroAbout2 hidden; heroAbout1 now
+     lives as the section background, so no duplicate inline image). */
+  .about-hero-images {
+    display: none;
+  }
+
+  /* ---------- MissionVision: images -50%, paragraph font -10%, card gap ---------- */
+
+  /* Add an appropriate gap between the two stacked cards. */
+  .mission-vision-grid {
+    gap: var(--space-8);
+  }
+
+  .mission-vision-card {
+    gap: var(--space-6);
+  }
+
+  /* Shrink image boxes by 50% (max-width 300px -> 150px). */
+  .mission-vision-image {
+    width: 100%;
+    max-width: 150px;
+
+    /* Ensure the image sizes to its own content height so it never
+       stretches over the paragraph below (fixes overlapping text). */
+    height: auto;
+    flex: none;
+  }
+
+  .mission-vision-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Reduce paragraph font by 10% (text-xl 1.25rem -> 1.125rem) and
+     stop the text from flexing over the image. */
+  .mission-vision-text {
+    flex: none;
+
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  /* ---------- CompanyStory: no bg image, +30% paragraph width, theme colors ---------- */
+
+  /* Background responds to the active theme:
+     light = #ffffff (--color-background), dark = #090b0d. */
+  .story {
+    position: relative;
+
+    background-color: var(--color-background);
+  }
+
+  /* Remove the blurred background-image overlay entirely. */
+  .story::before {
+    content: none;
+  }
+
+  /* Keep the section content above the section background. */
+  .story .page-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .expertise-image {
+    display: none;
+  }
+
+  /* Increase paragraph width by 30%
+     (from the previous 45% -> 58.5% -> now 76%). */
+  .expertise-content {
+    max-width: 95%;
+  }
+
+  /* Heading follows the theme:
+     light = #111318 (--color-text-primary), dark = #f5f7fa. */
+  .story-heading h2 {
+    color: var(--color-text-primary);
+  }
+
+  /* Paragraph follows the theme:
+     light = #4b5563 (--color-text-secondary), dark = #949fac
+     (--color-text-muted, overridden below). */
+  .story .expertise-content p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-lg);
+  }
+
+  /* Dark theme: paragraph uses the muted token (#949fac) instead of the
+     secondary token (#c7d1dc) so it matches the requested palette. */
+  [data-theme="dark"] .story .expertise-content p {
+    color: var(--color-text-muted);
   }
 }

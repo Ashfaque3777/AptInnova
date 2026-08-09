@@ -14,6 +14,7 @@ function CompanyStory() {
       <PageContainer>
         <div ref={headingRef} className="reveal">
           <SectionHeading
+            className="story-heading"
             title="Our Expertise: Practical AI, Real Results"
             align="center"
           />

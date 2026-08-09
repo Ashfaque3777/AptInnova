@@ -1,4 +1,3 @@
-/* src/styles/products.css */
 /* Shared styles for product pages (InnoVethic, ainsteins, A(i)MPACT Lab).*/
 
 /* Product hero */
@@ -797,5 +796,80 @@
 
   .product-pagination-spacer {
     display: none;
+  }
+}
+
+/* ============================================================
+   PRODUCT PAGES — MOBILE RESPONSIVE (320px min viewport)
+   ------------------------------------------------------------
+   Appended for small-screen precedence. Does not affect desktop
+   or tablet layouts.
+   ============================================================ */
+
+/* Prevent text/action overflow inside product sections. */
+.product-hero-copy,
+.product-intro-copy,
+.product-spotlight-copy,
+.product-cta-content,
+.product-intro-highlight,
+.product-spotlight-highlight {
+  min-width: 0;
+}
+
+/* Product hero: tighten spacing and fluid heading on small screens. */
+@media (max-width: 480px) {
+  .product-hero {
+    padding-block: var(--space-12);
+  }
+
+  .product-hero h1 {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+  }
+
+  .product-description {
+    font-size: var(--text-lg);
+  }
+
+  .product-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .product-hero-actions .button {
+    width: 100%;
+  }
+}
+
+/* Product CTA heading on small screens. */
+@media (max-width: 480px) {
+  .product-cta-content h2 {
+    font-size: var(--text-3xl);
+  }
+
+  .product-cta-content p {
+    font-size: var(--text-lg);
+  }
+}
+
+/* Product audience/capability cards: reduce padding at 320px. */
+@media (max-width: 480px) {
+  .product-audience-card,
+  .product-capability-card {
+    padding: var(--space-5) var(--space-4);
+  }
+}
+
+/* Workflow steps: allow long text to wrap within the grid. */
+@media (max-width: 480px) {
+  .product-workflow-step {
+    padding: var(--space-5);
+  }
+}
+
+/* Product intro highlights: keep items full-width & wrapping. */
+@media (max-width: 480px) {
+  .product-intro-highlight {
+    padding: var(--space-4) var(--space-5);
   }
 }
