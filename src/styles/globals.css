@@ -2180,7 +2180,7 @@ button {
 }
 
 /* 1 column on small mobile. */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .beliefs-grid {
     grid-template-columns: 1fr;
   }
@@ -3432,7 +3432,7 @@ section {
 }
 
 /* ---------- Header / logo / touch targets ---------- */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .site-nav {
     min-height: 60px;
   }
@@ -3464,7 +3464,7 @@ section {
 }
 
 /* ---------- Hero (Home) ---------- */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .hero-section {
     padding-top: var(--space-16);
   }
@@ -3478,7 +3478,7 @@ section {
 }
 
 /* ---------- About hero ---------- */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .about-hero {
     min-height: auto;
     padding-block: var(--space-12);
@@ -3499,7 +3499,7 @@ section {
 }
 
 /* ---------- Services hero ---------- */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .services-hero-content h1 {
     font-size: clamp(2.2rem, 10vw, 3.5rem);
   }
@@ -3513,7 +3513,7 @@ section {
 /* ---------- Fixed side-padding sections ---------- */
 
 /* Beliefs section: hugely oversized side padding (space-32 = 8rem). */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .beliefs-section {
     padding: var(--space-16) var(--space-4);
   }
@@ -3524,7 +3524,7 @@ section {
 }
 
 /* Mission & Vision: oversized side margin (space-32). */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .mission-vision-section {
     margin: var(--space-8) 0;
   }
@@ -3535,7 +3535,7 @@ section {
 }
 
 /* Insights hero content: oversized side padding. */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .insights-hero-card {
     max-width: 100%;
   }
@@ -3575,7 +3575,7 @@ section {
 }
 
 /* About partnership content: allow full width. */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .about-partnership-content-wrapper {
     max-width: 100%;
   }
@@ -3586,7 +3586,7 @@ section {
 }
 
 /* Contact CTA content: don't clip at 90%. */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .contact-cta-content {
     max-width: 100%;
   }
@@ -3599,7 +3599,7 @@ section {
 /* ---------- Services page ---------- */
 
 /* Overview cards: reduce padding so titles fit at 320px. */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .services-overview-card {
     gap: var(--space-3);
     padding: var(--space-4) var(--space-4);
@@ -3616,7 +3616,7 @@ section {
 }
 
 /* Service cards: ensure text wraps and content fits. */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .service-card {
     padding: var(--space-6) var(--space-3);
   }
@@ -3632,7 +3632,7 @@ section {
 }
 
 /* ---------- Products (home) ---------- */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .product-layout-heading {
     font-size: var(--text-3xl);
   }
@@ -3655,7 +3655,7 @@ section {
   }
 }
 
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .site-footer {
     margin-top: var(--space-16);
     padding-block: var(--space-12);
@@ -3688,7 +3688,7 @@ section {
 }
 
 /* ---------- Contact page ---------- */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .contact-hero-card {
     gap: var(--space-6);
   }
@@ -3707,14 +3707,14 @@ section {
 }
 
 /* ---------- FAQ ---------- */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .faq-question {
     font-size: var(--text-base);
   }
 }
 
 /* ---------- Newsletter ---------- */
-@media (max-width: 480px) {
+@media (320px <= width <= 480px) {
   .newsletter-card {
     padding: var(--space-8) var(--space-4);
   }
@@ -3725,7 +3725,7 @@ section {
 }
 
 /* ---------- 320px specific micro-adjustments ---------- */
-@media (max-width: 340px) {
+@media (320px <= width <= 480px) {
   .page-container {
     --container-padding: 0.75rem;
   }
@@ -4060,7 +4060,7 @@ section {
    pure CSS (JSX stays untouched) and never affect desktop,
    tablet, or larger mobile layouts.
    ============================================================ */
-@media (max-width: 340px) {
+@media (320px <= width <= 480px) {
   /* ---------- AboutHero: hide heroAbout2, heroAbout1 = bg, black heading ---------- */
 
   /* Use heroAbout-1 as the section's background image, rendered on a
