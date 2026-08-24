@@ -4966,9 +4966,9 @@ section {
    Home-page Topography background
    ============================================================ */
 
-/* When the home page is active, make the body background transparent
-   so the fixed Topography canvas shows through behind everything. */
-body.home-page {
+/* When the Topography background is active, make the body background
+   transparent so the fixed canvas shows through behind everything. */
+body {
   background: transparent;
 }
 
