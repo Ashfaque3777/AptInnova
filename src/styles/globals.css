@@ -6,7 +6,7 @@
    ============================================================ */
 
 /* Import the design tokens (colors, type scale, spacing, etc.) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import "./tokens.css";
 
 /* ---------- Reset & Base ---------- */
@@ -4969,4 +4969,26 @@ section {
   .software-dev-orbit {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================================
+   Home-page Topography background
+   ============================================================ */
+
+/* When the home page is active, make the body background transparent
+   so the fixed Topography canvas shows through behind everything. */
+body.home-page {
+  background: transparent;
+}
+
+/* Fixed fullscreen container that holds the Topography WebGL canvas.
+   z-index: -1 keeps it behind every section. */
+.topography-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: auto;
+  width: 100%;
+  height: 100vh;
+  background-color: #050510;
 }
