@@ -86,7 +86,8 @@ function Footer() {
                     </Link>
                   </div>
                 </div>
-                <Link to="/caseStudy/">Case Study</Link>
+                <Link to="/blog-insights/">Insights</Link>
+                <Link to="/work/">Work</Link>
               </div>
             </nav>
 

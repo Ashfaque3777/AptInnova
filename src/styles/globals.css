@@ -762,7 +762,7 @@ button {
 
 .hero-section {
   position: relative;
-  padding-top: clamp(8rem, 14vw, 4rem);
+  padding-top: clamp(5rem, 8vw, 6rem);
 
   background-size: cover;
   background-position: center;
@@ -783,9 +783,9 @@ button {
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  align-items: center;
+  align-items: start;
   gap: var(--space-16);
-  min-height: min(680px, calc(100vh - 76px));
+  min-height: calc(100vh - 76px);
 }
 
 /* Hero text content sits above the overlay. */
@@ -802,10 +802,9 @@ button {
 
   color: #ffffff;
 
-  font-size: clamp(2.8rem, 6.5vw, 6rem);
+  font-size: clamp(1.9rem, 4.8vw, 4rem);
 
-  line-height: 1.6;
-  letter-spacing: -0.04em;
+  line-height: 1.4;
 }
 
 /* Visual media in the hero is hidden by default. */
@@ -816,7 +815,7 @@ button {
 /* Responsive hero: stack columns and fluid-sizing on small screens. */
 @media (max-width: 768px) {
   .hero-section {
-    padding-block: var(--space-16);
+    padding-block: var(--space-12);
   }
 
   .hero-grid {
@@ -825,7 +824,7 @@ button {
   }
 
   .hero-content h1 {
-    font-size: clamp(2.5rem, 12vw, 4.5rem);
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
   }
 
   .hero-actions {
@@ -3574,6 +3573,358 @@ button {
 
   .services-contact-cta-actions .button {
     width: 100%;
+  }
+}
+
+/* ============================================================
+   Work Page
+   ============================================================ */
+
+/* ============================================================
+   Work Hero Section
+   ============================================================ */
+
+.work-hero {
+  padding-bottom: var(--space-16);
+}
+
+.work-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
+}
+
+.work-hero-content h1 {
+  margin-bottom: 0;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.work-hero-description {
+  margin: 0;
+
+  max-width: 56%;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-xl);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Work Stats Strip Section
+   ============================================================ */
+
+.work-stats-section {
+  padding-block: var(--space-12);
+}
+
+.work-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface-elevated);
+
+  box-shadow: var(--shadow-md);
+}
+
+.work-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: var(--space-8) var(--space-4);
+
+  text-align: center;
+}
+
+.work-stat + .work-stat {
+  border-left: 1px solid var(--color-border);
+}
+
+.work-stat-value {
+  color: var(--color-primary);
+
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.work-stat-label {
+  margin-top: var(--space-2);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Work Case Studies Section
+   ============================================================ */
+
+.work-cases-section {
+  padding-block: var(--space-20);
+}
+
+.work-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+
+  margin-top: var(--space-12);
+}
+
+.work-case-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-8);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface-elevated);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--duration-normal) ease,
+    box-shadow var(--duration-normal) ease,
+    border-color var(--duration-normal) ease;
+}
+
+.work-case-card:nth-child(odd):last-child {
+  grid-column: 1 / -1;
+}
+
+.work-case-card:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--color-primary);
+
+  box-shadow: var(--shadow-md);
+}
+
+.work-case-tag {
+  margin: 0 0 var(--space-4);
+
+  color: var(--color-primary);
+
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.work-case-title {
+  margin: 0 0 var(--space-2);
+
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.work-case-client {
+  margin: 0 0 var(--space-4);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-base);
+}
+
+.work-case-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin: 0 0 var(--space-6);
+}
+
+.work-case-metrics span {
+  font-size: var(--text-lg);
+  font-weight: 800;
+}
+
+.work-case-metric-sep {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.work-case-story {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-base);
+  line-height: 1.65;
+  text-align: justify;
+}
+
+/* ============================================================
+   Work Testimonials Section
+   ============================================================ */
+
+.work-testimonials-section {
+  padding-block: var(--space-20);
+  background: transparent;
+}
+
+.work-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+
+  margin-top: var(--space-12);
+}
+
+.work-testimonial-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  padding: var(--space-8);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--duration-normal) ease,
+    box-shadow var(--duration-normal) ease,
+    border-color var(--duration-normal) ease;
+}
+
+.work-testimonial-card:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--color-primary);
+
+  box-shadow: var(--shadow-md);
+  background: var(--color-surface-elevated);
+}
+
+.work-testimonial-quote {
+  color: var(--color-primary);
+
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+
+  margin-bottom: var(--space-4);
+}
+
+.work-testimonial-card blockquote {
+  margin: 0 0 var(--space-6);
+
+  flex: 1;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-base);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.work-testimonial-card figcaption {
+  display: flex;
+  flex-direction: column;
+
+  border-top: 1px solid var(--color-border);
+
+  padding-top: var(--space-4);
+}
+
+.work-testimonial-author {
+  font-weight: 700;
+
+  color: var(--color-text-primary);
+}
+
+.work-testimonial-role {
+  margin-top: var(--space-1);
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-sm);
+}
+
+/* ============================================================
+   Work CTA Section
+   ============================================================ */
+
+.work-cta-content {
+  display: flex;
+  justify-content: center;
+
+  margin-top: var(--space-10);
+}
+
+/* ============================================================
+   Work Page - Responsive
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .work-hero-description {
+    max-width: 80%;
+  }
+
+  .work-cases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .work-stat + .work-stat {
+    border-left: 0;
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 480px) {
+  .work-hero-description {
+    max-width: 100%;
+
+    font-size: var(--text-base);
+  }
+
+  .work-hero-content h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .work-stat {
+    padding: var(--space-6) var(--space-3);
+  }
+
+  .work-stat-value {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+
+  .work-case-card {
+    padding: var(--space-6);
   }
 }
 

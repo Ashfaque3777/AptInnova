@@ -14,7 +14,7 @@ function Hero() {
             <h1>
               Powering
               <br />
-              Businesses
+              <span style={{ color: 'var(--color-warm)' }}>Businesses</span>
               <br />
               with
               <br />
