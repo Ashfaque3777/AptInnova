@@ -6,10 +6,12 @@
    ============================================================ */
 
 /* Import the design tokens (colors, type scale, spacing, etc.) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import "./tokens.css";
 
-/* ---------- Reset & Base ---------- */
+/* ============================================================
+   Reset & Base
+   ============================================================ */
 
 /* Apply the border-box box model to every element and pseudo-element
    so padding and borders are included in an element's total width. */
@@ -90,7 +92,9 @@ button {
   color: #ffffff;
 }
 
-/* ---------- Layout: Page Container ---------- */
+/* ============================================================
+   Layout: Page Container
+   ============================================================ */
 
 /* Centers content and constrains its width to the container max-width,
    while reserving responsive side padding on smaller screens. */
@@ -102,6 +106,190 @@ button {
 
   /* Center horizontally */
   margin-inline: auto;
+}
+
+/* ============================================================
+   Section Heading
+   ============================================================ */
+
+.section-heading {
+  max-width: 760px;
+}
+
+.section-heading-center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.section-heading > p:last-child {
+  margin-top: var(--space-5);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-xl);
+
+  line-height: 1.6;
+}
+
+.section-heading-center > p:last-child {
+  margin-inline: auto;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+/* Base button style shared by all variants. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding-inline: 1.25rem;
+
+  border-radius: var(--radius-md);
+
+  font-size: var(--text-sm);
+  font-weight: 600;
+
+  transition:
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.button-secondary {
+  border: 1px solid var(--color-border);
+
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.button-secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ============================================================
+   Scroll Reveal Animation
+   ============================================================ */
+
+/* Elements start hidden & offset downward until scrolled into view. */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for child elements */
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+.reveal-delay-5 {
+  transition-delay: 0.5s;
+}
+.reveal-delay-6 {
+  transition-delay: 0.6s;
+}
+
+/* ============================================================
+   Scroll to Top Button
+   ============================================================ */
+
+/* Fixed "back to top" button, hidden by default. */
+.scroll-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--color-primary);
+  color: #ffffff;
+
+  box-shadow: 0 4px 16px rgba(93, 39, 228, 0.35);
+
+  cursor: pointer;
+
+  /* Hidden state */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Visible state (added when user scrolls down). */
+.scroll-to-top--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-to-top:hover {
+  background: var(--color-primary-hover);
+  box-shadow: 0 6px 20px rgba(93, 39, 228, 0.5);
+}
+
+.scroll-to-top:active {
+  transform: translateY(2px);
+}
+
+.scroll-to-top svg {
+  width: 22px;
+  height: 22px;
 }
 
 /* ============================================================
@@ -134,12 +322,12 @@ button {
   align-items: center;
   justify-content: space-between;
 
-  min-height: 76px;
+  max-height: 80px;
 }
 
 /* Header logo sizing (desktop). */
 .site-logo img {
-  width: 350px;
+  width: 300px;
   height: auto;
 }
 
@@ -565,7 +753,11 @@ button {
 }
 
 /* ============================================================
-   Hero
+   Home Page
+   ============================================================ */
+
+/* ============================================================
+   Home Hero Section
    ============================================================ */
 
 .hero-section {
@@ -603,18 +795,6 @@ button {
   max-width: 680px;
 }
 
-/* Small uppercase label above the hero heading. */
-.eyebrow {
-  margin: 0 0 var(--space-4);
-
-  color: var(--color-primary);
-
-  font-size: var(--text-sm);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 /* Large, fluid hero heading. */
 .hero-content h1 {
   max-width: 680px;
@@ -626,26 +806,6 @@ button {
 
   line-height: 1.6;
   letter-spacing: -0.04em;
-}
-
-/* Supporting paragraph under the hero heading. */
-.hero-description {
-  max-width: 600px;
-  margin: var(--space-8) 0 0;
-
-  color: var(--color-text-secondary);
-
-  font-size: var(--text-lg);
-  line-height: 1.7;
-}
-
-/* Row of hero action buttons. */
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-
-  margin-top: var(--space-10);
 }
 
 /* Visual media in the hero is hidden by default. */
@@ -680,176 +840,7 @@ button {
 }
 
 /* ============================================================
-   Company Stats
-   ============================================================ */
-
-/* Section sits directly under the hero; the CTA card below adds
-   its own top spacing, so only pad the top here. */
-.company-stats-section {
-  padding-block: var(--space-12) 0;
-}
-
-/* Single elevated card strip holding all four proof points. */
-.company-stats-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-
-  background: var(--color-surface-elevated);
-
-  box-shadow: var(--shadow-md);
-}
-
-.company-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: var(--space-8) var(--space-4);
-
-  text-align: center;
-}
-
-.company-stat-value {
-  color: var(--color-primary);
-
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-.company-stat-label {
-  margin-top: var(--space-2);
-
-  color: var(--color-text-secondary);
-
-  font-size: var(--text-base);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-/* Vertical dividers between stats on a single desktop row. */
-@media (min-width: 901px) {
-  .company-stat + .company-stat {
-    border-left: 1px solid var(--color-border);
-  }
-}
-
-/* Collapse to a 2x2 grid on tablet with adapted dividers. */
-@media (max-width: 900px) {
-  .company-stats-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .company-stat:nth-child(odd) {
-    border-right: 1px solid var(--color-border);
-  }
-
-  .company-stat:nth-child(n + 3) {
-    border-top: 1px solid var(--color-border);
-  }
-}
-
-/* Tighter spacing and smaller numbers on small mobile. */
-@media (max-width: 480px) {
-  .company-stat {
-    padding: var(--space-6) var(--space-3);
-  }
-
-  .company-stat-value {
-    font-size: clamp(1.75rem, 8vw, 2.25rem);
-  }
-}
-
-/* ============================================================
-   Buttons
-   ============================================================ */
-
-/* Base button style shared by all variants. */
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 48px;
-  padding-inline: 1.25rem;
-
-  border-radius: var(--radius-md);
-
-  font-size: var(--text-sm);
-  font-weight: 600;
-
-  transition:
-    background-color var(--duration-fast) ease,
-    color var(--duration-fast) ease,
-    border-color var(--duration-fast) ease,
-    transform var(--duration-fast) ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
-}
-
-.button-primary {
-  background: var(--color-primary);
-  color: #ffffff;
-}
-
-.button-primary:hover {
-  background: var(--color-primary-hover);
-}
-
-.button-secondary {
-  border: 1px solid var(--color-border);
-
-  background: transparent;
-  color: var(--color-text-primary);
-}
-
-.button-secondary:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-/* section heading style */
-.section-heading {
-  max-width: 760px;
-}
-
-.section-heading-center {
-  margin-inline: auto;
-  text-align: center;
-}
-
-.section-heading h2 {
-  margin: 0;
-
-  font-size: clamp(2rem, 4vw, 3.5rem);
-
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-.section-heading > p:last-child {
-  margin-top: var(--space-5);
-
-  color: var(--color-text-secondary);
-
-  font-size: var(--text-xl);
-
-  line-height: 1.6;
-}
-
-.section-heading-center > p:last-child {
-  margin-inline: auto;
-}
-
-/* ============================================================
-   CTA Card
+   Home CTA Card Section
    ============================================================ */
 
 /* Full-width CTA card section padding. */
@@ -932,7 +923,7 @@ button {
 }
 
 /* ============================================================
-   Services
+   Home Services Section
    ============================================================ */
 
 /* Generic section vertical padding. */
@@ -1057,7 +1048,7 @@ button {
 }
 
 /* ============================================================
-   Software Development Preview (home)
+   Home Software Development Preview Section
    ------------------------------------------------------------
    Four cards arranged on a circle that slowly spins. The ring
    rotates clockwise while each card counter-rotates, so the
@@ -1174,8 +1165,9 @@ button {
   scale: 1.04;
 }
 
-/* Circle positions: top -> right -> bottom -> left (clockwise,
-   so the cards chase each other around the ring in order). */
+/* Circle positions: five cards evenly spaced around the ring at
+   ~72° increments (top -> upper-right -> lower-right -> lower-left
+   -> upper-left, clockwise) so none overlap while spinning. */
 .software-dev-card--1 {
   top: 6%;
   left: 50%;
@@ -1183,20 +1175,26 @@ button {
 }
 
 .software-dev-card--2 {
-  top: 50%;
-  left: 94%;
+  top: 36%;
+  left: 92%;
   translate: -50% -50%;
 }
 
 .software-dev-card--3 {
-  top: 94%;
-  left: 50%;
+  top: 86%;
+  left: 76%;
   translate: -50% -50%;
 }
 
 .software-dev-card--4 {
-  top: 50%;
-  left: 6%;
+  top: 86%;
+  left: 24%;
+  translate: -50% -50%;
+}
+
+.software-dev-card--5 {
+  top: 36%;
+  left: 8%;
   translate: -50% -50%;
 }
 
@@ -1321,7 +1319,7 @@ button {
 }
 
 /* ============================================================
-   Products
+   Home Products Section
    ============================================================ */
 
 /* Center the products section heading. */
@@ -1456,7 +1454,10 @@ button {
   }
 }
 
-/* why aptinnova section */
+/* ============================================================
+   Home Why AptInnova Section
+   ============================================================ */
+
 .section-background {
   background: var(--color-surface);
   margin-bottom: var(--space-10);
@@ -1623,7 +1624,7 @@ button {
 }
 
 /* ============================================================
-   Partnership
+   Home Partnership Section
    ============================================================ */
 
 /* Partnership section with a surface background. */
@@ -1735,109 +1736,7 @@ button {
 }
 
 /* ============================================================
-   Contact CTA
-   ============================================================ */
-
-/* Centered CTA section with a heading, description, and form. */
-.contact-cta-section {
-  padding-block: var(--space-24);
-
-  background: var(--color-background);
-}
-
-.contact-cta-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  max-width: 90%;
-  margin-inline: auto;
-}
-
-.contact-cta-content h2 {
-  margin: 0;
-
-  font-size: var(--text-6xl);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-.contact-cta-content p {
-  margin: var(--space-6) 0 0;
-
-  color: var(--color-text-secondary);
-
-  font-size: var(--text-xl);
-  line-height: 1.6;
-}
-
-/* Inline email signup form. */
-.contact-cta-form {
-  display: flex;
-  gap: var(--space-2);
-
-  width: 100%;
-  max-width: 520px;
-
-  margin-top: var(--space-8);
-}
-
-.contact-cta-input {
-  flex: 1;
-
-  padding: 0.85rem 1.25rem;
-
-  border: 1px solid gray;
-  border-radius: var(--radius-sm);
-
-  background: var(--color-background);
-  color: var(--color-text-primary);
-
-  font-size: var(--text-lg);
-
-  transition: border-color var(--duration-fast) ease;
-}
-
-.contact-cta-input::placeholder {
-  color: var(--color-text-muted);
-}
-
-.contact-cta-input:focus {
-  outline: none;
-  border-color: var(--color-primary);
-}
-
-.contact-cta-submit {
-  padding: 0.85rem 2rem;
-
-  border: none;
-  border-radius: var(--radius-sm);
-
-  background: var(--color-primary);
-  color: #ffffff;
-
-  font-size: var(--text-lg);
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: background-color var(--duration-fast) ease;
-}
-
-.contact-cta-submit:hover {
-  background: var(--color-primary-hover);
-}
-
-/* Responsive: stack form fields on small screens. */
-@media (max-width: 600px) {
-  .contact-cta-form {
-    flex-direction: column;
-  }
-}
-
-/* ============================================================
-   Insights
+   Insights (home & blog) Section
    ============================================================ */
 
 .insights-section {
@@ -2039,271 +1938,114 @@ button {
   }
 }
 
-/* insights hero section */
-.insights-hero {
+/* ============================================================
+   Home Contact CTA Section
+   ============================================================ */
+
+/* Centered CTA section with a heading, description, and form. */
+.contact-cta-section {
   padding-block: var(--space-24);
 
   background: var(--color-background);
 }
 
-.insights-hero-heading {
-  text-align: center;
-  margin-bottom: var(--space-16);
-}
-
-.insights-hero-card {
-  max-width: 95%;
-  margin-inline: auto;
-  flex-direction: row;
-  padding-bottom: 0;
-}
-
-.insight-hero-image {
-  height: 100%;
-}
-
-.insight-hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 var(--space-16);
-}
-
-.insight-hero-card-heading {
-  font-size: var(--text-3xl);
-}
-
-.insight-card-description {
-  margin: var(--space-5) 0 0;
-
-  color: var(--color-text-secondary);
-
-  font-size: var(--text-lg);
-  line-height: 1.6;
-
-  text-align: center;
-}
-
-.insight-continue-link {
-  position: relative;
-
-  display: inline-block;
-  margin-top: var(--space-5);
-
-  padding-bottom: 2px;
-
-  color: var(--color-primary);
-
-  font-size: var(--text-lg);
-  font-weight: 600;
-
-  text-decoration: none;
-
-  transition: opacity var(--duration-fast) ease;
-}
-
-.insight-continue-link::after {
-  content: "";
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
-  height: 2px;
-
-  background: var(--color-primary);
-
-  transform: scaleX(0);
-  transform-origin: left;
-
-  transition: transform var(--duration-normal) ease;
-}
-
-.insight-continue-link:hover {
-  opacity: 0.85;
-}
-
-.insight-continue-link:hover::after {
-  transform: scaleX(1);
-}
-
-/* ============================================================
-   Newsletter
-   ============================================================ */
-
-.newsletter-section {
-  padding-block: var(--space-24);
-
-  background: var(--color-surface);
-}
-
-/* Centered newsletter signup card. */
-.newsletter-card {
+.contact-cta-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  max-width: 820px;
+  max-width: 90%;
   margin-inline: auto;
-
-  padding: var(--space-12) var(--space-16);
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-
-  background: var(--color-surface-elevated);
-
-  box-shadow: var(--shadow-md);
-
-  transition:
-    border-color var(--duration-normal) ease,
-    box-shadow var(--duration-normal) ease;
 }
 
-/* Highlight the card with a primary ring on hover. */
-.newsletter-card:hover {
-  border-color: var(--color-primary);
-  box-shadow:
-    0 0 0 1px var(--color-primary),
-    0 12px 32px rgba(93, 39, 228, 0.25);
-}
-
-.newsletter-heading {
-  margin: 0 0 var(--space-4);
-
-  font-size: var(--text-4xl);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-.newsletter-description {
+.contact-cta-content h2 {
   margin: 0;
+
+  font-size: var(--text-6xl);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.contact-cta-content p {
+  margin: var(--space-6) 0 0;
 
   color: var(--color-text-secondary);
 
   font-size: var(--text-xl);
   line-height: 1.6;
-
-  max-width: 640px;
 }
 
-.newsletter-note {
-  margin: var(--space-6) 0 0;
+/* Inline email signup form. */
+.contact-cta-form {
+  display: flex;
+  gap: var(--space-2);
 
+  width: 100%;
+  max-width: 520px;
+
+  margin-top: var(--space-8);
+}
+
+.contact-cta-input {
+  flex: 1;
+
+  padding: 0.85rem 1.25rem;
+
+  border: 1px solid gray;
+  border-radius: var(--radius-sm);
+
+  background: var(--color-background);
+  color: var(--color-text-primary);
+
+  font-size: var(--text-lg);
+
+  transition: border-color var(--duration-fast) ease;
+}
+
+.contact-cta-input::placeholder {
   color: var(--color-text-muted);
-
-  font-size: var(--text-base);
 }
 
-@media (max-width: 600px) {
-  .newsletter-card {
-    padding: var(--space-8) var(--space-6);
-  }
+.contact-cta-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
 }
 
-/* ============================================================
-   Scroll Reveal Animation
-   ============================================================ */
-
-/* Elements start hidden & offset downward until scrolled into view. */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition:
-    opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.reveal--visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Staggered delays for child elements */
-.reveal-delay-1 {
-  transition-delay: 0.1s;
-}
-.reveal-delay-2 {
-  transition-delay: 0.2s;
-}
-.reveal-delay-3 {
-  transition-delay: 0.3s;
-}
-.reveal-delay-4 {
-  transition-delay: 0.4s;
-}
-.reveal-delay-5 {
-  transition-delay: 0.5s;
-}
-.reveal-delay-6 {
-  transition-delay: 0.6s;
-}
-
-/* ============================================================
-   Scroll to Top Button
-   ============================================================ */
-
-/* Fixed "back to top" button, hidden by default. */
-.scroll-to-top {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 100;
-
-  display: grid;
-  place-items: center;
-
-  width: 40px;
-  height: 40px;
+.contact-cta-submit {
+  padding: 0.85rem 2rem;
 
   border: none;
-  border-radius: 50%;
+  border-radius: var(--radius-sm);
 
   background: var(--color-primary);
   color: #ffffff;
 
-  box-shadow: 0 4px 16px rgba(93, 39, 228, 0.35);
+  font-size: var(--text-lg);
+  font-weight: 600;
 
   cursor: pointer;
 
-  /* Hidden state */
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: background-color var(--duration-fast) ease;
 }
 
-/* Visible state (added when user scrolls down). */
-.scroll-to-top--visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.scroll-to-top:hover {
+.contact-cta-submit:hover {
   background: var(--color-primary-hover);
-  box-shadow: 0 6px 20px rgba(93, 39, 228, 0.5);
 }
 
-.scroll-to-top:active {
-  transform: translateY(2px);
-}
-
-.scroll-to-top svg {
-  width: 22px;
-  height: 22px;
+/* Responsive: stack form fields on small screens. */
+@media (max-width: 600px) {
+  .contact-cta-form {
+    flex-direction: column;
+  }
 }
 
 /* ============================================================
-   About Hero
+   About Page
+   ============================================================ */
+
+/* ============================================================
+   About Hero Section
    ============================================================ */
 
 .about-hero {
@@ -2372,7 +2114,10 @@ button {
   }
 }
 
-/* about company story / expertise style */
+/* ============================================================
+   About Company Story/Expertise Section
+   ============================================================ */
+
 .story {
   background: var(--color-background);
   padding: var(--space-20) 0;
@@ -2429,7 +2174,159 @@ button {
   }
 }
 
-/* about beliefs section style */
+/* ============================================================
+   About Company Stats Section
+   ============================================================ */
+
+.company-stats-section {
+  padding-block: var(--space-12) 0;
+}
+
+/* Single elevated card strip holding all four proof points. */
+.company-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface-elevated);
+
+  box-shadow: var(--shadow-md);
+}
+
+.company-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: var(--space-8) var(--space-4);
+
+  text-align: center;
+}
+
+.company-stat-value {
+  color: var(--color-primary);
+
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.company-stat-label {
+  margin-top: var(--space-2);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Vertical dividers between stats on a single desktop row. */
+@media (min-width: 901px) {
+  .company-stat + .company-stat {
+    border-left: 1px solid var(--color-border);
+  }
+}
+
+/* Collapse to a 2x2 grid on tablet with adapted dividers. */
+@media (max-width: 900px) {
+  .company-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .company-stat:nth-child(odd) {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .company-stat:nth-child(n + 3) {
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+/* Tighter spacing and smaller numbers on small mobile. */
+@media (max-width: 480px) {
+  .company-stat {
+    padding: var(--space-6) var(--space-3);
+  }
+
+  .company-stat-value {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+}
+
+/* ============================================================
+   About Mission & Vision Section
+   ============================================================ */
+
+.mission-vision-section {
+  margin: var(--space-12) var(--space-32);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-top: var(--space-10);
+}
+
+.mission-vision-card {
+  width: 95%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+
+  padding: var(--space-4);
+
+  border: 2px solid var(--color-text-muted);
+}
+
+.mission-vision-image {
+  overflow: hidden;
+  height: 100%;
+}
+
+.mission-vision-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.mission-vision-text {
+  flex: 1;
+
+  font-size: var(--text-xl);
+  line-height: 1.6;
+  text-align: center;
+
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-vision-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-vision-image {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ============================================================
+   About Beliefs Section
+   ============================================================ */
+
 .beliefs-section {
   background: var(--color-surface);
   padding: var(--space-24) var(--space-32);
@@ -2542,141 +2439,7 @@ button {
 }
 
 /* ============================================================
-   About Partnership
-   ============================================================ */
-
-.about-partnership {
-  background: var(--color-surface);
-  padding: var(--space-24) 0;
-}
-
-.about-partnership-content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  max-width: 80%;
-  margin: var(--space-16) auto 0;
-  gap: var(--space-6);
-}
-
-.about-partnership-content-wrapper p {
-  margin: 0;
-
-  color: var(--color-text-secondary);
-
-  font-size: var(--text-2xl);
-  line-height: 1.5;
-}
-
-.about-partnership-image {
-  margin-top: var(--space-12);
-
-  overflow: hidden;
-}
-
-.about-partnership-image img {
-  object-fit: cover;
-}
-
-/* ============================================================
-   Mission & Vision
-   ============================================================ */
-
-.mission-vision-section {
-  margin: var(--space-12) var(--space-32);
-}
-
-.mission-vision-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  margin-top: var(--space-10);
-}
-
-.mission-vision-card {
-  width: 95%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-6);
-
-  padding: var(--space-4);
-
-  border: 2px solid var(--color-text-muted);
-}
-
-.mission-vision-image {
-  overflow: hidden;
-  height: 100%;
-}
-
-.mission-vision-image img {
-  width: 100%;
-  height: 100%;
-}
-
-.mission-vision-text {
-  flex: 1;
-
-  font-size: var(--text-xl);
-  line-height: 1.6;
-  text-align: center;
-
-  color: var(--color-text-secondary);
-}
-
-@media (max-width: 768px) {
-  .mission-vision-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .mission-vision-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .mission-vision-image {
-    flex: none;
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-/* ============================================================
-   About Contact CTA
-   ============================================================ */
-
-.about-contact-cta {
-  text-align: center;
-  background: var(--color-surface);
-  padding: var(--space-24) 0;
-}
-
-.about-contact-cta-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-6);
-
-  margin-top: var(--space-8);
-}
-
-.about-contact-cta-content p {
-  margin: 0;
-
-  color: var(--color-text-secondary);
-
-  font-size: var(--text-xl);
-  line-height: 1.6;
-
-  max-width: 600px;
-}
-
-/* ============================================================
-   How We Work
+   About How We Work Section
    ============================================================ */
 
 .how-we-work-section {
@@ -2731,86 +2494,81 @@ button {
 }
 
 /* ============================================================
-   Why Work With Us
+   About Partnership Section
    ============================================================ */
 
-.wwu-section {
-  padding-block: var(--space-20);
+.about-partnership {
   background: var(--color-surface);
+  padding: var(--space-24) 0;
 }
 
-.wwu-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-6);
-
-  margin-top: var(--space-12);
-}
-
-.wwu-card {
+.about-partnership-content-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  padding: var(--space-8) var(--space-6);
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-
-  background: var(--color-surface-elevated);
-
-  box-shadow: var(--shadow-sm);
-
-  transition:
-    transform var(--duration-normal) ease,
-    border-color var(--duration-normal) ease,
-    box-shadow var(--duration-normal) ease,
-    background-color var(--duration-normal) ease;
+  max-width: 80%;
+  margin: var(--space-16) auto 0;
+  gap: var(--space-6);
 }
 
-.wwu-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-md);
-  background: var(--color-background);
-}
-
-.wwu-card-title {
-  margin: 0 0 var(--space-3);
-
-  font-size: var(--text-2xl);
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-}
-
-.wwu-card-description {
+.about-partnership-content-wrapper p {
   margin: 0;
 
   color: var(--color-text-secondary);
 
-  font-size: var(--text-lg);
+  font-size: var(--text-2xl);
+  line-height: 1.5;
+}
+
+.about-partnership-image {
+  margin-top: var(--space-12);
+
+  overflow: hidden;
+}
+
+.about-partnership-image img {
+  object-fit: cover;
+}
+
+/* ============================================================
+   About Contact CTA Section
+   ============================================================ */
+
+.about-contact-cta {
+  text-align: center;
+  background: var(--color-surface);
+  padding: var(--space-24) 0;
+}
+
+.about-contact-cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+
+  margin-top: var(--space-8);
+}
+
+.about-contact-cta-content p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-xl);
   line-height: 1.6;
-}
 
-@media (max-width: 900px) {
-  .wwu-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .wwu-grid {
-    grid-template-columns: 1fr;
-  }
+  max-width: 600px;
 }
 
 /* ============================================================
    Services Page
    ============================================================ */
 
-/* Services hero header. */
+/* ============================================================
+   Services Hero Section
+   ============================================================ */
 .services-hero {
   background: var(--color-surface);
   padding-bottom: var(--space-16);
@@ -2838,7 +2596,10 @@ button {
   line-height: 1.5;
 }
 
-/* services overview section */
+/* ============================================================
+   Services Overview Section
+   ============================================================ */
+
 .services-overview-section {
   padding-block: var(--space-20);
 }
@@ -2933,7 +2694,10 @@ button {
   }
 }
 
-/* services list section */
+/* ============================================================
+   Services List Section
+   ============================================================ */
+
 .services-list-section {
   padding-block: var(--space-16);
 }
@@ -3089,7 +2853,7 @@ button {
 }
 
 /* ============================================================
-   Software Development Services (numbered index list)
+   Services Software Development Services (numbered index list) Section
    ============================================================ */
 
 .software-services {
@@ -3251,7 +3015,7 @@ button {
 }
 
 /* ============================================================
-   Development Process (numbered step cards)
+   Services Development Process (numbered step cards) Section
    ============================================================ */
 
 .development-process {
@@ -3375,25 +3139,25 @@ button {
 }
 
 /* ============================================================
-   Technology Stack (category cards with tech chips)
+   Services Technology Stack (category cards with tech chips) Section
    ============================================================ */
 
-.technology-stack {
+/* .technology-stack {
   padding-block: var(--space-20);
-}
+} */
 
-.technology-stack .section-heading {
+/* .technology-stack .section-heading {
   margin-inline: auto;
   margin-bottom: var(--space-12);
-}
+} */
 
-.tech-stack-grid {
+/* .tech-stack-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: var(--space-6);
-}
+} */
 
-.tech-stack-card {
+/* .tech-stack-card {
   display: flex;
   flex-direction: column;
 
@@ -3403,17 +3167,17 @@ button {
     transform var(--duration-normal) ease,
     box-shadow var(--duration-normal) ease,
     border-color var(--duration-normal) ease;
-}
+} */
 
-.tech-stack-card:hover {
+/* .tech-stack-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-left: 1px solid var(--color-primary);
   border-radius: var(--radius-lg);
-}
+} */
 
 /* Accent dot in front of each category title. */
-.tech-stack-card-title {
+/* .tech-stack-card-title {
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -3425,9 +3189,9 @@ button {
   line-height: 1.3;
 
   transition: color var(--duration-fast) ease;
-}
+} */
 
-.tech-stack-card-title::before {
+/* .tech-stack-card-title::before {
   content: "";
 
   width: 10px;
@@ -3438,14 +3202,14 @@ button {
   border-radius: 50%;
 
   background: var(--color-primary);
-}
+} */
 
-.tech-stack-card:hover .tech-stack-card-title {
+/* .tech-stack-card:hover .tech-stack-card-title {
   color: var(--color-primary);
-}
+} */
 
 /* Pill chips for individual technologies. */
-.tech-stack-list {
+/* .tech-stack-list {
   display: flex;
   flex-wrap: wrap;
 
@@ -3454,9 +3218,9 @@ button {
   margin: 0;
   padding: 0;
   list-style: none;
-}
+} */
 
-.tech-stack-chip {
+/* .tech-stack-chip {
   padding: var(--space-2) var(--space-4);
 
   border: 1px solid var(--color-border);
@@ -3473,21 +3237,21 @@ button {
     color var(--duration-fast) ease,
     border-color var(--duration-fast) ease,
     background-color var(--duration-fast) ease;
-}
+} */
 
-.tech-stack-chip:hover {
+/* .tech-stack-chip:hover {
   color: var(--color-primary);
   border-color: var(--color-primary);
   background: var(--color-surface-elevated);
-}
+} */
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .tech-stack-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .technology-stack {
     padding-block: var(--space-12);
   }
@@ -3499,10 +3263,86 @@ button {
   .tech-stack-card {
     padding: var(--space-5);
   }
+} */
+
+/* ============================================================
+   Services Why Work With Us Section
+   ============================================================ */
+
+.wwu-section {
+  padding-block: var(--space-20);
+  background: var(--color-surface);
+}
+
+.wwu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+
+  margin-top: var(--space-12);
+}
+
+.wwu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: var(--space-8) var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface-elevated);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--duration-normal) ease,
+    border-color var(--duration-normal) ease,
+    box-shadow var(--duration-normal) ease,
+    background-color var(--duration-normal) ease;
+}
+
+.wwu-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  background: var(--color-background);
+}
+
+.wwu-card-title {
+  margin: 0 0 var(--space-3);
+
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.wwu-card-description {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .wwu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .wwu-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ============================================================
-   FAQ
+   Services FAQ Section
    ============================================================ */
 
 .faq-section {
@@ -3623,7 +3463,7 @@ button {
 }
 
 /* ============================================================
-   Services Contact CTA
+   Services Contact CTA Section
    ============================================================ */
 
 .services-contact-cta {
@@ -3738,7 +3578,183 @@ button {
 }
 
 /* ============================================================
-   Contact Hero
+   Insights/Blog Page
+   ============================================================ */
+
+/* ============================================================
+   Insights Hero Section
+   ============================================================ */
+
+.insights-hero {
+  padding-block: var(--space-24);
+
+  background: var(--color-background);
+}
+
+.insights-hero-heading {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.insights-hero-card {
+  max-width: 95%;
+  margin-inline: auto;
+  flex-direction: row;
+  padding-bottom: 0;
+}
+
+.insight-hero-image {
+  height: 100%;
+}
+
+.insight-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--space-16);
+}
+
+.insight-hero-card-heading {
+  font-size: var(--text-3xl);
+}
+
+.insight-card-description {
+  margin: var(--space-5) 0 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-lg);
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+.insight-continue-link {
+  position: relative;
+
+  display: inline-block;
+  margin-top: var(--space-5);
+
+  padding-bottom: 2px;
+
+  color: var(--color-primary);
+
+  font-size: var(--text-lg);
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: opacity var(--duration-fast) ease;
+}
+
+.insight-continue-link::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--color-primary);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform var(--duration-normal) ease;
+}
+
+.insight-continue-link:hover {
+  opacity: 0.85;
+}
+
+.insight-continue-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   Insights Newsletter Section
+   ============================================================ */
+
+.newsletter-section {
+  padding-block: var(--space-24);
+
+  background: var(--color-surface);
+}
+
+/* Centered newsletter signup card. */
+.newsletter-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  max-width: 820px;
+  margin-inline: auto;
+
+  padding: var(--space-12) var(--space-16);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface-elevated);
+
+  box-shadow: var(--shadow-md);
+
+  transition:
+    border-color var(--duration-normal) ease,
+    box-shadow var(--duration-normal) ease;
+}
+
+/* Highlight the card with a primary ring on hover. */
+.newsletter-card:hover {
+  border-color: var(--color-primary);
+  box-shadow:
+    0 0 0 1px var(--color-primary),
+    0 12px 32px rgba(93, 39, 228, 0.25);
+}
+
+.newsletter-heading {
+  margin: 0 0 var(--space-4);
+
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.newsletter-description {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-xl);
+  line-height: 1.6;
+
+  max-width: 640px;
+}
+
+.newsletter-note {
+  margin: var(--space-6) 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-base);
+}
+
+@media (max-width: 600px) {
+  .newsletter-card {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+/* ============================================================
+   Contact Page
+   ============================================================ */
+
+/* ============================================================
+   Contact Hero Section
    ============================================================ */
 
 .contact-hero {
@@ -4001,7 +4017,9 @@ section {
   min-width: 0;
 }
 
-/* ---------- Mobile hamburger menu ---------- */
+/* ============================================================
+   Mobile Hamburger Menu
+   ============================================================ */
 
 /* Hamburger toggle: hidden on desktop, shown on mobile. */
 .menu-toggle {
@@ -4963,7 +4981,7 @@ section {
 }
 
 /* ============================================================
-   Home-page Topography background
+   All-page Topography background
    ============================================================ */
 
 /* When the Topography background is active, make the body background

@@ -86,6 +86,7 @@ function Footer() {
                     </Link>
                   </div>
                 </div>
+                <Link to="/caseStudy/">Case Study</Link>
               </div>
             </nav>
 

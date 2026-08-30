@@ -53,6 +53,7 @@ function Header() {
               </div>
             </div>
             <Link to="/blog-insights/">Insights</Link>
+            <Link to="/caseStudy/">Case Study</Link>
           </div>
 
           <div className="nav-actions">

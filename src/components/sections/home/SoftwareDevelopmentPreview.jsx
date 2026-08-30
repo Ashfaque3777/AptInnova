@@ -86,6 +86,26 @@ const cards = [
       </svg>
     ),
   },
+  {
+    title: "DevOps & Cloud Engineering",
+    description:
+      "Automated pipelines, infrastructure as code and reliable cloud deployments that keep your software fast, secure and always available.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M17.5 19a4.5 4.5 0 1 0-.9-8.9 6 6 0 0 0-11.6 1.9A4 4 0 0 0 6 19z" />
+        <path d="M22 19a2 2 0 1 0-4 0" />
+        <path d="M18 22v-.5" />
+      </svg>
+    ),
+  },
 ];
 
 function SoftwareDevelopmentPreview() {

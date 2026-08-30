@@ -3,7 +3,7 @@ import ServicesOverview from "../components/sections/services/ServicesOverview.j
 import ServicesList from "../components/sections/services/ServicesList.jsx";
 import SoftwareDevelopmentServices from "../components/sections/services/SoftwareDevelopmentServices.jsx";
 import DevelopmentProcess from "../components/sections/services/DevelopmentProcess.jsx";
-import TechnologyStack from "../components/sections/services/TechnologyStack.jsx";
+// import TechnologyStack from "../components/sections/services/TechnologyStack.jsx";
 import WhyWorkWithUs from "../components/sections/services/WhyWorkWithUs.jsx";
 import ServicesFAQ from "../components/sections/services/ServicesFAQ.jsx";
 import ContactCTA from "../components/sections/services/ServicesContactCTA.jsx";
@@ -21,7 +21,7 @@ function Services() {
 
       <DevelopmentProcess />
 
-      <TechnologyStack />
+      {/* <TechnologyStack /> */}
 
       <WhyWorkWithUs />
 

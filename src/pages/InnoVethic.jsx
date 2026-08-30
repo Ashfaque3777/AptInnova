@@ -255,10 +255,7 @@ function InnoVethic() {
           content="Source-cited regulatory answers, governed workflows, and a complete audit trail for European banking. Sovereign AI, built in Europe."
         />
         <meta property="og:type" content="product" />
-        <meta
-          property="og:url"
-          content="/products/innovethic/"
-        />
+        <meta property="og:url" content="/products/innovethic/" />
         <meta property="og:image" content={innovethicImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta

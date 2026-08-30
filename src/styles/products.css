@@ -1,6 +1,9 @@
 /* Shared styles for product pages (InnoVethic, ainsteins, A(i)MPACT Lab).*/
 
-/* Product hero */
+/* ============================================================
+   Product Hero Section
+   ============================================================ */
+
 .product-hero {
   position: relative;
   overflow: hidden;
@@ -95,7 +98,10 @@
   }
 }
 
-/* Product intro */
+/* ============================================================
+   Product Intro Section
+   ============================================================ */
+
 .product-intro {
   padding-block: var(--space-24);
 }
@@ -194,7 +200,10 @@
   }
 }
 
-/* Product audience */
+/* ============================================================
+   Product Audience Section
+   ============================================================ */
+
 .product-audience {
   padding-block: var(--space-24);
 
@@ -272,7 +281,10 @@
   }
 }
 
-/* Product capabilities */
+/* ============================================================
+   Product Capabilities Section
+   ============================================================ */
+
 .product-capabilities {
   padding-block: var(--space-24);
 }
@@ -357,7 +369,10 @@
   }
 }
 
-/* Product workflow */
+/* ============================================================
+   Product Workflow Section
+   ============================================================ */
+
 .product-workflow {
   padding-block: var(--space-24);
 
@@ -431,7 +446,10 @@
   }
 }
 
-/* Product spotlight */
+/* ============================================================
+   Product Spotlight Section
+   ============================================================ */
+
 .product-spotlight {
   padding-block: var(--space-24);
 }
@@ -561,7 +579,10 @@
   }
 }
 
-/* Product video */
+/* ============================================================
+   Product Video Section
+   ============================================================ */
+
 .product-video-section {
   padding-block: var(--space-24);
 
@@ -584,7 +605,10 @@
   background: var(--color-background);
 }
 
-/* Product CTA */
+/* ============================================================
+   Product CTA Section
+   ============================================================ */
+
 .product-cta {
   padding-block: var(--space-24);
 
@@ -641,7 +665,10 @@
   }
 }
 
-/* Product pagination */
+/* ============================================================
+   Product Pagination Section
+   ============================================================ */
+
 .product-pagination {
   padding-block: var(--space-12);
 

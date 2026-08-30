@@ -10,6 +10,7 @@ import Ainsteins from "./pages/Ainsteins.jsx";
 import AimpactLab from "./pages/AimpactLab.jsx";
 import Insights from "./pages/Insights.jsx";
 import Contact from "./pages/Contact.jsx";
+import CaseStudies from "./pages/CaseStudies.jsx";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/products/aimpact-lab/" element={<AimpactLab />} />
           <Route path="/blog-insights/" element={<Insights />} />
           <Route path="/contact/" element={<Contact />} />
+          <Route path="/caseStudy/" element={<CaseStudies />} />
         </Route>
       </Routes>
     </>
