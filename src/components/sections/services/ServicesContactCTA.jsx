@@ -29,7 +29,12 @@ function ServicesContactCTA() {
     <section className="section services-contact-cta reveal" ref={sectionRef}>
       <PageContainer>
         <SectionHeading
-          title="Let's Build What's Next for Your Business"
+          title={
+            <>
+              <span style={{ color: "var(--color-warm)" }}>Let's Build</span>{" "}
+              What's Next for Your Business
+            </>
+          }
           description="You have seen what is possible. Now let's make it real for your organisation."
           align="center"
         />

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
 import PageContainer from "./PageContainer.jsx";
@@ -56,8 +56,8 @@ function Footer() {
               <h2>Explore</h2>
 
               <div className="footer-links-horizontal">
-                <Link to="/about/">About</Link>
-                <Link to="/services/">Services</Link>
+                <NavLink to="/about/">About</NavLink>
+                <NavLink to="/services/">Services</NavLink>
                 <div className="nav-dropdown" ref={productsRef}>
                   <button
                     type="button"
@@ -86,8 +86,8 @@ function Footer() {
                     </Link>
                   </div>
                 </div>
-                <Link to="/blog-insights/">Insights</Link>
-                <Link to="/work/">Work</Link>
+                <NavLink to="/blog-insights/">Insights</NavLink>
+                <NavLink to="/work/">Work</NavLink>
               </div>
             </nav>
 
@@ -95,7 +95,7 @@ function Footer() {
               <h2>Connect</h2>
 
               <div className="footer-links-horizontal">
-                <Link to="/contact/">Contact</Link>
+                <NavLink to="/contact/">Contact</NavLink>
 
                 <a
                   href="https://www.linkedin.com/company/aptinnova/about/?viewAsMember=true"

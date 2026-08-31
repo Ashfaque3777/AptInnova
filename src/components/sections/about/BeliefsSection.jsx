@@ -114,7 +114,14 @@ function BeliefsSection() {
     <section className="section beliefs-section">
       <PageContainer>
         <div ref={headingRef} className="reveal">
-          <SectionHeading title="Our Values" align="center" />
+          <SectionHeading
+            title={
+              <>
+                Our <span style={{ color: "var(--color-warm)" }}>Values</span>
+              </>
+            }
+            align="center"
+          />
         </div>
 
         <div className="beliefs-grid">

@@ -12,7 +12,12 @@ function CaseStudies() {
     <section className="work-cases-section reveal" ref={sectionRef}>
       <PageContainer>
         <SectionHeading
-          title="Our Work"
+          title={
+            <>
+              Selected{" "}
+              <span style={{ color: "var(--color-warm)" }}>Case Studies</span>
+            </>
+          }
           description="The breadth of what we build, and the measurable impact it leaves behind."
           align="center"
         />

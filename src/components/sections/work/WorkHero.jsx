@@ -9,7 +9,10 @@ function WorkHero() {
     <section className="work-hero">
       <PageContainer>
         <div className="work-hero-content reveal" ref={contentRef}>
-          <h1>Real work, Real numbers</h1>
+          <h1>
+            Real <span style={{ color: "var(--color-warm)" }}>work,</span> Real
+            numbers
+          </h1>
 
           <p className="work-hero-description">
             A selection of what we've built, across industries and business

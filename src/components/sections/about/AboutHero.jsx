@@ -12,7 +12,10 @@ function AboutHero() {
     <section className="about-hero section-large">
       <PageContainer>
         <div className="about-hero-content reveal" ref={headingRef}>
-          <h1>Our Story: From Idea to Impact</h1>
+          <h1>
+            Our Story: From{" "}
+            <span style={{ color: "var(--color-warm)" }}>Idea to Impact</span>
+          </h1>
 
           <p className="about-hero-description">
             AptInnova was born from a shared vision: to make its powerful

@@ -82,7 +82,14 @@ function ServicesSection() {
       <PageContainer>
         <div ref={headingRef} className="reveal">
           <SectionHeading
-            title="Unlock Your Potential with Generative AI"
+            title={
+              <>
+                Unlock Your Potential with{" "}
+                <span style={{ color: "var(--color-warm)" }}>
+                  Generative AI
+                </span>
+              </>
+            }
             description="Is your business ready to leverage the power of Generative AI? At AptInnova, we specialize in creating custom AI solutions that deliver real-world results. From automating complex processes to generating novel content and providing strategic AI guidance, we are your partners in innovation."
             align="center"
           />

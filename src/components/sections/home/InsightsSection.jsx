@@ -45,7 +45,15 @@ function InsightsSection({ showHeading = true, showViewMore = true }) {
       <PageContainer>
         {showHeading && (
           <div className="insights-heading-wrapper reveal" ref={headingRef}>
-            <SectionHeading title="Gain Valuable Insights" align="center" />
+            <SectionHeading
+              title={
+                <>
+                  Gain Valuable{" "}
+                  <span style={{ color: "var(--color-warm)" }}>Insights</span>
+                </>
+              }
+              align="center"
+            />
           </div>
         )}
 

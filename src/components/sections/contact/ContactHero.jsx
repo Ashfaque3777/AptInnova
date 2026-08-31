@@ -12,7 +12,10 @@ function ContactHero() {
       <PageContainer>
         <div className="contact-hero-reveal reveal" ref={sectionRef}>
           <div className="contact-hero-content">
-            <h1>Let's Get in Touch</h1>
+            <h1>
+              Let's Get in{" "}
+              <span style={{ color: "var(--color-warm)" }}>Touch</span>
+            </h1>
 
             <p className="contact-hero-description">
               Ready to harness the power of data, AI, and digital innovation?

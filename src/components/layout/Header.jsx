@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import PageContainer from "./PageContainer.jsx";
 import ThemeToggle from "../navigation/ThemeToggle.jsx";
@@ -32,10 +32,10 @@ function Header() {
           </Link>
 
           <div className="desktop-nav">
-            <Link to="/about/">About</Link>
-            <Link to="/services/">Services</Link>
+            <NavLink to="/about/">About</NavLink>
+            <NavLink to="/services/">Services</NavLink>
             <div className="nav-dropdown">
-              <Link className="nav-dropdown-trigger">Products</Link>
+              <span className="nav-dropdown-trigger">Products</span>
               <div
                 className="nav-dropdown-menu"
                 role="menu"
@@ -52,7 +52,7 @@ function Header() {
                 </Link>
               </div>
             </div>
-            <Link to="/work/">Work</Link>
+            <NavLink to="/work/">Work</NavLink>
           </div>
 
           <div className="nav-actions">

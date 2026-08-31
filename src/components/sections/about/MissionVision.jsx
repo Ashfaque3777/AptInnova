@@ -15,7 +15,15 @@ function MissionVision() {
     <section className="section mission-vision-section">
       <PageContainer>
         <div ref={headingRef} className="reveal">
-          <SectionHeading title="Our Mission & Vision" align="center" />
+          <SectionHeading
+            title={
+              <>
+                Our Mission{" "}
+                <span style={{ color: "var(--color-warm)" }}>&</span> Vision
+              </>
+            }
+            align="center"
+          />
         </div>
 
         <div className="mission-vision-grid">

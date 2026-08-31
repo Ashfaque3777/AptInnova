@@ -17,7 +17,14 @@ function InsightsHero() {
     <section className="insights-hero">
       <PageContainer>
         <div className="insights-hero-heading reveal" ref={headingRef}>
-          <SectionHeading title="Blogs" align="center" />
+          <SectionHeading
+            title={
+              <>
+                Our <span style={{ color: "var(--color-warm)" }}>Blogs</span>
+              </>
+            }
+            align="center"
+          />
         </div>
 
         <article className="insight-card insights-hero-card">

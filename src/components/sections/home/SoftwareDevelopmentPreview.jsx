@@ -116,7 +116,14 @@ function SoftwareDevelopmentPreview() {
       <PageContainer>
         <div ref={headingRef} className="reveal">
           <SectionHeading
-            title="Custom Software that Moves your Business Forward"
+            title={
+              <>
+                <span style={{ color: "var(--color-warm)" }}>
+                  Custom Software
+                </span>{" "}
+                that Moves your Business Forward
+              </>
+            }
             description="From customer-facing apps to internal platforms, we design, build and scale software tailored to the way you work. Our teams combine modern technology stacks with proven delivery practices to ship reliable products faster."
             align="center"
           />

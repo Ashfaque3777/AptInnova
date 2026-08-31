@@ -15,7 +15,15 @@ function CompanyStory() {
         <div ref={headingRef} className="reveal">
           <SectionHeading
             className="story-heading"
-            title="Our Expertise: Practical AI, Real Results"
+            title={
+              <>
+                Our Expertise:{" "}
+                <span style={{ color: "var(--color-warm)" }}>
+                  Practical AI, Real
+                </span>{" "}
+                Results
+              </>
+            }
             align="center"
           />
         </div>

@@ -1,4 +1,5 @@
 import PageContainer from "../../layout/PageContainer.jsx";
+import SectionHeading from "../../ui/SectionHeading.jsx";
 
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
@@ -9,9 +10,18 @@ function PartnershipSection() {
   return (
     <section className="partnership-section">
       <PageContainer>
-        <h2 className="partnership-heading reveal" ref={headingRef}>
-          Our Commitment to AIforAll Global
-        </h2>
+        <div ref={headingRef} className="reveal">
+          <SectionHeading
+            title={
+              <>
+                Our Commitment to{" "}
+                <span style={{ color: "var(--color-warm)" }}>AIforAll</span>{" "}
+                Global
+              </>
+            }
+            align="center"
+          />
+        </div>
 
         <div className="partnership-card reveal" ref={cardRef}>
           <div className="partnership-card-a" aria-hidden="true">

@@ -51,7 +51,13 @@ function ProductsSection() {
       <PageContainer>
         <div ref={headingRef} className="reveal">
           <SectionHeading
-            title="Applied AI Solutions for different kinds of Challenges"
+            title={
+              <>
+                Applied{" "}
+                <span style={{ color: "var(--color-warm)" }}>AI Solutions</span>{" "}
+                for different kinds of Challenges
+              </>
+            }
             align="center"
           />
         </div>

@@ -11,7 +11,12 @@ function WorkCTA() {
     <section className="section work-cta-section reveal" ref={sectionRef}>
       <PageContainer>
         <SectionHeading
-          title="Want results like these?"
+          title={
+            <>
+              Want <span style={{ color: "var(--color-warm)" }}>Results</span>{" "}
+              like these?
+            </>
+          }
           description="Tell us what your business is dealing with. We'll show you what's possible and come back quickly with a clear plan. No cost, no pressure."
           align="center"
         />

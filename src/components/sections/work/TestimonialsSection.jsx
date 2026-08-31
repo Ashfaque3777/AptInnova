@@ -12,7 +12,12 @@ function TestimonialsSection() {
     <section className="work-testimonials-section section-background">
       <PageContainer>
         <SectionHeading
-          title="What our Clients say"
+          title={
+            <>
+              What our{" "}
+              <span style={{ color: "var(--color-warm)" }}>Clients</span> say
+            </>
+          }
           align="center"
         />
 

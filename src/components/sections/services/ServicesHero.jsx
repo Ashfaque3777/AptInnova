@@ -9,7 +9,9 @@ function ServicesHero() {
     <section className="services-hero section-large">
       <PageContainer>
         <div className="services-hero-content reveal" ref={contentRef}>
-          <h1>Our Services</h1>
+          <h1>
+            Our <span style={{ color: "var(--color-warm)"}}>Services</span>
+          </h1>
 
           <p className="services-hero-description">
             Discover AptInnova's suite of Generative AI products & services,

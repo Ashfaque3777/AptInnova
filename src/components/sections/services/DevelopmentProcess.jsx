@@ -62,8 +62,15 @@ function DevelopmentProcess() {
       <PageContainer>
         <div ref={headingRef} className="reveal">
           <SectionHeading
-            title="A Structured Process, without Unnecessary Friction"
-            description="A structured yet flexible process that keeps you informed at every stage."
+            title={
+              <>
+                A{" "}
+                <span style={{ color: "var(--color-warm)" }}>
+                  Structured Process,
+                </span>{" "}
+                without Unnecessary Friction
+              </>
+            }
             align="center"
           />
         </div>

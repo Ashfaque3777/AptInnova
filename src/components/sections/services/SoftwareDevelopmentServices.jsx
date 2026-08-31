@@ -198,7 +198,14 @@ function SoftwareDevelopmentServices() {
       <div className="page-container">
         <div ref={headingRef} className="reveal">
           <SectionHeading
-            title="Technology Built Around your Business"
+            title={
+              <>
+                <span style={{ color: "var(--color-warm)" }}>
+                  Technology Built
+                </span>{" "}
+                around your Business
+              </>
+            }
             align="center"
           />
         </div>

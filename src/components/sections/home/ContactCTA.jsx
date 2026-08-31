@@ -1,4 +1,5 @@
 import PageContainer from "../../layout/PageContainer.jsx";
+import SectionHeading from "../../ui/SectionHeading.jsx";
 
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
@@ -9,12 +10,19 @@ function ContactCTA() {
     <section className="contact-cta-section reveal" ref={sectionRef}>
       <PageContainer>
         <div className="contact-cta-content">
-          <h2>Ready to Transform Your Business?</h2>
-
-          <p>
-            Boost your Market cometitiveness and Business Performance with
-            Applied Generative AI & Data-Driven Insights – Talk to Our Experts!
-          </p>
+          <div>
+            <SectionHeading
+              title={
+                <>
+                  Ready to{" "}
+                  <span style={{ color: "var(--color-warm)" }}>Transform</span>{" "}
+                  Your Business?
+                </>
+              }
+              description="Boost your Market competitiveness and Business Performance with Applied Generative AI & Data-Driven Insights – Talk to Our Experts!"
+              align="center"
+            />
+          </div>
 
           <div className="contact-cta-form">
             <input

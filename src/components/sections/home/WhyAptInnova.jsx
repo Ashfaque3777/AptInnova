@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import PageContainer from "../../layout/PageContainer.jsx";
+import SectionHeading from "../../ui/SectionHeading.jsx";
 
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
@@ -107,13 +108,15 @@ function WhyAptInnova() {
     <section className="section section-background">
       <PageContainer>
         <div className="why-heading reveal" ref={headingRef}>
-          <h2>Why Choose AptInnova?</h2>
-          <p>
-            With a focus on innovation and a track record of success, Aptinnova
-            is your trusted partner in navigating the complexities of the
-            digital age. We deliver tailored solutions that drive growth,
-            efficiency, and competitive advantage.
-          </p>
+          <SectionHeading
+            title={
+              <>
+                Why Choose{" "}
+                <span style={{ color: "var(--color-warm)" }}>AptInnova</span>?
+              </>
+            }
+            description="With a focus on innovation and a track record of success, Aptinnova is your trusted partner in navigating the complexities of the digital age. We deliver tailored solutions that drive growth, efficiency, and competitive advantage."
+          />
         </div>
 
         <div className="why-cards-grid">

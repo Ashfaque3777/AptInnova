@@ -37,7 +37,14 @@ function HowWeWork() {
       <PageContainer>
         <div ref={headingRef} className="reveal">
           <SectionHeading
-            title="From Opportunity to Implementation"
+            title={
+              <>
+                From Opportunity to{" "}
+                <span style={{ color: "var(--color-warm)" }}>
+                  Implementation
+                </span>
+              </>
+            }
             align="center"
           />
         </div>

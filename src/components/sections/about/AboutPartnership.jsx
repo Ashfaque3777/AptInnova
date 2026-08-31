@@ -22,8 +22,11 @@ function AboutPartnership() {
           ref={contentRef}
         >
           <p>
-            AptInnova is the proud Partner of <b>Stichting AIforAll Global</b>,
-            a dutch non-profit initiative focusing on Human-Centered AI.
+            AptInnova is the proud Partner of{" "}
+            <span style={{ color: "var(--color-warm)" }}>
+              <b>Stichting AIforAll Global</b>
+            </span>
+            , a dutch non-profit initiative focusing on Human-Centered AI.
           </p>
 
           <p>
