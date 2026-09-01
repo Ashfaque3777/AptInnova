@@ -1093,6 +1093,45 @@ button {
   line-height: 1.6;
 
   white-space: pre-line;
+  text-align: justify;
+}
+
+/* Note paragraph below the services grid. */
+.services-section-note {
+  max-width: 640px;
+  margin: 0 auto;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Centered link below the services grid. */
+.services-section-link-wrapper {
+  display: flex;
+  justify-content: center;
+
+  margin-top: var(--space-8);
+}
+
+.services-section-link {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.75rem 1.5rem;
+
+  color: var(--color-primary);
+
+  font-size: var(--text-lg);
+  font-weight: 600;
+
+  transition: color var(--duration-fast) ease;
+}
+
+.services-section-link:hover {
+  color: var(--color-primary-hover);
 }
 
 /* responsive: 2 columns on tablet, 1 on mobile */
@@ -1378,6 +1417,190 @@ button {
   .software-dev-orbit {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================================
+   Home Featured Work Section
+   ============================================================ */
+
+.featured-work-section {
+  overflow: hidden;
+}
+
+.featured-work-section .section-heading {
+  margin-bottom: var(--space-12);
+}
+
+/* Full-width marquee viewport. */
+.featured-work-marquee {
+  width: 100%;
+
+  cursor: grab;
+}
+
+.featured-work-track {
+  display: flex;
+
+  width: max-content;
+
+  animation: featuredWorkScroll 36s linear infinite;
+}
+
+/* Pause the whole marquee while hovering any card, so it can be read. */
+.featured-work-marquee:hover .featured-work-track {
+  animation-play-state: paused;
+}
+
+@keyframes featuredWorkScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Each identical group holds all the cards, side by side for a seamless loop. */
+.featured-work-group {
+  display: flex;
+  gap: var(--space-8);
+
+  padding-inline: var(--space-6);
+}
+
+.featured-work-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 420px;
+  max-width: 86vw;
+
+  padding: var(--space-8);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface-elevated);
+
+  box-shadow: var(--shadow-md);
+
+  transition:
+    transform var(--duration-normal) ease,
+    box-shadow var(--duration-normal) ease;
+}
+
+/* Scale up the hovered card for readability. */
+.featured-work-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Warm border line that traces corner to corner around the card. */
+@property --featured-border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.featured-work-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  border-radius: inherit;
+
+  padding: 2px;
+
+  background: conic-gradient(
+    from var(--featured-border-angle),
+    transparent 0deg,
+    var(--color-warm) 90deg,
+    transparent 90deg
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity var(--duration-fast) ease;
+}
+
+.featured-work-card:hover::before {
+  opacity: 1;
+
+  animation: featuredBorderTrace 2.5s linear infinite;
+}
+
+@keyframes featuredBorderTrace {
+  to {
+    --featured-border-angle: 360deg;
+  }
+}
+
+.featured-work-card h3 {
+  margin: 0 0 var(--space-4);
+
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.featured-work-story {
+  margin: 0 0 var(--space-6);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-lg);
+  line-height: 1.65;
+  text-align: justify;
+}
+
+.featured-work-tag {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Centered "See all case studies" link below the marquee. */
+.featured-work-link-wrapper {
+  display: flex;
+  justify-content: center;
+
+  margin-top: var(--space-12);
+}
+
+.featured-work-link {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.75rem 1.5rem;
+
+  color: var(--color-primary);
+
+  font-size: var(--text-xl);
+  font-weight: 600;
+
+  transition: color var(--duration-fast) ease;
+}
+
+.featured-work-link:hover {
+  color: var(--color-primary-hover);
 }
 
 /* ============================================================

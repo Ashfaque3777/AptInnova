@@ -288,7 +288,12 @@ function InnoVethic() {
         ]}
       >
         <ProductIntro
-          title="What is InnoVethic?"
+          title={
+            <>
+              What is{" "}
+              <span style={{ color: "var(--color-warm)" }}>InnoVethic?</span>
+            </>
+          }
           paragraphs={[
             "InnoVethic is a regulated AI operations platform for European banks. It combines source-cited regulatory answers with governed multi-step workflows, so risk, finance, compliance and audit teams can work with AI inside a defensible operating model.",
             "Every answer points back to named regulatory sources, and every workflow step is recorded on the audit trail. The system is designed to run inside the bank's approved environment rather than on a vendor's cloud, reflecting a sovereign AI position built in Europe.",
@@ -298,24 +303,51 @@ function InnoVethic() {
 
         <ProductAudience
           title="Who is it for?"
-          description="Built for banks and financial institutions where regulated AI operations matter, InnoVethic supports the teams accountable for keeping AI inside the rules."
+          description={
+            <>
+              Built for{" "}
+              <span style={{ color: "var(--color-warm)" }}>
+                banks and financial institutions
+              </span>{" "}
+              where regulated AI operations matter, InnoVethic supports the
+              teams accountable for keeping AI inside the rules.
+            </>
+          }
           audiences={audienceItems}
         />
 
         <ProductCapabilities
-          title="Key Capabilities"
+          title={
+            <>
+              Key{" "}
+              <span style={{ color: "var(--color-warm)" }}>Capabilities</span>
+            </>
+          }
           description="The capabilities that make InnoVethic a fit for regulated AI operations in European banking."
           capabilities={capabilities}
         />
 
         <ProductWorkflow
-          title="How it Supports Regulated AI"
+          title={
+            <>
+              How it{" "}
+              <span style={{ color: "var(--color-warm)" }}>Supports</span>{" "}
+              Regulated AI
+            </>
+          }
           description="From a grounded question to a complete audit trail, every step is designed for accountability."
           steps={workflowSteps}
         />
 
         <ProductCTA
-          title="Ready to see InnoVethic in Action?"
+          title={
+            <>
+              Ready to see{" "}
+              <span style={{ color: "var(--color-warm)" }}>
+                InnoVethic in Action?
+              </span>
+            </>
+          }
           description="Talk to our team about regulated AI operations for your institution, or explore more on the InnoVethic site."
           actions={[
             { label: "Contact us", to: "/contact/" },

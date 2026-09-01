@@ -12,15 +12,15 @@ function Hero() {
         <div className="hero-grid">
           <div className="hero-content">
             <h1>
-              Powering
+              Growing
               <br />
               <span style={{ color: 'var(--color-warm)' }}>Businesses</span>
               <br />
               with
               <br />
-              Generative
+              AI-native
               <br />
-              AI
+              Software
             </h1>
           </div>
 

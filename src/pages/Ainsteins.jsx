@@ -266,7 +266,11 @@ function Ainsteins() {
       </Helmet>
 
       <ProductLayout
-        title="ainsteins"
+        title={
+          <>
+            ainste<span style={{ color: "var(--color-warm)" }}>i</span>ns
+          </>
+        }
         description="Plug-and-play AI knowledge assistant for institutions. Curated curriculum corpora, persona-aware chat, and source-cited answers for learning that stays grounded in your curriculum."
         heroImage={ainsteinsImage}
         actions={[
@@ -282,7 +286,12 @@ function Ainsteins() {
         ]}
       >
         <ProductIntro
-          title="What is ainsteins?"
+          title={
+            <>
+              What is{" "}
+              <span style={{ color: "var(--color-warm)" }}>ainsteins?</span>
+            </>
+          }
           paragraphs={[
             "ainsteins is a plug-and-play AI knowledge assistant built for institutions. It combines curated curriculum corpora, persona-aware chat, and source-cited answers so students learn with focus, teachers keep their voice, and the institution keeps its edge.",
             "Learning is grounded in the institution's own curriculum. Instead of open-ended answers, users get responses that reference the material the institution has curated and approved.",
@@ -291,25 +300,46 @@ function Ainsteins() {
         />
 
         <ProductWorkflow
-          title="How it Works"
+          title={
+            <>
+              How it <span style={{ color: "var(--color-warm)" }}>Works?</span>
+            </>
+          }
           description="From curated curriculum to source-cited answers, every step keeps learning grounded and focused."
           steps={workflowSteps}
         />
 
         <ProductAudience
-          title="Who Benefits?"
+          title={
+            <>
+              Who <span style={{ color: "var(--color-warm)" }}>Benefits?</span>
+            </>
+          }
           description="ainsteins is built for the people at the heart of every academic institution."
           audiences={audienceItems}
         />
 
         <ProductCapabilities
-          title="Key Capabilities"
+          title={
+            <>
+              Key{" "}
+              <span style={{ color: "var(--color-warm)" }}>Capabilities</span>
+            </>
+          }
           description="The capabilities that make ainsteins a fit for curriculum-grounded learning."
           capabilities={capabilities}
         />
 
         <ProductCTA
-          title="Ready to bring ainsteins to your Institution?"
+          title={
+            <>
+              Ready to{" "}
+              <span style={{ color: "var(--color-warm)" }}>
+                bring ainsteins to your
+              </span>{" "}
+              Institution?
+            </>
+          }
           description="Talk to our team about AI-powered learning on your curriculum, or explore more on the ainsteins site."
           actions={[
             { label: "Contact us", to: "/contact/" },

@@ -282,7 +282,11 @@ function AimpactLab() {
       </Helmet>
 
       <ProductLayout
-        title="A(i)MPACT Lab"
+        title={
+          <>
+            A(<span style={{ color: "var(--color-warm)" }}>i</span>)MPACT Lab
+          </>
+        }
         description="A sovereign sandbox environment for sector-grounded AI experimentation. AI, Digital Twin, and XR prototyping in one space to validate, iterate, and stress-test ideas before real-world deployment."
         heroImage={aimpactLabImage}
         actions={[
@@ -295,7 +299,12 @@ function AimpactLab() {
         ]}
       >
         <ProductIntro
-          title="What is A(i)MPACT Lab?"
+          title={
+            <>
+              What is{" "}
+              <span style={{ color: "var(--color-warm)" }}>A(i)MPACT Lab?</span>
+            </>
+          }
           paragraphs={[
             "A(i)MPACT Lab is a sovereign sandbox environment for sector-grounded AI experimentation. It brings AI, Digital Twin, and XR prototyping into one space so innovators can validate, iterate, and stress-test ideas before real-world deployment.",
             "Currently in Beta and available on demand, A(i)MPACT Lab serves cohorts, partner institutions, and community programmes looking for a controlled place to experiment with applied AI.",
@@ -304,7 +313,12 @@ function AimpactLab() {
         />
 
         <ProductSpotlight
-          title="Innovation Sandbox"
+          title={
+            <>
+              Innovation{" "}
+              <span style={{ color: "var(--color-warm)" }}>Sandbox</span>
+            </>
+          }
           paragraphs={[
             "A(i)MPACT Lab provides a sovereign sandbox where sector-grounded AI ideas can be validated before they reach the real world.",
             "Teams prototype, iterate, and stress-test in a controlled space, learning what works before committing to deployment.",
@@ -313,7 +327,11 @@ function AimpactLab() {
         />
 
         <ProductSpotlight
-          title="Digital Twin"
+          title={
+            <>
+              Digital <span style={{ color: "var(--color-warm)" }}>Twin</span>
+            </>
+          }
           reversed
           paragraphs={[
             "Digital Twin modelling is part of the A(i)MPACT Lab environment, letting teams represent and simulate systems before making changes.",
@@ -323,7 +341,11 @@ function AimpactLab() {
         />
 
         <ProductSpotlight
-          title="XR"
+          title={
+            <>
+              X<span style={{ color: "var(--color-warm)" }}>R</span>
+            </>
+          }
           paragraphs={[
             "XR prototyping brings experiments into immersive, spatial formats within the sandbox.",
             "Combined with AI and Digital Twin, XR gives innovators a fuller way to experience, test, and stress-test ideas before real-world deployment.",
@@ -332,7 +354,12 @@ function AimpactLab() {
         />
 
         <ProductVideo
-          title="See A(i)MPACT Lab in Action"
+          title={
+            <>
+              See A(i)MPACT Lab{" "}
+              <span style={{ color: "var(--color-warm)" }}>in Action</span>
+            </>
+          }
           description="A short demonstration of the A(i)MPACT Lab environment."
           src={impactLabVideo}
           poster={aimpactLabImage}
@@ -340,7 +367,14 @@ function AimpactLab() {
         />
 
         <ProductCTA
-          title="Ready to Experiment in the Sandbox?"
+          title={
+            <>
+              <span style={{ color: "var(--color-warm)" }}>
+                Ready to Experiment
+              </span>{" "}
+              in the Sandbox?
+            </>
+          }
           description="A(i)MPACT Lab is in Beta and available on demand. Talk to our team or explore the Incubation Factory at AIforAll Global."
           actions={[
             {

@@ -55,6 +55,7 @@
 
   font-size: var(--text-xl);
   line-height: 1.7;
+  text-align: justify;
 }
 
 .product-hero-actions {
@@ -121,6 +122,7 @@
 
   font-size: var(--text-xl);
   line-height: 1.75;
+  text-align: justify;
 }
 
 .product-intro-copy > p + p {
@@ -188,6 +190,7 @@
 
   font-size: var(--text-base);
   line-height: 1.6;
+  text-align: justify;
 }
 
 @media (max-width: 900px) {
@@ -203,8 +206,6 @@
 
 .product-audience {
   padding-block: var(--space-24);
-
-  background: var(--color-surface);
 }
 
 .product-audience-grid {
@@ -352,6 +353,7 @@
 
   font-size: var(--text-base);
   line-height: 1.6;
+  text-align: justify;
 }
 
 @media (max-width: 900px) {
@@ -372,8 +374,6 @@
 
 .product-workflow {
   padding-block: var(--space-24);
-
-  background: var(--color-surface);
 }
 
 .product-workflow-list {
@@ -432,6 +432,7 @@
 
   font-size: var(--text-lg);
   line-height: 1.6;
+  text-align: justify;
 }
 
 @media (max-width: 700px) {
@@ -449,10 +450,6 @@
 
 .product-spotlight {
   padding-block: var(--space-24);
-}
-
-.product-spotlight:nth-of-type(odd) {
-  background: var(--color-surface);
 }
 
 .product-spotlight-grid {
@@ -490,6 +487,7 @@
 
   font-size: var(--text-lg);
   line-height: 1.7;
+  text-align: justify;
 }
 
 .product-spotlight-paragraphs > p + p {
@@ -559,6 +557,7 @@
 
   font-size: var(--text-base);
   line-height: 1.6;
+  text-align: justify;
 }
 
 @media (max-width: 900px) {
@@ -582,8 +581,6 @@
 
 .product-video-section {
   padding-block: var(--space-24);
-
-  background: var(--color-surface);
 }
 
 .product-video {
@@ -608,8 +605,6 @@
 
 .product-cta {
   padding-block: var(--space-24);
-
-  background: var(--color-background);
 }
 
 .product-cta-content {
@@ -668,10 +663,6 @@
 
 .product-pagination {
   padding-block: var(--space-12);
-
-  border-top: 1px solid var(--color-border);
-
-  background: var(--color-surface);
 }
 
 .product-pagination-inner {

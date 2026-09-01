@@ -53,13 +53,15 @@ function Header() {
               </div>
             </div>
             <NavLink to="/work/">Work</NavLink>
+            <NavLink to="/training/">AI Training</NavLink>
+            <NavLink to="/contact/">Contact</NavLink>
           </div>
 
           <div className="nav-actions">
             <ThemeToggle />
 
             <Link to="/contact/" className="header-cta">
-              Talk to us
+              Start a Project
             </Link>
 
             <MobileMenu />
