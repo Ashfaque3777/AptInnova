@@ -829,16 +829,23 @@ button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-/* Very subtle dark overlay to improve text contrast over the hero image. */
-.hero-section::before {
-  content: "";
-
+.hero-video-bg {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
   background: rgba(0, 0, 0, 0.02);
+  z-index: 1;
 }
 
 /* Two-column hero: wider text column + narrower visual column. */
@@ -6157,7 +6164,7 @@ section {
 /* When the Topography background is active, make the body background
    transparent so the fixed canvas shows through behind everything. */
 body {
-  background: transparent;
+  background: #050510;
 }
 
 /* Fixed fullscreen container that holds the Topography WebGL canvas.
