@@ -1,13 +1,18 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 
-import heroHome from "../../../assets/images/home/heroHome.webp";
-
 function Hero() {
   return (
-    <section
-      className="hero-section"
-      style={{ backgroundImage: `url(${heroHome})` }}
-    >
+    <section className="hero-section">
+      <video
+        className="hero-video-bg"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/WhatsApp Video 2026-09-03 at 20.35.05.mp4" type="video/mp4" />
+      </video>
+      <div className="hero-video-overlay" />
       <PageContainer>
         <div className="hero-grid">
           <div className="hero-content">
