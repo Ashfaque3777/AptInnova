@@ -927,6 +927,7 @@ button {
 
 .cta-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 /* Left group: icon + text. */
@@ -1026,7 +1027,7 @@ button {
 
 .service-card-elevated:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 /* service card image */
@@ -1245,8 +1246,6 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  background: var(--color-surface-elevated);
-
   box-shadow: var(--shadow-md);
 
   animation: software-dev-spin-reverse 36s linear infinite;
@@ -1257,11 +1256,8 @@ button {
 }
 
 .software-dev-card:hover {
-  border-color: var(--color-primary);
-
-  box-shadow:
-    0 0 0 1px var(--color-primary),
-    0 12px 32px rgba(93, 39, 228, 0.18);
+  box-shadow: 0 0 20px 10px #ffffff25;
+  /* background: var(--color-surface); */
 
   scale: 1.04;
 }
@@ -1314,6 +1310,11 @@ button {
   color: var(--color-primary);
 }
 
+.software-dev-card:hover .software-dev-card-icon {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
 .software-dev-card-icon svg {
   width: 26px;
   height: 26px;
@@ -1325,6 +1326,10 @@ button {
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.3;
+}
+
+.software-dev-card:hover h3 {
+  color: var(--color-primary);
 }
 
 .software-dev-card p {
@@ -1483,8 +1488,6 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  background: var(--color-surface-elevated);
-
   box-shadow: var(--shadow-md);
 
   transition:
@@ -1495,17 +1498,54 @@ button {
 /* Scale up the hovered card for readability. */
 .featured-work-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 0 10px 10px #ffffff25;
+  background: var(--color-surface);
 }
 
-/* Warm border line that traces corner to corner around the card. */
-@property --featured-border-angle {
+/* Cards need to be positioned so the border-trace pseudo-element
+   anchors to their own box. */
+.featured-work-card,
+.service-card-elevated,
+.insight-card,
+.mission-vision-card,
+.belief-card,
+.service-card,
+.process-card,
+.contact-hero-card,
+.newsletter-card,
+.insights-hero-card,
+.cta-card,
+.partnership-card,
+.product-capability-card,
+.work-case-card,
+.work-testimonial-card {
+  position: relative;
+}
+
+/* Warm border line that traces corner to corner around a card on hover.
+   Applied consistently across every card in the project. */
+@property --card-border-angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
 
-.featured-work-card::before {
+.featured-work-card::before,
+.service-card-elevated::before,
+.insight-card::before,
+.mission-vision-card::before,
+.belief-card::before,
+.service-card::before,
+.process-card::before,
+.contact-hero-card::before,
+.newsletter-card::before,
+.insights-hero-card::before,
+.cta-card::before,
+.partnership-card::before,
+.product-capability-card::before,
+.work-case-card::before,
+.software-dev-card::before,
+.work-testimonial-card::before {
   content: "";
 
   position: absolute;
@@ -1517,7 +1557,7 @@ button {
   padding: 2px;
 
   background: conic-gradient(
-    from var(--featured-border-angle),
+    from var(--card-border-angle),
     transparent 0deg,
     var(--color-warm) 90deg,
     transparent 90deg
@@ -1536,15 +1576,30 @@ button {
   transition: opacity var(--duration-fast) ease;
 }
 
-.featured-work-card:hover::before {
+.featured-work-card:hover::before,
+.service-card-elevated:hover::before,
+.insight-card:hover::before,
+.mission-vision-card:hover::before,
+.belief-card:hover::before,
+.service-card:hover::before,
+.process-card:hover::before,
+.contact-hero-card:hover::before,
+.newsletter-card:hover::before,
+.insights-hero-card:hover::before,
+.cta-card:hover::before,
+.partnership-card:hover::before,
+.product-capability-card:hover::before,
+.work-case-card:hover::before,
+.software-dev-card:hover::before,
+.work-testimonial-card:hover::before {
   opacity: 1;
 
-  animation: featuredBorderTrace 2.5s linear infinite;
+  animation: cardBorderTrace 2.5s linear infinite;
 }
 
-@keyframes featuredBorderTrace {
+@keyframes cardBorderTrace {
   to {
-    --featured-border-angle: 360deg;
+    --card-border-angle: 360deg;
   }
 }
 
@@ -1555,6 +1610,7 @@ button {
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.01em;
+  text-align: center;
 }
 
 .featured-work-story {
@@ -1601,6 +1657,500 @@ button {
 
 .featured-work-link:hover {
   color: var(--color-primary-hover);
+}
+
+/* =========================================================
+   Home How We Work Section
+   ========================================================= */
+.how-we-work {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 150px;
+}
+
+.how-we-work-container {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Header */
+.how-we-work-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 80px;
+}
+
+.how-we-work-heading-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.6fr);
+  gap: 80px;
+  align-items: end;
+}
+
+.how-we-work-heading-row h2 {
+  margin: 0;
+
+  font-size: clamp(44px, 6vw, 76px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+}
+
+.how-we-work-heading-row h2 em {
+  color: var(--color-warm);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.how-we-work-heading-row p {
+  max-width: 420px;
+  margin: 0 0 5px;
+
+  color: var(--color-text-secondary);
+  font-size: var(--text-xl);
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Roadmap */
+.roadmap {
+  position: relative;
+  width: 100%;
+  min-height: 1450px;
+}
+
+.roadmap-svg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main road */
+.roadmap-road {
+  fill: none;
+
+  stroke: #202526;
+  stroke-width: 86;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Inner road */
+.roadmap-road-line {
+  fill: none;
+
+  stroke: var(--color-warm);
+  stroke-width: 3;
+
+  stroke-dasharray: 12 14;
+  stroke-linecap: round;
+}
+
+/* Start / End */
+.roadmap-start {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 72px;
+  height: 72px;
+
+  border: 1px solid var(--color-warm);
+  border-radius: 50%;
+
+  background: #202526;
+  color: #ffffff;
+
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.roadmap-end {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+
+  transform: translate(-50%, 20%);
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+
+  text-align: center;
+}
+
+.roadmap-end-dot {
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: #e0a52d;
+
+  box-shadow: 0 0 0 7px rgba(224, 165, 45, 0.15);
+}
+
+.roadmap-end span {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.16em;
+
+  color: #ffffff;
+}
+
+/* Step Cards */
+.roadmap-steps {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+}
+
+.how-step {
+  position: absolute;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  width: 500px;
+}
+
+/* Alternating positions */
+.how-step-1 {
+  top: 90px;
+  left: 0px;
+}
+
+.how-step-2 {
+  top: 320px;
+  right: -105px;
+}
+
+.how-step-3 {
+  top: 480px;
+  left: -30px;
+}
+
+.how-step-4 {
+  top: 645px;
+  right: -120px;
+}
+
+.how-step-5 {
+  top: 955px;
+  left: -20px;
+}
+
+.how-step-6 {
+  top: 1205px;
+  right: -80px;
+}
+
+/* Number */
+.how-step-number {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 62px;
+  height: 62px;
+
+  border: 6px solid #f5f6f3;
+  border-radius: 50%;
+
+  background: #202526;
+
+  box-shadow:
+    0 0 0 1px rgba(32, 37, 38, 0.12),
+    0 12px 30px rgba(32, 37, 38, 0.14);
+}
+
+.how-step-number span {
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Content */
+.how-step-content {
+  padding-top: 4px;
+}
+
+.how-step-content h3 {
+  margin: 0 0 9px;
+
+  color: #ffffff;
+
+  font-size: var(--text-3xl);
+  line-height: 1.15;
+}
+
+.how-step-content p {
+  margin: 0;
+
+  max-width: 320px;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Subtle Connector Dots */
+.how-step::after {
+  content: "";
+
+  position: absolute;
+
+  top: 60px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #e0a52d;
+
+  box-shadow:
+    0 0 0 6px #f5f6f3,
+    0 0 0 7px rgba(224, 165, 45, 0.25);
+}
+
+/* Left cards */
+.how-step:nth-child(odd)::after {
+  right: -105px;
+}
+
+/* Right cards */
+.how-step:nth-child(even)::after {
+  left: -185px;
+}
+
+/* Hover */
+.how-step-number {
+  transition:
+    transform 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.how-step:hover .how-step-number {
+  transform: scale(1.08);
+
+  background: #e0a52d;
+
+  box-shadow:
+    0 0 0 1px rgba(38, 127, 120, 0.2),
+    0 16px 36px rgba(38, 127, 120, 0.18);
+}
+
+/* Centered "See how we work in detail" link below the marquee. */
+.work-process-link-wrapper {
+  display: flex;
+  justify-content: center;
+
+  margin-top: var(--space-24);
+  margin-bottom: 0;
+}
+
+.work-process-link {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--color-primary);
+
+  font-size: var(--text-xl);
+  font-weight: 600;
+
+  transition: color var(--duration-fast) ease;
+}
+
+.work-process-link:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .how-we-work {
+    padding: 100px 0 120px;
+  }
+
+  .how-we-work-heading-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .roadmap {
+    min-height: 1420px;
+  }
+
+  .how-step {
+    width: 350px;
+  }
+
+  .how-step-1,
+  .how-step-3,
+  .how-step-5 {
+    left: 0;
+  }
+
+  .how-step-2,
+  .how-step-4,
+  .how-step-6 {
+    right: 0;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+  .how-we-work {
+    padding: 80px 0 90px;
+  }
+
+  .how-we-work-container {
+    width: min(100% - 32px, 520px);
+  }
+
+  .how-we-work-header {
+    margin-bottom: 60px;
+  }
+
+  .how-we-work-heading-row h2 {
+    font-size: clamp(42px, 13vw, 60px);
+  }
+
+  .how-we-work-heading-row p {
+    font-size: 15px;
+  }
+
+  /* Turn roadmap into vertical timeline */
+  .roadmap {
+    min-height: auto;
+    padding: 10px 0 30px;
+  }
+
+  .roadmap-svg {
+    display: none;
+  }
+
+  /* Vertical line */
+  .roadmap::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 31px;
+
+    width: 2px;
+
+    background: #267f78;
+  }
+
+  .roadmap-start {
+    position: relative;
+
+    top: auto;
+    left: 31px;
+
+    transform: translate(-50%, 0);
+
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 60px;
+  }
+
+  .roadmap-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    height: auto;
+  }
+
+  .how-step,
+  .how-step-1,
+  .how-step-2,
+  .how-step-3,
+  .how-step-4,
+  .how-step-5,
+  .how-step-6 {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+
+    width: 100%;
+
+    padding-left: 0;
+
+    gap: 18px;
+  }
+
+  .how-step-number {
+    width: 64px;
+    height: 64px;
+
+    border-width: 7px;
+  }
+
+  .how-step-content {
+    padding-top: 7px;
+  }
+
+  .how-step-content h3 {
+    font-size: 19px;
+  }
+
+  .how-step-content p {
+    max-width: none;
+
+    font-size: 14px;
+  }
+
+  /* Remove desktop connector dots */
+  .how-step::after {
+    display: none;
+  }
+
+  .roadmap-end {
+    position: relative;
+
+    bottom: auto;
+    left: 31px;
+
+    transform: translateX(-50%);
+
+    margin-top: 60px;
+  }
 }
 
 /* ============================================================
@@ -1794,8 +2344,6 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  background: var(--color-surface-elevated);
-
   box-shadow: var(--shadow-sm);
 
   transition:
@@ -1806,8 +2354,8 @@ button {
 
 .why-card:hover {
   transform: scale(1.05);
-  background: var(--color-primary);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 0 10px 10px #ffffff25;
+  background: var(--color-surface);
 }
 
 .why-card-icon {
@@ -1833,7 +2381,7 @@ button {
 
 .why-card:hover .why-card-icon {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--color-primary);
 }
 
 .why-card-icon svg {
@@ -1852,7 +2400,7 @@ button {
 }
 
 .why-card:hover .why-card-title {
-  color: #ffffff;
+  color: var(--color-primary);
 }
 
 .why-card-description {
@@ -1944,6 +2492,10 @@ button {
   background: var(--color-surface-elevated);
 
   box-shadow: var(--shadow-md);
+}
+
+.partnership-card:hover {
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 /* Large decorative letter on the left. */
@@ -2054,6 +2606,10 @@ button {
   background: var(--color-surface-elevated);
 
   box-shadow: var(--shadow-md);
+}
+
+.insight-card:hover {
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 .insight-category-btn {
@@ -2563,6 +3119,11 @@ button {
   border: 2px solid var(--color-text-muted);
 }
 
+.mission-vision-card:hover {
+  box-shadow: 0 0 10px 10px #ffffff25;
+  background: var(--color-surface);
+}
+
 .mission-vision-image {
   overflow: hidden;
   height: 100%;
@@ -2642,6 +3203,8 @@ button {
 
 .belief-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 10px 10px #ffffff25;
+  background: var(--color-surface);
 }
 
 .belief-card-header {
@@ -2666,6 +3229,10 @@ button {
   color: var(--color-primary);
 }
 
+.belief-card:hover .belief-card-icon {
+  color: #ffffff;
+}
+
 .belief-card-arrow {
   flex-shrink: 0;
 
@@ -2680,6 +3247,10 @@ button {
   font-size: var(--text-xl);
   font-weight: 700;
   line-height: 1.3;
+}
+
+.belief-card:hover .belief-card-title {
+  color: var(--color-primary);
 }
 
 .belief-card-description {
@@ -2896,8 +3467,6 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  background: var(--color-surface);
-
   transition:
     transform var(--duration-normal) ease,
     box-shadow var(--duration-normal) ease,
@@ -2906,8 +3475,7 @@ button {
 
 .services-overview-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-primary);
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 /* Large faint number on the left of each overview card. */
@@ -3008,7 +3576,7 @@ button {
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 .service-card-heading {
@@ -3183,7 +3751,6 @@ button {
   transition:
     background-color var(--duration-normal) ease,
     color var(--duration-normal) ease,
-    box-shadow var(--duration-normal) ease,
     transform var(--duration-normal) ease;
 }
 
@@ -3195,7 +3762,6 @@ button {
 .software-service-row:hover .software-service-icon {
   color: #ffffff;
   background: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(93, 39, 228, 0.35);
   transform: translateY(-2px);
 }
 
@@ -3338,8 +3904,6 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  background: var(--color-surface-elevated);
-
   transition:
     transform var(--duration-normal) ease,
     box-shadow var(--duration-normal) ease,
@@ -3348,8 +3912,8 @@ button {
 
 .process-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-primary);
+  box-shadow: 0 0 10px 10px #ffffff25;
+  background: var(--color-surface);
 }
 
 /* Circular step-number badge. */
@@ -3363,11 +3927,16 @@ button {
 
   border-radius: 50%;
 
-  color: #ffffff;
-  background: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-surface);
 
   font-size: var(--text-base);
   font-weight: 700;
+}
+
+.process-card:hover .process-card-number {
+  color: #ffffff;
+  background: var(--color-primary);
 }
 
 .process-card-title {
@@ -3389,7 +3958,7 @@ button {
 
   color: var(--color-text-secondary);
 
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
   line-height: 1.6;
 }
 
@@ -3542,7 +4111,6 @@ button {
 /* ============================================================
    Services Why Work With Us Section
    ============================================================ */
-
 .wwu-section {
   padding-block: var(--space-20);
 }
@@ -3566,8 +4134,6 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  background: var(--color-surface-elevated);
-
   box-shadow: var(--shadow-sm);
 
   transition:
@@ -3579,9 +4145,7 @@ button {
 
 .wwu-card:hover {
   transform: translateY(-6px);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-md);
-  background: var(--color-background);
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 .wwu-card-title {
@@ -3600,6 +4164,7 @@ button {
 
   font-size: var(--text-lg);
   line-height: 1.6;
+  text-align: justify;
 }
 
 @media (max-width: 900px) {
@@ -3779,8 +4344,6 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  background: var(--color-surface);
-
   transition:
     transform var(--duration-normal) ease,
     border-color var(--duration-normal) ease,
@@ -3789,9 +4352,7 @@ button {
 
 .services-contact-cta-highlight:hover {
   transform: translateY(-4px);
-
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 .services-contact-cta-highlight h3 {
@@ -3965,7 +4526,7 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  background: var(--color-surface-elevated);
+  /* background: var(--color-surface-elevated); */
 
   box-shadow: var(--shadow-sm);
 
@@ -3982,9 +4543,8 @@ button {
 .work-case-card:hover {
   transform: translateY(-6px);
 
-  border-color: var(--color-primary);
-
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 0 10px 10px #ffffff25;
+  background: var(--color-surface);
 }
 
 .work-case-tag {
@@ -4084,16 +4644,13 @@ button {
 .work-testimonial-card:hover {
   transform: translateY(-6px);
 
-  border-color: var(--color-primary);
-
-  box-shadow: var(--shadow-md);
-  background: var(--color-surface-elevated);
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 .work-testimonial-quote {
   color: var(--color-primary);
 
-  font-size: 3rem;
+  font-size: var(--text-5xl);
   font-weight: 800;
   line-height: 1;
 
@@ -4107,7 +4664,7 @@ button {
 
   color: var(--color-text-secondary);
 
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
   line-height: 1.6;
   text-align: justify;
 }
@@ -4123,6 +4680,7 @@ button {
 
 .work-testimonial-author {
   font-weight: 700;
+  font-size: var(--text-base);
 
   color: var(--color-text-primary);
 }
@@ -4327,10 +4885,7 @@ button {
 
 /* Highlight the card with a primary ring on hover. */
 .newsletter-card:hover {
-  border-color: var(--color-primary);
-  box-shadow:
-    0 0 0 1px var(--color-primary),
-    0 12px 32px rgba(93, 39, 228, 0.25);
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 .newsletter-heading {
@@ -4422,8 +4977,6 @@ button {
 
   margin-top: var(--space-16);
 
-  /* padding: var(--space-8); */
-
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
@@ -4437,8 +4990,7 @@ button {
 }
 
 .contact-hero-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 12px 32px rgba(93, 39, 228, 0.15);
+  box-shadow: 0 0 10px 10px #ffffff25;
 }
 
 .contact-hero-image {

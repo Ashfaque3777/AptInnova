@@ -53,11 +53,11 @@ function ProductsSection() {
           <SectionHeading
             title={
               <>
-                Applied{" "}
-                <span style={{ color: "var(--color-warm)" }}>AI Solutions</span>{" "}
-                for different kinds of Challenges
+                <span style={{ color: "var(--color-warm)" }}>Products</span>{" "}
+                we've brought to Market
               </>
             }
+            description="These three products were incubated at AI for ALL Global. As AFA's official industrialization partner, we take products like these from incubation to market: making them ready to deploy, adopt, and support in the real world. All three are live and in use today."
             align="center"
           />
         </div>

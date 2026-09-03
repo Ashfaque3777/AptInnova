@@ -4,6 +4,7 @@ import CTACard from "../components/sections/home/CTACard.jsx";
 import ServicesSection from "../components/sections/home/ServicesSection.jsx";
 import SoftwareDevelopmentPreview from "../components/sections/home/SoftwareDevelopmentPreview.jsx";
 import FeaturedWork from "../components/sections/home/FeaturedWork.jsx";
+import WorkProcess from "../components/sections/home/WorkProcess.jsx";
 import ProductsSection from "../components/sections/home/ProductsSection.jsx";
 import WhyAptInnova from "../components/sections/home/WhyAptInnova.jsx";
 import PartnershipSection from "../components/sections/home/PartnershipSection.jsx";
@@ -24,6 +25,8 @@ function Home() {
       <SoftwareDevelopmentPreview />
 
       <FeaturedWork />
+
+      <WorkProcess />
 
       <ProductsSection />
 
