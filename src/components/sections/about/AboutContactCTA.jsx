@@ -15,7 +15,7 @@ function AboutContactCTA() {
         <div className="about-contact-cta-content">
           <p>Ready to explore how AptInnova can accelerate your AI journey?</p>
 
-          <Button to="/contact/">Contact Us</Button>
+          <Button href="https://aptinnova.com/contact/">Contact Us</Button>
         </div>
       </PageContainer>
     </section>

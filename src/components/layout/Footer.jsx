@@ -115,7 +115,7 @@ function Footer() {
               <h2>Connect</h2>
 
               <div className="footer-links-horizontal">
-                <NavLink to="/contact/">Contact</NavLink>
+                <a href="https://aptinnova.com/contact/">Contact</a>
 
                 <a
                   href="https://www.linkedin.com/company/aptinnova/about/?viewAsMember=true"

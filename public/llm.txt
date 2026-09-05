@@ -1,0 +1,61 @@
+# AptInnova - AI Solutions for RSMEs
+
+## About
+AptInnova empowers small and medium-sized enterprises (RSMEs) with trustworthy, human-centric AI solutions. We build AI tools that are transparent, ethical, and designed to augment human capabilities — not replace them. Founded with a mission to make AI accessible and responsible for businesses of all sizes.
+
+## What We Do
+- AI Strategy Consulting — helping organizations define and execute responsible AI roadmaps
+- Applied Generative AI — custom LLM-powered solutions for real business workflows
+- Ready-to-Use AI Agents — pre-built, deployable AI agents for common enterprise tasks
+- Knowledge Assistants — intelligent document retrieval and Q&A systems
+- Data Solutions — data pipelines, analytics infrastructure, and AI-ready data preparation
+- Business Intelligence — dashboards, reporting, and data-driven decision tools
+- Custom Software Development — full-stack web and mobile applications with AI integration
+- AI Training & Education — workshops, bootcamps, and corporate training programs
+
+## Products
+- InnoVethic — Regulated AI operations platform for European banks. Source-cited regulatory answers (EBA, ECB, DNB, AFM, FATF, BIS, IFRS), governed multi-step workflows, and complete audit trails. Sovereign AI, built in Europe.
+- Ainsteins — AI agent platform for business automation. Deploy intelligent agents that handle complex workflows, integrate with existing tools, and operate within governance guardrails.
+- A(i)MPACT Lab — AI innovation sandbox for experimenting with and prototyping AI solutions. A safe environment to test ideas, validate concepts, and build proofs of concept.
+
+## Industries Served
+- Financial Services & Banking (regulatory compliance, risk management)
+- Healthcare & Life Sciences
+- Manufacturing & Supply Chain
+- Professional Services
+- Education & Research
+- Public Sector & Government
+
+## Website Sections
+- Home: https://aptinnova.com/
+- About: https://aptinnova.com/about/
+- Services: https://aptinnova.com/services/
+- Products: https://aptinnova.com/products/innovethic/
+- Products: https://aptinnova.com/products/ainsteins/
+- Products: https://aptinnova.com/products/aimpact-lab/
+- Work & Case Studies: https://aptinnova.com/work/
+- Insights & Blog: https://aptinnova.com/blog-insights/
+- AI Training: https://aptinnova.com/services/ (AI Training section)
+- Contact: https://aptinnova.com/contact/
+- Privacy Policy: https://aptinnova.com/privacy/
+- Terms of Service: https://aptinnova.com/terms/
+
+## Key Values
+- Human-Centric AI — technology that augments, not replaces
+- Transparency — explainable decisions, open processes
+- Regulatory Compliance — GDPR, EU AI Act, and sector-specific requirements
+- Sovereignty — data stays under your control, on your infrastructure
+- Ethics — responsible AI development with bias mitigation
+
+## Contact
+- Website: https://aptinnova.com
+- Email: contact@aptinnova.com
+
+## Organization Type
+AI consulting and software development company specializing in responsible AI solutions for small and medium enterprises.
+
+## Location
+Europe-based, serving clients globally.
+
+## Last Updated
+2026-09-05

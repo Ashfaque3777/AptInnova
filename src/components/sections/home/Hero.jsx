@@ -30,7 +30,7 @@ function Hero() {
             </p>
 
             <div className="hero-actions">
-              <Button to="/contact/" variant="primary">
+              <Button href="https://aptinnova.com/contact/" variant="primary">
                 Start a project
               </Button>
               <Button to="/work/" variant="secondary">

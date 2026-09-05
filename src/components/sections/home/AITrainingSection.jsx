@@ -78,7 +78,7 @@ function AITrainingSection() {
               <h3>{program.title}</h3>
               <p>{program.description}</p>
               <div className="ai-training-action">
-                <Button to="/contact/" variant="primary">
+                <Button href="https://aptinnova.com/contact/" variant="primary">
                   {program.action}
                 </Button>
               </div>

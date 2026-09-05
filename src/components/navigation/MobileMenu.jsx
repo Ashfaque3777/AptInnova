@@ -99,9 +99,9 @@ function MobileMenu() {
             Insights
           </Link>
 
-          <Link to="/contact/" className="mobile-menu-link" onClick={closeMenu}>
+          <a href="https://aptinnova.com/contact/" className="mobile-menu-link" onClick={closeMenu}>
             Contact
-          </Link>
+          </a>
 
           <div className="mobile-menu-footer">
             <span className="mobile-menu-theme-label">Theme</span>

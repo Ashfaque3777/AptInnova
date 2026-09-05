@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 import aptInnovaLogo from "../../../assets/brand/aptInnovaLogo.webp";
@@ -24,10 +22,10 @@ function CTACard() {
           </div>
 
           <div className="cta-card-link">
-            <Link to="/contact/">
+            <a href="https://aptinnova.com/contact/">
               Contact Us
               <span aria-hidden="true">&nbsp;&rarr;</span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

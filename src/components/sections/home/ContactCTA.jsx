@@ -25,7 +25,7 @@ function ContactCTA() {
           </div>
 
           <div className="contact-cta-actions">
-            <Button to="/contact/" variant="primary">
+            <Button href="https://aptinnova.com/contact/" variant="primary">
               Start a project
             </Button>
 
