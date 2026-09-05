@@ -7,6 +7,7 @@
 /* ============================================================
    AI Training Hero Section
    ============================================================ */
+
 .ait-hero {
   position: relative;
   overflow: hidden;
@@ -89,10 +90,10 @@
 /* ============================================================
    AI Training Audience Section (Who it's for)
    ============================================================ */
+
 .ait-audience {
   padding-block: var(--space-16);
-
-  /* background: var(--color-surface); */
+  margin-top: var(--space-16);
 }
 
 .ait-audience-grid {
@@ -128,6 +129,7 @@
 .ait-audience-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 10px 10px #ffffff25;
+  background: var(--color-background);
 }
 
 .ait-audience-icon {
@@ -191,6 +193,7 @@
 /* ============================================================
    AI Training Tiers Section (How it's built)
    ============================================================ */
+
 .ait-tiers {
   padding-block: var(--space-16);
 }
@@ -218,8 +221,6 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  /* background: var(--color-surface); */
-
   transition:
     transform var(--duration-normal) ease,
     box-shadow var(--duration-normal) ease;
@@ -228,7 +229,7 @@
 .ait-tier-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 10px 10px #ffffff25;
-  background: var(--color-surface);
+  background: var(--color-background);
 }
 
 .ait-tier-tag {
@@ -358,8 +359,6 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  /* background: var(--color-surface-elevated); */
-
   box-shadow: var(--shadow-sm);
 
   transition:
@@ -370,6 +369,7 @@
 .ait-format-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 10px 10px #ffffff25;
+  background: var(--color-background);
 }
 
 .ait-format-icon {
@@ -621,6 +621,9 @@
   );
 
   -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;

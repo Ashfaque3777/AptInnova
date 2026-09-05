@@ -112,7 +112,6 @@ function AITrainingFormat() {
       <PageContainer>
         <div ref={headingRef} className="reveal">
           <SectionHeading
-            eyebrow="How the training runs"
             title={
               <>
                 Built to Fit Real{" "}
