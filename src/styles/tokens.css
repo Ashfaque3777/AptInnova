@@ -10,6 +10,7 @@
   --color-background: #ffffff;
   --color-surface: #f7f8fa;
   --color-surface-elevated: #ffffff;
+  --color-surface-translucent: rgba(255, 255, 255, 0.88);
 
   --color-text-primary: #111318;
   --color-text-secondary: #4b5563;
@@ -62,6 +63,14 @@
   --duration-normal: 250ms;
   --duration-slow: 500ms;
 
+  /* Inverted-permanent tokens — always dark surface with light text,
+     regardless of theme. Use for footer, dark hero bands, roadmap. */
+  --color-inverted-bg: #090b0d;
+  --color-inverted-bg-2: #11161b;
+  --color-inverted-text: #f5f7fa;
+  --color-inverted-text-soft: #c7d1dc;
+  --color-inverted-border: #2d3a45;
+
   /* Shadows */
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05);
   --shadow-md: 0 8px 24px rgb(0 0 0 / 0.08);
@@ -71,6 +80,7 @@
   --color-background: #090b0d;
   --color-surface: #11161b;
   --color-surface-elevated: #18212a;
+  --color-surface-translucent: rgba(9, 11, 13, 0.88);
 
   --color-text-primary: #f5f7fa;
   --color-text-secondary: #c7d1dc;
