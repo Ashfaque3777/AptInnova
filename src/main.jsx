@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.jsx";
 import "./styles/globals.css";
 import "./styles/products.css";
+import "./styles/ai-training.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

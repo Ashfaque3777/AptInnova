@@ -863,6 +863,7 @@ button {
   inset: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.50) 100%);
   z-index: 1;
+  backdrop-filter: blur(5px);
 }
 
 /* Two-column hero: wider text column + narrower visual column. */
@@ -905,7 +906,7 @@ button {
 
   color: var(--color-inverted-text-soft);
 
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   line-height: 1.7;
   text-align: justify;
 }
@@ -2496,6 +2497,7 @@ button {
 /* ============================================================
    Home AI Training Section
    ============================================================ */
+
 .ai-training-section {
   padding-block: var(--space-16);
 }
@@ -2520,8 +2522,6 @@ button {
 
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-
-  /* background: var(--color-surface-elevated); */
 
   box-shadow: var(--shadow-sm);
 
