@@ -50,10 +50,10 @@ function ServicesContactCTA() {
           </ul>
 
           <div className="services-contact-cta-actions">
-            <Button to="/contact/" variant="primary">
+            <Button href="https://aptinnova.com/contact/" variant="primary">
               Contact Us
             </Button>
-            <Button to="/contact/" variant="secondary">
+            <Button href="https://aptinnova.com/contact/" variant="secondary">
               Request a Consultation
             </Button>
           </div>

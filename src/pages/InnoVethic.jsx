@@ -278,7 +278,7 @@ function InnoVethic() {
         actions={[
           {
             label: "Talk to our team",
-            to: "/contact/",
+            href: "https://aptinnova.com/contact/",
           },
           {
             label: "Visit innovethic.com",
@@ -350,7 +350,7 @@ function InnoVethic() {
           }
           description="Talk to our team about regulated AI operations for your institution, or explore more on the InnoVethic site."
           actions={[
-            { label: "Contact us", to: "/contact/" },
+            { label: "Contact us", href: "https://aptinnova.com/contact/" },
             {
               label: "Visit innovethic.com",
               href: "https://innovethic.com",

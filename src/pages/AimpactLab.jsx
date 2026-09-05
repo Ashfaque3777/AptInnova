@@ -290,7 +290,7 @@ function AimpactLab() {
         description="A sovereign sandbox environment for sector-grounded AI experimentation. AI, Digital Twin, and XR prototyping in one space to validate, iterate, and stress-test ideas before real-world deployment."
         heroImage={aimpactLabImage}
         actions={[
-          { label: "Request access", to: "/contact/" },
+          { label: "Request access", href: "https://aptinnova.com/contact/" },
           {
             label: "Visit AIforAll Global",
             href: "https://aiforallglobal.org/incubation-factory",
@@ -379,7 +379,7 @@ function AimpactLab() {
           actions={[
             {
               label: "Request access",
-              to: "/contact/",
+              href: "https://aptinnova.com/contact/",
             },
             {
               label: "Visit Incubation Factory",

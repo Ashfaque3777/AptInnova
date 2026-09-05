@@ -54,15 +54,15 @@ function Header() {
             </div>
             <NavLink to="/work/">Work</NavLink>
             <NavLink to="/training/">AI Training</NavLink>
-            <NavLink to="/contact/">Contact</NavLink>
+            <a href="https://aptinnova.com/contact/">Contact</a>
           </div>
 
           <div className="nav-actions">
             <ThemeToggle />
 
-            <Link to="/contact/" className="header-cta">
+            <a href="https://aptinnova.com/contact/" className="header-cta">
               Start a Project
-            </Link>
+            </a>
 
             <MobileMenu />
           </div>

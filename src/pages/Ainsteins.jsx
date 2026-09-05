@@ -276,7 +276,7 @@ function Ainsteins() {
         actions={[
           {
             label: "Talk to our team",
-            to: "/contact/",
+            href: "https://aptinnova.com/contact/",
           },
           {
             label: "Visit ainsteins.com",
@@ -342,7 +342,7 @@ function Ainsteins() {
           }
           description="Talk to our team about AI-powered learning on your curriculum, or explore more on the ainsteins site."
           actions={[
-            { label: "Contact us", to: "/contact/" },
+            { label: "Contact us", href: "https://aptinnova.com/contact/" },
             {
               label: "Visit ainsteins.com",
               href: "https://ainsteins.com",

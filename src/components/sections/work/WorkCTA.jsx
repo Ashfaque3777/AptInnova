@@ -22,7 +22,7 @@ function WorkCTA() {
         />
 
         <div className="work-cta-content">
-          <Button to="/contact/">Start a project</Button>
+          <Button href="https://aptinnova.com/contact/">Start a project</Button>
         </div>
       </PageContainer>
     </section>
