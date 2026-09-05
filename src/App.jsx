@@ -11,6 +11,8 @@ import AimpactLab from "./pages/AimpactLab.jsx";
 import Insights from "./pages/Insights.jsx";
 import Contact from "./pages/Contact.jsx";
 import Work from "./pages/Work.jsx";
+import Privacy from "./pages/Privacy.jsx";
+import Terms from "./pages/Terms.jsx";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/blog-insights/" element={<Insights />} />
           <Route path="/contact/" element={<Contact />} />
           <Route path="/work/" element={<Work />} />
+          <Route path="/privacy/" element={<Privacy />} />
+          <Route path="/terms/" element={<Terms />} />
         </Route>
       </Routes>
     </>

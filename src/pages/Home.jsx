@@ -7,8 +7,9 @@ import FeaturedWork from "../components/sections/home/FeaturedWork.jsx";
 import WorkProcess from "../components/sections/home/WorkProcess.jsx";
 import ProductsSection from "../components/sections/home/ProductsSection.jsx";
 import WhyAptInnova from "../components/sections/home/WhyAptInnova.jsx";
+import AITrainingSection from "../components/sections/home/AITrainingSection.jsx";
 import PartnershipSection from "../components/sections/home/PartnershipSection.jsx";
-import InsightsSection from "../components/sections/home/InsightsSection.jsx";
+// import InsightsSection from "../components/sections/home/InsightsSection.jsx";
 import ContactCTA from "../components/sections/home/ContactCTA.jsx";
 
 function Home() {
@@ -32,9 +33,11 @@ function Home() {
 
       <WhyAptInnova />
 
+      <AITrainingSection />
+
       <PartnershipSection />
 
-      <InsightsSection />
+      {/* <InsightsSection /> */}
 
       <ContactCTA />
     </>

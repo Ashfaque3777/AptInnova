@@ -1,5 +1,6 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
+import Button from "../../ui/Button.jsx";
 
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
@@ -14,25 +15,24 @@ function ContactCTA() {
             <SectionHeading
               title={
                 <>
-                  Ready to{" "}
-                  <span style={{ color: "var(--color-warm)" }}>Transform</span>{" "}
-                  Your Business?
+                  <span style={{ color: "var(--color-warm)" }}>Tell us</span>{" "}
+                  what you're building?
                 </>
               }
-              description="Boost your Market competitiveness and Business Performance with Applied Generative AI & Data-Driven Insights – Talk to Our Experts!"
+              description="Whether you've got a clear spec or just a rough idea, we'll help you shape it. Send us what you have and we'll come back quickly with a clear plan and honest next steps. No cost, no pressure."
               align="center"
             />
           </div>
 
-          <div className="contact-cta-form">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="contact-cta-input"
-            />
-            <button type="submit" className="contact-cta-submit">
-              Submit
-            </button>
+          <div className="contact-cta-actions">
+            <Button to="/contact/" variant="primary">
+              Start a project
+            </Button>
+
+            <p className="contact-cta-email">
+              Prefer email?{" "}
+              <a href="mailto:hello@aptinnova.com">hello@aptinnova.com</a>
+            </p>
           </div>
         </div>
       </PageContainer>

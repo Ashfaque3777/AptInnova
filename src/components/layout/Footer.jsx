@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import PageContainer from "./PageContainer.jsx";
 
 import footerLogoBlackbg from "../../assets/brand/footerLogoBlackbg.webp";
+import afaLogo from "../../assets/brand/afaLogo.png";
 
 function Footer() {
   const [productsOpen, setProductsOpen] = useState(false);
@@ -58,6 +59,7 @@ function Footer() {
               <div className="footer-links-horizontal">
                 <NavLink to="/about/">About</NavLink>
                 <NavLink to="/services/">Services</NavLink>
+
                 <div className="nav-dropdown" ref={productsRef}>
                   <button
                     type="button"
@@ -86,10 +88,28 @@ function Footer() {
                     </Link>
                   </div>
                 </div>
-                <NavLink to="/blog-insights/">Insights</NavLink>
                 <NavLink to="/work/">Work</NavLink>
               </div>
+
+              <div className="footer-links-horizontal">
+                <NavLink to="/training/">AI Training</NavLink>
+                <NavLink to="/blog-insights/">Insights</NavLink>
+              </div>
             </nav>
+
+            <div>
+              <a
+                href="https://www.aiforall.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={afaLogo}
+                  alt="AIforALL Global partner"
+                  className="footer-partner-badge"
+                />
+              </a>
+            </div>
 
             <div className="footer-links-column">
               <h2>Connect</h2>
@@ -105,14 +125,28 @@ function Footer() {
                   LinkedIn
                 </a>
               </div>
+              <div className="footer-links-horizontal">
+                <a href="mailto:hello@aptinnova.com">hello@aptinnova.com</a>
+
+                <a
+                  href="https://www.aptinnova.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  www.aptinnova.com
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>AptInnova © {new Date().getFullYear()}, All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AptInnova, All rights reserved.</p>
 
-          <Link to="/privacy/">Privacy Policy</Link>
+          <div className="footer-legal-links">
+            <Link to="/privacy/">Privacy Policy</Link>
+            <Link to="/terms/">Terms of Service</Link>
+          </div>
         </div>
       </PageContainer>
     </footer>

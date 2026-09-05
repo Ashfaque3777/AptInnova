@@ -13,9 +13,9 @@ const products = [
   {
     name: "InnoVethic",
     badge: "PILOT",
-    title: "Sovereign AI for European banking",
+    title: "For banks and financial institutions",
     description:
-      "A knowledge assistant built around how risk, finance, compliance, and audit teams actually work. Department-aware, role-calibrated, scope-bounded, and operating inside the bank's approved environment, not on a vendor's cloud. Designed for the agentic ambition most internal builds stop short of.",
+      "AI for European banks that has to work inside the rules, not around them. It answers regulatory questions with cited sources, runs credit and audit workflows step by step, and keeps a full trail of everything. Built to run inside the bank's own environment.",
     image: innovethic,
     path: "/products/innovethic/",
     linkText: "Learn more about InnoVethic →",
@@ -23,9 +23,9 @@ const products = [
   {
     name: "A(i)MPACT Lab",
     badge: "BETA",
-    title: "Sandbox environment for sector-grounded AI experimentation",
+    title: "For research teams and innovation programs",
     description:
-      "AI, Digital Twin, and XR prototyping and simulation environment for testing solutions before real-world deployment. Ventures can validate, iterate, and stress-test ideas with collaborators across sectors.",
+      "A safe sandbox for testing AI ideas before they go live. It brings AI, digital twins, and immersive prototyping into one space, so teams can try, break, and refine things without real-world risk.",
     image: aimpactLab,
     path: "/products/aimpact-lab/",
     linkText: "Learn more about A(i)MPACT Lab →",
@@ -33,10 +33,10 @@ const products = [
   },
   {
     name: "ainsteins",
-    badge: "BETA",
-    title: "AI-powered learning, grounded in your institution's curriculum",
+    badge: "PILOT",
+    title: "For schools, colleges, and universities",
     description:
-      "AI-powered learning on your own curriculum, so students learn with focus, teachers keep their voice, and your institution keeps its edge.",
+      "An AI learning assistant grounded in your institution's own curriculum. Students get answers that stay on-syllabus, teachers keep their voice, and every response points back to the source it came from.",
     image: ainsteins,
     path: "/products/ainsteins/",
     linkText: "Learn more about ainsteins →",

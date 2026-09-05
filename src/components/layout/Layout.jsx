@@ -4,13 +4,13 @@ import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 
 import ScrollToTop from "../ui/ScrollToTop.jsx";
-// import Topography from "../ui/Topography.jsx";
+import Topography from "../ui/Topography.jsx";
 
 function Layout() {
   return (
     <>
       {/* Fixed fullscreen Topography background – sits behind all pages */}
-      {/* <div className="topography-bg">
+      <div className="topography-bg">
         <Topography
           lowColor="#0a0a1a"
           midColor="#1a0a3e"
@@ -34,7 +34,7 @@ function Layout() {
           mouseRadius={0.3}
           mouseStrength={0.4}
         />
-      </div> */}
+      </div>
 
       <Header />
 

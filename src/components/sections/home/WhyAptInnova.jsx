@@ -7,8 +7,9 @@ import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 const cards = [
   {
-    title: "Expertise",
-    description: "Deep knowledge in Applied Generative AI.",
+    title: "You get senior people",
+    description:
+      "Our team is small on purpose. The people who scope your project are the people who build it, so nothing gets lost passing between a salesperson and a junior developer.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +27,9 @@ const cards = [
     ),
   },
   {
-    title: "Customization",
-    description: "Solutions tailored to your unique needs.",
+    title: "One team, start to finish",
+    description:
+      "Design, web, mobile, backend, cloud, all in-house. You're not managing three vendors who blame each other when something breaks.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -38,14 +40,18 @@ const cards = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        <path d="M3 4h7v6H3z" />
+        <path d="M14 14h7v6h-7z" />
+        <path d="M10 7h4" />
+        <path d="M3 17h7" />
+        <path d="M14 10v4" />
       </svg>
     ),
   },
   {
-    title: "Partnership",
-    description: "We work with you every step of the way.",
+    title: "We stay after launch",
+    description:
+      "Launch is the start, not the finish. We monitor, patch, and keep improving as your business changes, on support plans that fit what you actually need.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -56,16 +62,19 @@ const cards = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 2v20" />
+        <path d="M12 12 2 6" />
+        <path d="M12 12l10-6" />
+        <path d="M12 12l10 6" />
+        <path d="M12 12 2 18" />
       </svg>
     ),
   },
   {
-    title: "Innovation",
-    description: "Committed to staying at the forefront of AI.",
+    title: "You always know where things stand",
+    description:
+      "Regular updates, open channels, honest answers. If something slips, you hear it from us early, not at the deadline.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -76,13 +85,14 @@ const cards = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
       </svg>
     ),
   },
   {
-    title: "Impact",
-    description: "Focused on delivering measurable business value.",
+    title: "We learn your business first",
+    description:
+      "Before we write code, we understand how you actually work and where the money is. That's why what we build tends to pay for itself.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -96,6 +106,24 @@ const cards = [
         <circle cx="12" cy="12" r="10" />
         <circle cx="12" cy="12" r="6" />
         <circle cx="12" cy="12" r="2" />
+      </svg>
+    ),
+  },
+  {
+    title: "A track record you can check",
+    description:
+      "8+ years, 20+ projects, and clients who come back for the next one. The numbers on this page are real and measured.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 2l2.4 5.2 5.7.6-4.2 3.9 1.1 5.6L12 14.6 7 17.3l1.1-5.6L3.9 7.8l5.7-.6z" />
       </svg>
     ),
   },
@@ -115,7 +143,7 @@ function WhyAptInnova() {
                 <span style={{ color: "var(--color-warm)" }}>AptInnova</span>?
               </>
             }
-            description="With a focus on innovation and a track record of success, Aptinnova is your trusted partner in navigating the complexities of the digital age. We deliver tailored solutions that drive growth, efficiency, and competitive advantage."
+            description="You work directly with the people building your software. No account managers, no handoffs, no junior team you never agreed to."
           />
         </div>
 
