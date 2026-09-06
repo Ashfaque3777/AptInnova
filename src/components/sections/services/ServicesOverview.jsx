@@ -1,6 +1,8 @@
 import PageContainer from "../../layout/PageContainer.jsx";
 import SectionHeading from "../../ui/SectionHeading.jsx";
 
+import Button from "../../ui/Button.jsx";
+
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 import iconStrategy from "../../../assets/icons/strategy.svg";
@@ -11,12 +13,12 @@ import iconDataSol from "../../../assets/icons/dataSol.svg";
 import iconBI from "../../../assets/icons/BI.svg";
 
 const overviewServices = [
-  { number: "01", title: "Strategy", icon: iconStrategy },
-  { number: "02", title: "Custom AI", icon: iconGenAI },
-  { number: "03", title: "AI Agents", icon: iconAgent },
-  { number: "04", title: "Knowledge Assistants", icon: iconKnowledge },
-  { number: "05", title: "Data Solutions", icon: iconDataSol },
-  { number: "06", title: "Business Intelligence", icon: iconBI },
+  { number: "01", title: "Discovery", icon: iconStrategy },
+  { number: "02", title: "Design", icon: iconGenAI },
+  { number: "03", title: "Build", icon: iconAgent },
+  { number: "04", title: "Test", icon: iconKnowledge },
+  { number: "05", title: "Launch", icon: iconDataSol },
+  { number: "06", title: "Support", icon: iconBI },
 ];
 
 function ServicesOverview() {
@@ -26,7 +28,19 @@ function ServicesOverview() {
     <section className="services-overview-section section">
       <PageContainer>
         <div ref={headingRef} className="reveal">
-          <SectionHeading title="What we Help with?" align="center" />
+          <SectionHeading
+            title={
+              <>
+                A{" "}
+                <span style={{ color: "var(--color-warm)" }}>
+                  Clear Process,
+                </span>{" "}
+                Start to Finish
+              </>
+            }
+            description="Every project runs through the same six phases, from the first conversation to long after launch. You always know what's happening and what's next."
+            align="center"
+          />
         </div>
 
         <div className="services-overview-grid">
@@ -42,6 +56,10 @@ function ServicesOverview() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="services-overview-cta">
+          <Button to="/work/">See how we work in detail</Button>
         </div>
       </PageContainer>
     </section>

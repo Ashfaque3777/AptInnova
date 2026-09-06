@@ -31,37 +31,20 @@ function ServicesContactCTA() {
         <SectionHeading
           title={
             <>
-              <span style={{ color: "var(--color-warm)" }}>Let's Build</span>{" "}
-              What's Next for Your Business
+              Not sure which of these{" "}
+              <span style={{ color: "var(--color-warm)" }}>you need?</span>{" "}
             </>
           }
-          description="You have seen what is possible. Now let's make it real for your organisation."
+          description="That's normal, and it's exactly what the first conversation is for. Tell us what's slowing your business down and we'll point you to the right starting place. No cost, no pressure."
           align="center"
         />
 
         <div className="services-contact-cta-content">
-          <ul className="services-contact-cta-highlights">
-            {contactHighlights.map((item) => (
-              <li className="services-contact-cta-highlight" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </li>
-            ))}
-          </ul>
-
           <div className="services-contact-cta-actions">
-            <Button href="https://aptinnova.com/contact/" variant="primary">
-              Contact Us
-            </Button>
-            <Button href="https://aptinnova.com/contact/" variant="secondary">
-              Request a Consultation
+            <Button href="https://aptinnova.com/contact/">
+              Start a project
             </Button>
           </div>
-
-          <p className="services-contact-cta-note">
-            No pressure, No jargon. Just a clear conversation about what AI can
-            do for your business.
-          </p>
         </div>
       </PageContainer>
     </section>

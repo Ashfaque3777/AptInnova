@@ -3664,6 +3664,14 @@ button {
   line-height: 1.3;
 }
 
+.services-overview-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: var(--space-24);
+}
+
 @media (max-width: 768px) {
   .services-overview-grid {
     grid-template-columns: 1fr;
@@ -3691,6 +3699,7 @@ button {
   flex-direction: column;
   align-items: center;
   gap: var(--space-16);
+  margin-top: var(--space-20);
 }
 
 .service-card {
@@ -3840,16 +3849,16 @@ button {
    Services Software Development Services (numbered index list) Section
    ============================================================ */
 
-.software-services {
+/* .software-services {
   padding-block: var(--space-20);
 }
 
 .software-services .section-heading {
   margin-bottom: var(--space-12);
-}
+} */
 
 /* Full-width rows separated by hairlines instead of cards. */
-.software-services-list {
+/* .software-services-list {
   display: flex;
   flex-direction: column;
 
@@ -3875,10 +3884,10 @@ button {
 
 .software-service-row:hover {
   background: var(--color-surface);
-}
+} */
 
 /* Circular icon badge on the left of each row. */
-.software-service-icon {
+/* .software-service-icon {
   display: grid;
   place-items: center;
 
@@ -3929,10 +3938,10 @@ button {
 
   font-size: var(--text-base);
   line-height: 1.6;
-}
+} */
 
 /* Large faint index number on the right of each row. */
-.software-service-index {
+/* .software-service-index {
   font-size: var(--text-3xl);
   font-weight: 800;
   line-height: 1;
@@ -3962,10 +3971,10 @@ button {
     gap: var(--space-2) var(--space-5);
 
     padding: var(--space-5) var(--space-2);
-  }
+  } */
 
   /* Index number becomes a small label above the text on mobile. */
-  .software-service-index {
+  /* .software-service-index {
     grid-area: index;
     justify-self: end;
 
@@ -3994,46 +4003,46 @@ button {
   .software-service-content h3 {
     font-size: var(--text-lg);
   }
-}
+} */
 
 /* ============================================================
    Services Development Process (numbered step cards) Section
    ============================================================ */
 
-.development-process {
+/* .development-process {
   padding-block: var(--space-20);
 }
 
 .development-process .section-heading {
   margin-inline: auto;
   margin-bottom: var(--space-12);
-}
+} */
 
 /* Six steps arranged as a centred pyramid:
    row 1 = 01–03, row 2 = 04–05, row 3 = 06.
    Six equal tracks let every row stay centred with equal-width cards. */
-.development-process-grid {
+/* .development-process-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: var(--space-6);
-}
+} */
 
 /* Every card occupies two of the six tracks. */
-.development-process-grid .process-card {
+/* .development-process-grid .process-card {
   grid-column: span 2;
-}
+} */
 
 /* Row 2: pull the pair of cards toward the centre. */
-.development-process-grid .process-card:nth-child(4) {
+/* .development-process-grid .process-card:nth-child(4) {
   grid-column: 2 / span 2;
 }
 
 .development-process-grid .process-card:nth-child(5) {
   grid-column: 4 / span 2;
-}
+} */
 
 /* Row 3: centre the final card. */
-.development-process-grid .process-card:nth-child(6) {
+/* .development-process-grid .process-card:nth-child(6) {
   grid-column: 3 / span 2;
 }
 
@@ -4056,10 +4065,10 @@ button {
   transform: translateY(-4px);
   box-shadow: 0 0 10px 10px #ffffff25;
   background: var(--color-background);
-}
+} */
 
 /* Circular step-number badge. */
-.process-card-number {
+/* .process-card-number {
   display: grid;
   place-items: center;
 
@@ -4103,10 +4112,10 @@ button {
 @media (max-width: 768px) {
   .development-process {
     padding-block: var(--space-12);
-  }
+  } */
 
   /* Stack the pyramid into a single centred column. */
-  .development-process-grid {
+  /* .development-process-grid {
     grid-template-columns: 1fr;
   }
 
@@ -4117,7 +4126,7 @@ button {
   .process-card {
     padding: var(--space-6);
   }
-}
+} */
 
 /* ============================================================
    Services Technology Stack (category cards with tech chips) Section
@@ -4249,7 +4258,7 @@ button {
 /* ============================================================
    Services Why Work With Us Section
    ============================================================ */
-.wwu-section {
+/* .wwu-section {
   padding-block: var(--space-20);
 }
 
@@ -4316,7 +4325,7 @@ button {
   .wwu-grid {
     grid-template-columns: 1fr;
   }
-}
+} */
 
 /* ============================================================
    Services FAQ Section
@@ -4338,6 +4347,10 @@ button {
   padding-block: var(--space-1);
   /* Remove default <details> marker on Firefox */
   display: block;
+}
+
+.faq-item:hover {
+  background: var(--color-background);
 }
 
 /* Remove default <details> triangle marker on WebKit/Blink */
@@ -4408,6 +4421,7 @@ button {
 .faq-answer {
   padding: 0 0 var(--space-6);
   max-width: 740px;
+  text-align: justify;
 }
 
 .faq-answer p {

@@ -10,14 +10,13 @@ function ServicesHero() {
       <PageContainer>
         <div className="services-hero-content reveal" ref={contentRef}>
           <h1>
-            Our <span style={{ color: "var(--color-warm)"}}>Services</span>
+            What <span style={{ color: "var(--color-warm)" }}>We Build</span>
           </h1>
 
           <p className="services-hero-description">
-            Discover AptInnova's suite of Generative AI products & services,
-            designed to help your business innovate, automate, and grow. With a
-            focus on innovation and a track record of success, Aptinnova is your
-            trusted partner in navigating the complexities of the digital age.
+            Five ways we put AI to work inside your business, from a first plan
+            to a running system. One senior team takes it end to end, so you're
+            never handed off and never left guessing.
           </p>
         </div>
       </PageContainer>

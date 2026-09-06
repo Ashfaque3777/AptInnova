@@ -5,34 +5,34 @@ import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 
 const faqData = [
   {
-    question: "What types of organisations does AptInnova work with?",
+    question: "What kinds of businesses do you work with?",
     answer:
-      "AptInnova partners with organisations of all sizes and across a wide range of industries including e-commerce, healthcare, finance, manufacturing, and professional services. Whether you are a startup exploring AI for the first time or an established enterprise scaling your AI capabilities, our services are tailored to meet your unique business needs and maturity level.",
+      "All sizes, across a lot of industries: e-commerce, healthcare, finance, manufacturing, professional services, and more. Whether you're trying AI for the first time or scaling what you've already started, we shape the work around where you are.",
   },
   {
-    question: "How do you identify AI opportunities?",
+    question: "How do you figure out where AI actually helps?",
     answer:
-      "We follow a structured approach starting with an AI Readiness Assessment, where we evaluate your current infrastructure, data capabilities, and business processes to determine AI suitability. From there, we develop a custom AI Implementation Roadmap with a phased approach, from pilot projects to full-scale deployment and quantify the potential return on investment through detailed ROI Analysis & Business Case Development.",
+      "We start with a readiness assessment, looking at your systems, your data, and how you work day to day. From there we build a roadmap that moves in stages, from a small pilot to full rollout, with an honest view of the return at each step.",
   },
   {
-    question: "Can AI solutions integrate with existing systems?",
+    question: "Will this work with the systems we already have?",
     answer:
-      "Yes. A core part of our service is ensuring seamless integration with your current technology stack. Our Data Solutions practice specialises in Data Integration & Engineering, consolidating data from disparate sources and building robust data pipelines. We also focus on Data Quality Management to ensure accuracy and consistency, and establish Data Governance & Compliance frameworks so your AI solutions work reliably within your existing infrastructure.",
+      "Yes. A big part of what we do is making AI work alongside your existing tools. We connect scattered data sources, clean them up, and put the right governance in place, so anything we build has something solid to run on.",
   },
   {
-    question: "Do you provide AI strategy before implementation?",
+    question: "Do you do strategy before building, or just build?",
     answer:
-      "Absolutely. Strategy comes first. Our AI Strategy Consulting service begins with an AI Readiness Assessment and a Custom AI Implementation Roadmap. We help you align AI initiatives with your business goals, develop a phased adoption plan, and build a compelling business case with quantified ROI projections. This strategic foundation ensures that every implementation step is purposeful and delivers measurable impact.",
+      "Strategy first, always. We'd rather tell you what's worth doing before you spend on building it. Sometimes that means starting small. Sometimes it means not building a thing yet. You get an honest answer either way.",
   },
   {
-    question: "What specific AI services does AptInnova offer?",
+    question: "What exactly do you offer?",
     answer:
-      "We offer six core services:: (1) AI Strategy Consulting: readiness assessments, roadmaps, and change management; (2) Applied Generative AI Solutions: custom document processing, content generation, and automation; (3) Ready to Use AI Agents: pre-built task-specific and industry-focused agents; (4) Knowledge Assistants: FAQ chatbots, knowledge base assistants, and navigational bots; (5) Data Solutions: data integration, quality management, analytics pipelines, and governance; and (6) Business Intelligence & Performance: custom dashboards, predictive analytics, KPI tracking, and automated reporting.",
+      "Five things: AI strategy, custom software, AI agents, chatbots, and data and intelligence. Underneath all of them sits the data engineering, dashboards, and analytics that make AI actually useful.",
   },
   {
-    question: "How do you ensure AI solutions are responsible and ethical?",
+    question: "How do you keep AI responsible?",
     answer:
-      "Responsible AI is a core principle at AptInnova. We prioritise explainable, fair, and transparent AI solutions that build trust and foster positive impact. Our approach includes establishing data governance frameworks for security and regulatory compliance, designing with human-centred principles, and operating with unwavering integrity in every partnership. We believe ethical AI is not just a checkbox, it is fundamental to lasting value.",
+      "We build for AI that's explainable, fair, and transparent, with proper data governance and security around it. We also work closely with AI governance partners, which keeps us honest about how this technology should and shouldn't be used.",
   },
   {
     question: "What makes AptInnova different from other AI consultancies?",
@@ -78,11 +78,10 @@ function ServicesFAQ() {
           <SectionHeading
             title={
               <>
-                Frequently Asked{" "}
-                <span style={{ color: "var(--color-warm)" }}>Questions</span>
+                Questions we get{" "}
+                <span style={{ color: "var(--color-warm)" }}>Asked First</span>
               </>
             }
-            description="Quick answers to common questions about our AI services, approach, and how we can help your organisation."
             align="center"
           />
         </div>

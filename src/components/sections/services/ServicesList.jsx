@@ -1,95 +1,85 @@
 import PageContainer from "../../layout/PageContainer.jsx";
+import SectionHeading from "../../ui/SectionHeading.jsx";
 
 import imgStrategy from "../../../assets/images/services/strategy.webp";
 import imgGenAI from "../../../assets/images/services/genAI.webp";
 import imgAgent from "../../../assets/images/services/agent.webp";
 import imgAssistant from "../../../assets/images/services/assistant.webp";
 import imgSolutions from "../../../assets/images/services/solutions.webp";
-import imgBI from "../../../assets/images/services/bi.webp";
+// import imgBI from "../../../assets/images/services/bi.webp";
 
 const servicesData = [
   {
-    heading: "AI Strategy Consulting",
+    heading: "AI Strategy",
     subtitle:
-      "Navigate the complexities of AI adoption with expert strategic guidance.",
+      "Best for: teams who know AI matters but aren't sure where to start.",
     image: imgStrategy,
     description:
-      "Our AI Strategy Consulting services help you identify the right AI opportunities, develop a clear implementation roadmap, and ensure your AI initiatives align with your business goals for maximum impact.",
+      "Not sure where AI actually fits? Start here. We look at how your business runs today, find the places where AI would genuinely help, and tell you honestly what's worth doing and what isn't. You get a clear roadmap and a real sense of the return before you spend anything on building.",
     offers: [
-      "AI Readiness Assessment: Evaluate your current infrastructure, data capabilities, and business processes to determine AI suitability.",
-      "Custom AI Implementation Roadmap: Develop a phased approach for AI adoption, from pilot projects to full-scale deployment.",
-      "ROI Analysis & Business Case Development: Quantify the potential return on investment and build a compelling case for AI projects.",
-      "Change Management & Training: Support your team through the transition with tailored training programs and change management strategies.",
+      "A readiness assessment of your systems, data, and workflows",
+      "A prioritized roadmap, from quick wins to bigger bets",
+      "An honest ROI view, so the business case stands on its own",
+      "Help bringing your team along, not just the technology",
     ],
   },
   {
-    heading: "Applied Generative AI Solutions",
+    heading: "Custom Software",
     subtitle:
-      "Unlock transformative automation and creativity with custom Generative AI applications.",
+      "Best for: businesses whose real work doesn't fit the tools they're forced to use.",
     image: imgGenAI,
     description:
-      "We specialize in developing and deploying bespoke Generative AI solutions that integrate seamlessly into your existing workflows and address your unique business challenges. Our focus is on practical applications that deliver measurable results.",
+      "The software your business actually runs on, built around the way you work instead of forcing you to work around it. Web apps, mobile apps, internal tools, customer platforms, whatever the job needs, with AI built in from the start rather than bolted on later.",
     offers: [
-      "Automated Document Processing: Extract insights, summarize information, and automate data entry from various document types.",
-      "Intelligent Content Generation: Create engaging marketing copy, product descriptions, reports, and other textual content at scale.",
-      "Enhanced Customer Service: Develop AI-powered virtual assistants and chatbots for improved customer support and engagement.",
-      "Custom Process Automation: Design and implement AI models to automate repetitive tasks, optimize workflows, and boost operational efficiency.",
+      "Web applications: dashboards, portals, and SaaS products built for real use",
+      "Mobile apps: native and cross-platform for iOS and Android, with offline and real-time built in",
+      "E-commerce: storefronts, catalogs, payments, and logistics for B2C and B2B",
+      "ERP and CRM systems: one platform that unifies sales, operations, and finance",
+      "Content management: custom and headless CMS so your team publishes without waiting on developers",
+      "APIs and backend: REST and GraphQL, authentication, and architecture that scales",
+      "AI integration: add AI to the software you already run, including systems we didn't build",
     ],
   },
   {
-    heading: "Ready to Use AI Agents",
+    heading: "AI Agents",
     subtitle:
-      "Deploy pre-built AI agents to automate specific tasks and workflows instantly.",
+      "Best for: teams losing hours to repetitive, rules-based busywork.",
     image: imgAgent,
     description:
-      "Our Ready to Use AI Agents are designed for quick integration and immediate impact, providing solutions for common business challenges without the need for extensive custom development.",
+      "Software that takes the repetitive work off your team's plate. Agents handle the tasks people shouldn't have to, from data entry to routing to following up, so your staff spends their time on the work that actually needs a human. Most deploy in days, and they scale as you grow.",
     offers: [
-      "Task-Specific Virtual Agents: Agents for customer support, data entry, scheduling, and more.",
-      "Industry-Focused Agents: Pre-trained agents for specific sectors like e-commerce, healthcare, or finance.",
-      "Easy Customization: Options to tailor agent behavior and responses to your brand and needs.",
-      "Scalable Deployment: Easily scale the number of agents based on demand.",
+      "Task-specific agents for the jobs that eat your team's hours",
+      "Agents tuned to your industry and your way of working",
+      "Simple customization as your needs change",
+      "Room to scale up without starting over",
     ],
   },
   {
-    heading: "Knowledge Assistants",
+    heading: "Chatbots",
     subtitle:
-      "Empower your users and team with intelligent, conversational AI assistants.",
+      "Best for: businesses answering the same questions over and over, day and night.",
     image: imgAssistant,
     description:
-      "Our pre-built Knowledge Assistants and Chatbots provide instant access to information, answer frequently asked questions, and guide users through processes, enhancing engagement and efficiency.",
+      "Assistants that actually know your business, not generic bots reading from a script. They answer customer questions, help your staff find internal information, and guide people through your product or service. They work across your website, your apps, and your messaging channels, around the clock.",
     offers: [
-      "FAQ Chatbots: Automate responses to common customer and internal queries.",
-      "Knowledge Base Assistants: Provide employees or customers with easy access to documentation, guides, and internal knowledge.",
-      "Website & App Navigational Bots: Help users find information and navigate digital platforms.",
-      "Multi-Channel Integration: Deployable on websites, messaging apps, and internal platforms.",
+      "Customer-facing bots that handle the common questions instantly",
+      "Internal assistants that surface company knowledge on demand",
+      "Navigation help that guides users to what they need",
+      "One assistant across web, app, and messaging channels",
     ],
   },
   {
-    heading: "Data Solutions",
+    heading: "Data & Intelligence",
     subtitle:
-      "Leverage the full potential of your data with our comprehensive data management and analytics services.",
+      "Best for: businesses sitting on data they can't yet use.",
     image: imgSolutions,
     description:
-      "A solid data foundation is crucial for successful AI implementation. We help you organize, clean, and analyze your data to uncover valuable insights and fuel your Generative AI models.",
+      "The foundation everything else stands on. Before AI can help, your data has to be clean, connected, and trustworthy. We sort that out, then build the dashboards and forecasting that turn the information you already have into decisions you can act on.",
     offers: [
-      "Data Integration & Engineering: Consolidate data from disparate sources and build robust data pipelines.",
-      "Data Quality Management: Ensure data accuracy, completeness, and consistency for reliable AI outputs.",
-      "Advanced Analytics Pipeline: Develop and deploy analytics models to extract insights and predict future trends.",
-      "Data Governance & Compliance: Establish frameworks for data security, privacy, and regulatory compliance.",
-    ],
-  },
-  {
-    heading: "Business Intelligence & Performance",
-    subtitle:
-      "Transform data into actionable intelligence for smarter, faster decision-making.",
-    image: imgBI,
-    description:
-      "Our Business Intelligence services empower you with the tools and insights needed to monitor performance, identify opportunities, and drive strategic initiatives effectively.",
-    offers: [
-      "Custom Interactive Dashboards: Visualize key performance indicators (KPIs) and business metrics in real-time.",
-      "Predictive Analytics & Forecasting: Utilize historical data and AI models to predict future outcomes and trends.",
-      "Performance Metrics & KPI Tracking: Define and track critical metrics to measure progress against business objectives.",
-      "Automated Reporting Solutions: Streamline reporting processes to save time and ensure timely access to information.",
+      "Data integration and engineering, pulling scattered sources into one place",
+      "Data quality and governance you can rely on",
+      "Dashboards that show what's actually happening in the business",
+      "Predictive analytics and forecasting to see what's coming",
     ],
   },
 ];
@@ -98,12 +88,21 @@ function ServicesList() {
   return (
     <section className="services-list-section">
       <PageContainer>
+        <SectionHeading
+          title={
+            <>
+              The{" "}
+              <span style={{ color: "var(--color-warm)" }}>Five Services</span>
+            </>
+          }
+          align="center"
+        />
         <div className="services-list">
           {servicesData.map((service) => (
             <article className="service-card" key={service.heading}>
               <h2 className="service-card-heading">{service.heading}</h2>
 
-              <p className="service-card-subtitle">{service.subtitle}</p>
+              <p className="service-card-subtitle"><em>{service.subtitle}</em></p>
 
               <div className="service-card-image">
                 <img src={service.image} alt={service.heading} loading="lazy" />
@@ -112,7 +111,7 @@ function ServicesList() {
               <p className="service-card-description">{service.description}</p>
 
               <div className="offer-section">
-                <h3>What we offer?</h3>
+                <h3>What you get?</h3>
                 <ul className="offer-list">
                   {service.offers.map((offer, index) => (
                     <li key={index}>{offer}</li>
