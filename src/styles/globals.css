@@ -3049,7 +3049,7 @@ button {
 }
 
 .about-hero-description {
-  max-width: 70%;
+  max-width: 60%;
   margin-top: var(--space-2);
 
   color: var(--color-text-muted);
@@ -3234,72 +3234,54 @@ button {
 }
 
 /* ============================================================
-   About Mission & Vision Section
+   About How We Work Section
    ============================================================ */
 
-.mission-vision-section {
-  margin: var(--space-12) var(--space-32);
+.how-we-work-section {
+  padding: var(--space-20) 0;
 }
 
-.mission-vision-grid {
+/* Four-step process grid. */
+.process-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  margin-top: var(--space-10);
-}
-
-.mission-vision-card {
-  width: 95%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
 
-  padding: var(--space-4);
-
-  border: 2px solid var(--color-text-muted);
+  margin-top: var(--space-12);
 }
 
-.mission-vision-card:hover {
-  box-shadow: 0 0 10px 10px #ffffff25;
+.process-step {
+  padding-top: var(--space-6);
+
+  border-top: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.process-step:hover {
   background: var(--color-background);
 }
 
-.mission-vision-image {
-  overflow: hidden;
-  height: 100%;
-}
-
-.mission-vision-image img {
-  width: 100%;
-  height: 100%;
-}
-
-.mission-vision-text {
-  flex: 1;
-
-  font-size: var(--text-xl);
-  line-height: 1.6;
+.process-step h3 {
+  margin-top: var(--space-6);
+  font-size: var(--text-2xl);
   text-align: center;
-
-  color: var(--color-text-secondary);
 }
 
-@media (max-width: 768px) {
-  .mission-vision-grid {
+.process-step p {
+  color: var(--color-text-secondary);
+  font-size: var(--text-lg);
+  text-align: justify;
+}
+
+@media (max-width: 900px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .process-grid {
     grid-template-columns: 1fr;
-  }
-
-  .mission-vision-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .mission-vision-image {
-    flex: none;
-    width: 100%;
-    max-width: 300px;
   }
 }
 
@@ -3308,7 +3290,7 @@ button {
    ============================================================ */
 
 .beliefs-section {
-  padding: var(--space-24) var(--space-32);
+  padding: var(--space-24) var(--space-24);
 }
 
 .beliefs-grid {
@@ -3332,7 +3314,7 @@ button {
   align-items: center;
 
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
 
   padding: var(--space-6) var(--space-8);
 
@@ -3425,57 +3407,73 @@ button {
 }
 
 /* ============================================================
-   About How We Work Section
+   About Mission & Vision Section
    ============================================================ */
 
-.how-we-work-section {
-  padding: var(--space-20) 0;
+.mission-vision-section {
+  margin: var(--space-12) var(--space-32);
 }
 
-/* Four-step process grid. */
-.process-grid {
+.mission-vision-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr;
+
+  margin-top: var(--space-10);
+}
+
+.mission-vision-card {
+  width: 95%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: var(--space-6);
 
-  margin-top: var(--space-12);
+  padding: var(--space-4);
+
+  border: 2px solid var(--color-text-muted);
 }
 
-.process-step {
-  padding-top: var(--space-6);
-
-  border-top: 2px solid var(--color-primary);
-  box-shadow: var(--shadow-sm);
+.mission-vision-card:hover {
+  box-shadow: 0 0 10px 10px #ffffff25;
+  background: var(--color-background);
 }
 
-.process-step > span {
-  color: var(--color-primary);
+.mission-vision-image {
+  overflow: hidden;
+  height: 100%;
+}
+
+.mission-vision-image img {
+  width: 90%;
+  height: 90%;
+  justify-self: center;
+}
+
+.mission-vision-text {
+  flex: 1;
 
   font-size: var(--text-xl);
-  font-weight: 700;
-}
+  line-height: 1.6;
+  text-align: justify;
 
-.process-step h3 {
-  margin-top: var(--space-6);
-  font-size: var(--text-2xl);
-  text-align: center;
-}
-
-.process-step p {
   color: var(--color-text-secondary);
-  font-size: var(--text-lg);
-  text-align: center;
 }
 
-@media (max-width: 900px) {
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .process-grid {
+@media (max-width: 768px) {
+  .mission-vision-grid {
     grid-template-columns: 1fr;
+  }
+
+  .mission-vision-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-vision-image {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
   }
 }
 
@@ -3505,6 +3503,11 @@ button {
 
   font-size: var(--text-2xl);
   line-height: 1.5;
+  text-align: justify;
+}
+
+.about-partnership-content-wrapper p em {
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .about-partnership-image {

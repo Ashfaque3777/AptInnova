@@ -13,18 +13,13 @@ function AboutHero() {
       <PageContainer>
         <div className="about-hero-content reveal" ref={headingRef}>
           <h1>
-            Our Story: From{" "}
-            <span style={{ color: "var(--color-warm)" }}>Idea to Impact</span>
+            Software that makes your{" "}
+            <span style={{ color: "var(--color-warm)" }}>Business Better,</span>{" "}
+            and the AI that helps it Think
           </h1>
 
           <p className="about-hero-description">
-            AptInnova was born from a shared vision: to make its powerful
-            capabilities accessible to businesses ready to innovate and grow. We
-            saw the potential for AI to revolutionize operations, not just for
-            large corporations, but for agile enterprises looking for a
-            competitive edge. Our journey is one of continuous learning, client
-            collaboration, and a dedication to delivering practical, impactful
-            AI solutions.
+            We're AptInnova. We build the software growing businesses run on, with AI built in from the start. We've been doing it for over eight years, and most of our clients come back for the next project.
           </p>
 
           <div className="about-hero-images">

@@ -14,7 +14,16 @@ function AboutPartnership() {
     <section className="about-partnership section">
       <PageContainer>
         <div ref={headingRef} className="reveal">
-          <SectionHeading title="AIforAll" align="center" />
+          <SectionHeading
+            title={
+              <>
+                <span style={{ color: "var(--color-warm)" }}>AIforAll</span>{" "}
+                Global
+              </>
+            }
+            description="Our work goes beyond client projects, through our partnership with AIforAll Global (AFA)."
+            align="center"
+          />
         </div>
 
         <div
@@ -22,19 +31,32 @@ function AboutPartnership() {
           ref={contentRef}
         >
           <p>
-            AptInnova is the proud Partner of{" "}
-            <span style={{ color: "var(--color-warm)" }}>
-              <b>Stichting AIforAll Global</b>
-            </span>
-            , a dutch non-profit initiative focusing on Human-Centered AI.
+            <b>
+              <em>We train the next generation of AI talent.</em>
+            </b>{" "}
+            Together with AFA we run AI-readiness programs for colleges and
+            companies, from everyday AI literacy up to hands-on building. It's
+            how we help more people become genuinely capable with AI, not just
+            aware of it.
           </p>
 
           <p>
-            This reflects our deep commitment to: Democratizing AI knowledge.
-            Building a vibrant network of AI learners and professionals. <br />
-            Nurturing future talent and promoting ethical AI. Our community
-            involvement enriches our perspective and reinforces our mission to
-            make a positive impact.
+            <b>
+              <em>We bring AFA's products to market.</em>
+            </b>{" "}
+            As AFA's official industrialization partner, we take products
+            incubated in their labs and make them ready for the real world:
+            ready to deploy, adopt, and support. InnoVethic, ainsteins, and
+            A(i)MPACT Lab all came through this route.
+          </p>
+
+          <p>
+            <b>
+              <em>We keep good company on governance.</em>
+            </b>{" "}
+            We work alongside AI governance organizations, including DefenLab
+            and World AI Governance, whose work informs how we think about
+            trust, safety, and accountability in everything we ship.
           </p>
 
           <Button href="https://aiforallglobal.org/">Learn more</Button>

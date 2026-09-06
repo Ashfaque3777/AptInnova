@@ -8,27 +8,23 @@ function HowWeWork() {
 
   const steps = [
     {
-      number: "01",
-      title: "Understand",
+      title: "Practical over theoretical",
       description:
-        "We start with the problem, the context, and the opportunity.",
+        "AI is useful when it solves a real problem in front of a real business. We build things that work in the day-to-day, not demos that impress in a meeting and gather dust after.",
     },
     {
-      number: "02",
-      title: "Explore",
-      description: "We identify where AI can create meaningful value.",
+      title: "People first",
+      description: "Technology should serve the people using it. We design around how your team actually works, and we bring them along rather than dropping something on them.",
     },
     {
-      number: "03",
-      title: "Build",
+      title: "Responsible by default",
       description:
-        "We develop practical solutions that fit the real environment.",
+        "We build AI that's explainable, fair, and transparent, with proper data governance around it. We work closely with AI governance partners to stay honest about how this technology should be used.",
     },
     {
-      number: "04",
-      title: "Improve",
+      title: "We do the work with you, not to you",
       description:
-        "We learn from implementation and continue to refine the solution.",
+        "The best results come from combining what we know about building software with what you know about your business. That's a partnership, and we treat it like one.",
     },
   ];
 
@@ -39,9 +35,9 @@ function HowWeWork() {
           <SectionHeading
             title={
               <>
-                From Opportunity to{" "}
+                What{" "}
                 <span style={{ color: "var(--color-warm)" }}>
-                  Implementation
+                  We Believe
                 </span>
               </>
             }
@@ -51,9 +47,7 @@ function HowWeWork() {
 
         <div className="process-grid">
           {steps.map((step) => (
-            <article className="process-step" key={step.number}>
-              <span>{step.number}</span>
-
+            <article className="process-step">
               <h3>{step.title}</h3>
 
               <p>{step.description}</p>

@@ -18,8 +18,7 @@ function MissionVision() {
           <SectionHeading
             title={
               <>
-                Our Mission{" "}
-                <span style={{ color: "var(--color-warm)" }}>&</span> Vision
+                Who <span style={{ color: "var(--color-warm)" }}>We Are</span>
               </>
             }
             align="center"
@@ -27,7 +26,7 @@ function MissionVision() {
         </div>
 
         <div className="mission-vision-grid">
-          {/* Card 1: Mission */}
+          {/* Card 1*/}
           <div
             className="mission-vision-card reveal reveal-delay-1"
             ref={card1Ref}
@@ -36,21 +35,24 @@ function MissionVision() {
               <img src={missionImg} alt="Mission" />
             </div>
             <p className="mission-vision-text">
-              <strong>Mission:</strong> To empower businesses with cutting-edge,
-              practical Applied Generative AI solutions and strategic guidance,
-              driving efficiency and transformative growth.
+              We're a small, senior team, and that's on purpose. When you work
+              with us, you work directly with the people building your software,
+              not a salesperson who hands you off and a rotating cast of juniors
+              you never agreed to.
             </p>
           </div>
 
-          {/* Card 2: Vision */}
+          {/* Card 2*/}
           <div
             className="mission-vision-card reveal reveal-delay-2"
             ref={card2Ref}
           >
             <p className="mission-vision-text">
-              <strong>Vision:</strong> To be a leading catalyst in the
-              widespread adoption of Generative AI, fostering a future where
-              intelligent automation is integral to every thriving business.
+              A lean team means we move fast, stay close to the work, and keep
+              the quality high. We handle design, web, backend, mobile, and
+              cloud in-house, so you're dealing with one team that owns the
+              whole thing, not three vendors pointing fingers when something
+              breaks.
             </p>
             <div className="mission-vision-image">
               <img src={visionImg} alt="Vision" />

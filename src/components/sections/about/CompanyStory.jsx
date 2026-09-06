@@ -17,11 +17,7 @@ function CompanyStory() {
             className="story-heading"
             title={
               <>
-                Our Expertise:{" "}
-                <span style={{ color: "var(--color-warm)" }}>
-                  Practical AI, Real
-                </span>{" "}
-                Results
+                Our <span style={{ color: "var(--color-warm)" }}>Story</span>
               </>
             }
             align="center"
@@ -34,17 +30,26 @@ function CompanyStory() {
         >
           <div className="expertise-content">
             <p>
-              The AptInnova team is a blend of seasoned AI strategists,
-              engineers, and data scientists. Our strength lies in translating
-              complex Generative AI potential into tangible business value.
+              We started AptInnova because good software was still out of reach
+              for most businesses that needed it. The tools that could actually
+              change how a company works were built for large enterprises with
+              large budgets, while everyone else made do with spreadsheets,
+              disconnected apps, and workarounds.
             </p>
 
             <p>
-              We operate with a lean core team, augmented by intelligent virtual
-              staff powered by AI, ensuring agility and efficiency. This allows
-              us to remain committed to staying at the forefront of AI, ensuring
-              our clients benefit from the most advanced yet practical solutions
-              tailored to their unique needs.
+              We set out to close that gap. Over eight years we've built web and
+              mobile apps, custom platforms, and complete systems for businesses
+              across manufacturing, retail, logistics, education, healthcare,
+              and more. Some were startups launching their first product. Others
+              were established businesses replacing workflows they'd outgrown
+              years ago.
+            </p>
+
+            <p>
+              What ties the work together is simple: we build software that fits
+              the business, and now, with AI as part of how we build, that
+              software can do more than it ever could before.
             </p>
           </div>
 
