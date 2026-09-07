@@ -5,6 +5,7 @@ import Layout from "./components/layout/Layout.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Services from "./pages/Services.jsx";
+import Products from "./pages/Products.jsx";
 import InnoVethic from "./pages/InnoVethic.jsx";
 import AimpactLab from "./pages/AimpactLab.jsx";
 import Ainsteins from "./pages/Ainsteins.jsx";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about/" element={<About />} />
           <Route path="/services/" element={<Services />} />
+          <Route path="/products/" element={<Products />} />
           <Route path="/products/innovethic/" element={<InnoVethic />} />
           <Route path="/products/aimpact-lab/" element={<AimpactLab />} />
           <Route path="/products/ainsteins/" element={<Ainsteins />} />

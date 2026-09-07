@@ -398,7 +398,7 @@ button {
 
 /* Warm underline that sweeps in from the left on hover, and stays
    visible for the active route. */
-.desktop-nav a::after,
+.desktop-nav a:not(.nav-dropdown-trigger)::after,
 .desktop-nav .nav-dropdown-trigger::before {
   content: "";
 
@@ -417,9 +417,9 @@ button {
   transition: transform var(--duration-normal) ease;
 }
 
-.desktop-nav a:hover::after,
+.desktop-nav a:hover:not(.nav-dropdown-trigger)::after,
 .desktop-nav .nav-dropdown-trigger:hover::before,
-.desktop-nav a.active::after {
+.desktop-nav a.active:not(.nav-dropdown-trigger)::after {
   transform: scaleX(1);
 }
 
@@ -1570,6 +1570,7 @@ button {
 .cta-card,
 .partnership-card,
 .product-capability-card,
+.products-index-card,
 .work-case-card,
 .work-testimonial-card {
   position: relative;
@@ -1598,6 +1599,7 @@ button {
 .cta-card::before,
 .partnership-card::before,
 .product-capability-card::before,
+.products-index-card::before,
 .work-case-card::before,
 .software-dev-card::before,
 .work-testimonial-card::before {
@@ -1649,6 +1651,7 @@ button {
 .cta-card:hover::before,
 .partnership-card:hover::before,
 .product-capability-card:hover::before,
+.products-index-card:hover::before,
 .work-case-card:hover::before,
 .software-dev-card:hover::before,
 .work-testimonial-card:hover::before {
@@ -5496,6 +5499,29 @@ section {
 
   .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-chevron {
     transform: translateY(1px) rotate(225deg);
+  }
+
+  .mobile-menu-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .mobile-menu-row .mobile-menu-link {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .mobile-menu-row .mobile-menu-toggle {
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
   }
 
   /* Submenu is fully hidden by default (no residual space), so the

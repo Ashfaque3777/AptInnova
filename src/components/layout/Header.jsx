@@ -35,7 +35,9 @@ function Header() {
             <NavLink to="/about/">About</NavLink>
             <NavLink to="/services/">Services</NavLink>
             <div className="nav-dropdown">
-              <span className="nav-dropdown-trigger">Products</span>
+              <Link to="/products/" className="nav-dropdown-trigger">
+                Products
+              </Link>
               <div
                 className="nav-dropdown-menu"
                 role="menu"

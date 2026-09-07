@@ -1,14 +1,15 @@
 import { Helmet } from "react-helmet-async";
 
 import ProductLayout from "../components/sections/products/ProductLayout.jsx";
-import ProductIntro from "../components/sections/products/ProductIntro.jsx";
-import ProductSpotlight from "../components/sections/products/ProductSpotlight.jsx";
 import ProductVideo from "../components/sections/products/ProductVideo.jsx";
 import ProductCTA from "../components/sections/products/ProductCTA.jsx";
 import ProductPagination from "../components/sections/products/ProductPagination.jsx";
 
 import aimpactLabImage from "../assets/images/products/aimpact-lab/aimpactLab.webp";
 import impactLabVideo from "../assets/media/impact-lab.mp4";
+import ProductAudience from "../components/sections/products/ProductAudience.jsx";
+import ProductCapabilities from "../components/sections/products/ProductCapabilities.jsx";
+import ProductWorkflow from "../components/sections/products/ProductWorkflow.jsx";
 
 /* Small, consistent inline icon set (stroke style matches the site). */
 function IconSandbox() {
@@ -206,25 +207,38 @@ const twinHighlights = [
   },
 ];
 
-const xrHighlights = [
+const capabilities = [
   {
     icon: <IconXR />,
-    title: "XR prototyping",
+    title: "A controlled space to experiment",
     description:
-      "Extended reality prototyping brings ideas into spatial, immersive formats inside the sandbox.",
+      "Prototype and pressure-test AI ideas in a sandbox first, learning what works before committing to real-world deployment.",
   },
   {
     icon: <IconFlask />,
-    title: "Test interactions early",
+    title: "Grounded in your sector",
     description:
-      "Teams can experience and stress-test ideas in XR before committing to real-world deployment.",
+      "Experiments stay anchored in the real context of the teams using them, so what you learn actually applies.",
   },
   {
     icon: <IconLayers />,
-    title: "One space for experimentation",
+    title: "Digital twin simulation",
     description:
-      "AI, Digital Twin, and XR prototyping sit together in one environment, enabling richer experiments.",
+      "Model and simulate real systems against a virtual counterpart, so you can iterate and stress-test with far less risk.",
   },
+  {
+    icon: <IconGlobe />,
+    title: "Immersive prototyping",
+    description:
+      "Bring ideas into spatial, immersive formats, so teams can experience and test them before they're real.",
+  },
+];
+
+const audienceItems = [
+  "Cohorts",
+  "Partner Institutions",
+  "Research Teams",
+  "Community Programs",
 ];
 
 const productStructuredData = {
@@ -284,13 +298,26 @@ function AimpactLab() {
       <ProductLayout
         title={
           <>
-            A(<span style={{ color: "var(--color-warm)" }}>i</span>)MPACT Lab
+            A safe{" "}
+            <span style={{ color: "var(--color-warm)" }}>place to test</span> AI
+            Ideas before they meet the Real World
           </>
         }
-        description="A sovereign sandbox environment for sector-grounded AI experimentation. AI, Digital Twin, and XR prototyping in one space to validate, iterate, and stress-test ideas before real-world deployment."
+        description={
+          <>
+            A sovereign sandbox for sector-grounded AI experimentation, bringing
+            AI, digital twins, and immersive prototyping into one space, so
+            teams can validate, iterate, and stress-test ideas before anything
+            goes live.{" "}
+            <em>
+              For research teams and innovation programs · Currently in beta,
+              available on demand.
+            </em>
+          </>
+        }
         heroImage={aimpactLabImage}
         actions={[
-          { label: "Request access", href: "https://aptinnova.com/contact/" },
+          { label: "Talk to our team", href: "https://aptinnova.com/contact/" },
           {
             label: "Visit AIforAll Global",
             href: "https://aiforallglobal.org/incubation-factory",
@@ -298,59 +325,35 @@ function AimpactLab() {
           },
         ]}
       >
-        <ProductIntro
+        <ProductWorkflow
           title={
             <>
-              What is{" "}
-              <span style={{ color: "var(--color-warm)" }}>A(i)MPACT Lab?</span>
+              The <span style={{ color: "var(--color-warm)" }}>Problem</span>
             </>
           }
-          paragraphs={[
-            "A(i)MPACT Lab is a sovereign sandbox environment for sector-grounded AI experimentation. It brings AI, Digital Twin, and XR prototyping into one space so innovators can validate, iterate, and stress-test ideas before real-world deployment.",
-            "Currently in Beta and available on demand, A(i)MPACT Lab serves cohorts, partner institutions, and community programmes looking for a controlled place to experiment with applied AI.",
-          ]}
-          highlights={introHighlights}
+          description="Testing a new AI idea in the real world is risky and expensive, and getting it wrong in production can do real damage. Teams need a place to try things, break them, and learn, without those consequences, and without their ideas or data leaving a controlled environment."
         />
 
-        <ProductSpotlight
+        <ProductCapabilities
           title={
             <>
-              Innovation{" "}
-              <span style={{ color: "var(--color-warm)" }}>Sandbox</span>
+              What{" "}
+              <span style={{ color: "var(--color-warm)" }}>
+                A(i)MPACT Lab does?
+              </span>
             </>
           }
-          paragraphs={[
-            "A(i)MPACT Lab provides a sovereign sandbox where sector-grounded AI ideas can be validated before they reach the real world.",
-            "Teams prototype, iterate, and stress-test in a controlled space, learning what works before committing to deployment.",
-          ]}
-          highlights={sandboxHighlights}
+          capabilities={capabilities}
         />
 
-        <ProductSpotlight
+        <ProductAudience
           title={
             <>
-              Digital <span style={{ color: "var(--color-warm)" }}>Twin</span>
+              Who <span style={{ color: "var(--color-warm)" }}>it's for?</span>
             </>
           }
-          reversed
-          paragraphs={[
-            "Digital Twin modelling is part of the A(i)MPACT Lab environment, letting teams represent and simulate systems before making changes.",
-            "By testing against a virtual counterpart, innovators can validate ideas with far less risk and refine them iteratively.",
-          ]}
-          highlights={twinHighlights}
-        />
-
-        <ProductSpotlight
-          title={
-            <>
-              X<span style={{ color: "var(--color-warm)" }}>R</span>
-            </>
-          }
-          paragraphs={[
-            "XR prototyping brings experiments into immersive, spatial formats within the sandbox.",
-            "Combined with AI and Digital Twin, XR gives innovators a fuller way to experience, test, and stress-test ideas before real-world deployment.",
-          ]}
-          highlights={xrHighlights}
+          description="Cohorts, partner institutions, research teams, and community programs that want a controlled place to experiment with applied AI."
+          audiences={audienceItems}
         />
 
         <ProductVideo
@@ -369,20 +372,18 @@ function AimpactLab() {
         <ProductCTA
           title={
             <>
-              <span style={{ color: "var(--color-warm)" }}>
-                Ready to Experiment
-              </span>{" "}
-              in the Sandbox?
+              <span style={{ color: "var(--color-warm)" }}>Experiment</span> in
+              the Sandbox?
             </>
           }
-          description="A(i)MPACT Lab is in Beta and available on demand. Talk to our team or explore the Incubation Factory at AIforAll Global."
+          description="A(i)MPACT Lab is in beta and available on demand. Talk to our team, or explore the Incubation Factory at AIforAll Global."
           actions={[
             {
-              label: "Request access",
+              label: "Talk to our team",
               href: "https://aptinnova.com/contact/",
             },
             {
-              label: "Visit Incubation Factory",
+              label: "Visit AIforAll Global",
               href: "https://aiforallglobal.org/incubation-factory",
               variant: "secondary",
             },

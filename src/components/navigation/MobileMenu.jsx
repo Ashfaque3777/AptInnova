@@ -54,15 +54,27 @@ function MobileMenu() {
 
           {/* Products submenu */}
           <div className="mobile-menu-group">
-            <button
-              type="button"
-              className="mobile-menu-link mobile-menu-toggle"
-              aria-expanded={productsOpen}
-              onClick={() => setProductsOpen((prev) => !prev)}
-            >
-              Products
-              <span className="mobile-menu-chevron" aria-hidden="true" />
-            </button>
+            <div className="mobile-menu-row">
+              <Link
+                to="/products/"
+                className="mobile-menu-link"
+                onClick={closeMenu}
+              >
+                Products
+              </Link>
+
+              <button
+                type="button"
+                className="mobile-menu-toggle"
+                aria-expanded={productsOpen}
+                aria-label={
+                  productsOpen ? "Hide products submenu" : "Show products submenu"
+                }
+                onClick={() => setProductsOpen((prev) => !prev)}
+              >
+                <span className="mobile-menu-chevron" aria-hidden="true" />
+              </button>
+            </div>
 
             <div
               className={`mobile-menu-submenu${productsOpen ? " mobile-menu-submenu--open" : ""}`}

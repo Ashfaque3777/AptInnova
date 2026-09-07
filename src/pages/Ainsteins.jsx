@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 
 import ProductLayout from "../components/sections/products/ProductLayout.jsx";
 import ProductIntro from "../components/sections/products/ProductIntro.jsx";
-import ProductWorkflow from "../components/sections/products/ProductWorkflow.jsx";
 import ProductAudience from "../components/sections/products/ProductAudience.jsx";
 import ProductCapabilities from "../components/sections/products/ProductCapabilities.jsx";
 import ProductCTA from "../components/sections/products/ProductCTA.jsx";
@@ -80,136 +79,34 @@ function IconQuote() {
   );
 }
 
-function IconTarget() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <circle cx="12" cy="12" r="6" />
-      <circle cx="12" cy="12" r="2" />
-    </svg>
-  );
-}
-
-function IconInstitution() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 21h18" />
-      <path d="M5 21V7l7-4 7 4v14" />
-      <path d="M9 21v-4h6v4" />
-      <path d="M9 9h.01" />
-      <path d="M15 9h.01" />
-      <path d="M9 13h.01" />
-      <path d="M15 13h.01" />
-    </svg>
-  );
-}
-
 const introHighlights = [
   {
     icon: <IconPlug />,
-    title: "Plug-and-play",
+    title: "Grounded in your curriculum",
     description:
-      "A ready-to-use AI knowledge assistant that institutions can adopt without heavy custom builds.",
+      "ainsteins works from the material your institution has curated and approved, so answers stay aligned with what's actually being taught.",
   },
   {
     icon: <IconBooks />,
-    title: "Curated curriculum corpora",
+    title: "Aware of who's asking",
     description:
-      "AI answers are grounded in the institution's own curated curriculum, keeping learning on track.",
+      "The assistant adapts to the person using it, so students, teachers, and staff each get responses matched to their role and needs.",
   },
   {
     icon: <IconChat />,
-    title: "Persona-aware chat",
+    title: "Traceable answers",
     description:
-      "Conversation adapts to the user's role, so students, teachers, and institutions each get relevant help.",
+      "Every response points back to the curriculum source it came from, so answers can be checked and trusted.",
   },
   {
     icon: <IconQuote />,
-    title: "Source-cited answers",
+    title: "Ready to adopt",
     description:
-      "Every answer points back to the curriculum source it draws from, keeping responses verifiable.",
-  },
-];
-
-const workflowSteps = [
-  {
-    title: "Start with your curriculum",
-    description:
-      "ainsteins runs on curated curriculum corpora from the institution, so answers stay grounded in the material students actually study.",
-  },
-  {
-    title: "Chat with a persona-aware assistant",
-    description:
-      "Users interact in plain language and the assistant adapts to their role and context across the institution.",
-  },
-  {
-    title: "Receive source-cited answers",
-    description:
-      "Responses reference the curriculum sources they rely on, so answers can be traced and verified.",
-  },
-  {
-    title: "Learn with focus",
-    description:
-      "Students stay on the institution's curriculum, teachers keep their voice, and the institution keeps its edge.",
+      "ainsteins is built to be adopted without a heavy custom build, so institutions can get going without a long engineering project.",
   },
 ];
 
 const audienceItems = ["Students", "Educators", "Academic institutions"];
-
-const capabilities = [
-  {
-    icon: <IconPlug />,
-    title: "Plug-and-play deployment",
-    description:
-      "A ready-to-use knowledge assistant designed for institutions to adopt without a custom build.",
-  },
-  {
-    icon: <IconBooks />,
-    title: "Curated curriculum corpora",
-    description:
-      "The assistant works from the institution's own curated curriculum material, keeping answers aligned with what is taught.",
-  },
-  {
-    icon: <IconChat />,
-    title: "Persona-aware chat",
-    description:
-      "Conversation adapts to the user's role, giving students, educators, and institutions responses matched to their needs.",
-  },
-  {
-    icon: <IconQuote />,
-    title: "Source-cited answers",
-    description:
-      "Answers reference the curriculum sources they come from, making responses transparent and verifiable.",
-  },
-  {
-    icon: <IconTarget />,
-    title: "Learning with focus",
-    description:
-      "Students learn on their own curriculum with fewer distractions, keeping study aligned with course goals.",
-  },
-  {
-    icon: <IconInstitution />,
-    title: "Built for institutions",
-    description:
-      "Designed for students, teachers, and academic institutions, so the whole institution benefits from one assistant.",
-  },
-];
 
 const productStructuredData = {
   "@context": "https://schema.org",
@@ -268,10 +165,18 @@ function Ainsteins() {
       <ProductLayout
         title={
           <>
-            ainste<span style={{ color: "var(--color-warm)" }}>i</span>ns
+            AI-powered Learning, Grounded in your own{" "}
+            <span style={{ color: "var(--color-warm)" }}>Curriculum</span>
           </>
         }
-        description="Plug-and-play AI knowledge assistant for institutions. Curated curriculum corpora, persona-aware chat, and source-cited answers for learning that stays grounded in your curriculum."
+        description={
+          <>
+            An AI learning assistant that works from your institution's own
+            approved material, so students learn with focus, teachers keep their
+            voice, and your institution keeps its edge.{" "}
+            <em>For schools, colleges, and universities.</em>
+          </>
+        }
         heroImage={ainsteinsImage}
         actions={[
           {
@@ -285,64 +190,52 @@ function Ainsteins() {
           },
         ]}
       >
+        <ProductCapabilities
+          title={
+            <>
+              The <span style={{ color: "var(--color-warm)" }}>Problem</span>
+            </>
+          }
+          description="General AI tools will answer anything, which is exactly the problem in education. Students get off-syllabus answers, teachers lose control of what's being taught, and no one can tell where an answer actually came from. Learning drifts away from the curriculum the institution has carefully built."
+        />
+
         <ProductIntro
           title={
             <>
-              What is{" "}
-              <span style={{ color: "var(--color-warm)" }}>ainsteins?</span>
+              What{" "}
+              <span style={{ color: "var(--color-warm)" }}>
+                ainsteins does?
+              </span>
             </>
           }
-          paragraphs={[
-            "ainsteins is a plug-and-play AI knowledge assistant built for institutions. It combines curated curriculum corpora, persona-aware chat, and source-cited answers so students learn with focus, teachers keep their voice, and the institution keeps its edge.",
-            "Learning is grounded in the institution's own curriculum. Instead of open-ended answers, users get responses that reference the material the institution has curated and approved.",
-          ]}
           highlights={introHighlights}
-        />
-
-        <ProductWorkflow
-          title={
-            <>
-              How it <span style={{ color: "var(--color-warm)" }}>Works?</span>
-            </>
-          }
-          description="From curated curriculum to source-cited answers, every step keeps learning grounded and focused."
-          steps={workflowSteps}
         />
 
         <ProductAudience
           title={
             <>
-              Who <span style={{ color: "var(--color-warm)" }}>Benefits?</span>
+              Who <span style={{ color: "var(--color-warm)" }}>it's for?</span>
             </>
           }
-          description="ainsteins is built for the people at the heart of every academic institution."
+          description="Students, educators, and academic institutions that want the benefits of AI-powered learning without letting it pull students off course."
           audiences={audienceItems}
-        />
-
-        <ProductCapabilities
-          title={
-            <>
-              Key{" "}
-              <span style={{ color: "var(--color-warm)" }}>Capabilities</span>
-            </>
-          }
-          description="The capabilities that make ainsteins a fit for curriculum-grounded learning."
-          capabilities={capabilities}
         />
 
         <ProductCTA
           title={
             <>
-              Ready to{" "}
               <span style={{ color: "var(--color-warm)" }}>
-                bring ainsteins to your
+                Bring ainsteins
               </span>{" "}
-              Institution?
+              to your Institution?
             </>
           }
-          description="Talk to our team about AI-powered learning on your curriculum, or explore more on the ainsteins site."
+          description="Talk to our team about AI-powered learning on your own curriculum, or explore more on the ainsteins site."
           actions={[
-            { label: "Contact us", href: "https://aptinnova.com/contact/" },
+            {
+              label: "Talk to our team",
+              href: "https://aptinnova.com/contact/",
+            },
             {
               label: "Visit ainsteins.com",
               href: "https://ainsteins.com",
