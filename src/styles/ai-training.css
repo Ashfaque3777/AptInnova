@@ -53,12 +53,13 @@
   font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   line-height: 1.08;
   letter-spacing: -0.03em;
+  color: var(--color-inverted-text);
 }
 
 .ait-hero-description {
   margin: var(--space-6) 0 0;
 
-  color: var(--color-text-secondary);
+  color: var(--color-inverted-text-soft);
 
   font-size: var(--text-xl);
   line-height: 1.7;

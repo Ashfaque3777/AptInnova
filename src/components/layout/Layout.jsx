@@ -17,8 +17,8 @@ function Layout() {
       <div className="topography-bg">
         <Topography
           lowColor={isDark ? "#0a0a1a" : "#e8e0f7"}
-          midColor={isDark ? "#1a0a3e" : "#c4b5e3"}
-          highColor={isDark ? "#3d1f8e" : "#9b7dd4"}
+          midColor={isDark ? "#1a0a3e" : "#6b7280"}
+          highColor={isDark ? "#3d1f8e" : "#4b5563"}
           speed={0.35}
           morphAmount={3.0}
           morphSpeed={0.05}
@@ -29,7 +29,7 @@ function Layout() {
           glow={0.5}
           colorMode="elevation"
           contrast={3.0}
-          brightness={isDark ? 0.8 : 1.0}
+          brightness={isDark ? 0.4 : 2.0}
           fillBands={false}
           opacity={isDark ? 1.0 : 0.6}
           grain={true}

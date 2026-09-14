@@ -1,33 +1,13 @@
-import { useEffect, useState } from "react";
+import { createContext, useContext } from "react";
 
-const STORAGE_KEY = "aptinnova-theme";
-
-function getInitialTheme() {
-  const savedTheme = localStorage.getItem(STORAGE_KEY);
-
-  if (savedTheme === "light" || savedTheme === "dark") {
-    return savedTheme;
-  }
-
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
+export const ThemeContext = createContext(null);
 
 export function useTheme() {
-  const [theme, setTheme] = useState(getInitialTheme);
+  const ctx = useContext(ThemeContext);
 
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    localStorage.setItem(STORAGE_KEY, theme);
-  }, [theme]);
-
-  function toggleTheme() {
-    setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
+  if (!ctx) {
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
 
-  return {
-    theme,
-    toggleTheme,
-  };
+  return ctx;
 }

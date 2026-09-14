@@ -8,6 +8,17 @@
       href="src/assets/brand/aptInnovaLogo.webp"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("aptinnova-theme");
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
     <title>AptInnova - Empowering RSMEs with Trustworthy AI Solutions</title>
     <meta name="description" content="AptInnova empowers small and medium enterprises with trustworthy, human-centric AI solutions. AI strategy consulting, generative AI, custom software development, and AI training — built responsibly in Europe." />
     <meta name="keywords" content="AI consulting, artificial intelligence, RSME, SME, generative AI, AI agents, responsible AI, trustworthy AI, EU AI Act, GDPR, AI strategy, machine learning, LLM, software development, Europe" />

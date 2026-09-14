@@ -68,7 +68,9 @@ function MobileMenu() {
                 className="mobile-menu-toggle"
                 aria-expanded={productsOpen}
                 aria-label={
-                  productsOpen ? "Hide products submenu" : "Show products submenu"
+                  productsOpen
+                    ? "Hide products submenu"
+                    : "Show products submenu"
                 }
                 onClick={() => setProductsOpen((prev) => !prev)}
               >
@@ -103,15 +105,22 @@ function MobileMenu() {
             </div>
           </div>
 
+          <Link to="/work/" className="mobile-menu-link" onClick={closeMenu}>
+            Work
+          </Link>
           <Link
-            to="/blog-insights/"
+            to="/training/"
             className="mobile-menu-link"
             onClick={closeMenu}
           >
-            Insights
+            AI Training
           </Link>
 
-          <a href="https://aptinnova.com/contact/" className="mobile-menu-link" onClick={closeMenu}>
+          <a
+            href="https://aptinnova.com/contact/"
+            className="mobile-menu-link"
+            onClick={closeMenu}
+          >
             Contact
           </a>
 

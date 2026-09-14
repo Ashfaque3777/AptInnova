@@ -1499,7 +1499,7 @@ button {
 
   width: max-content;
 
-  animation: featuredWorkScroll 36s linear infinite;
+  animation: featuredWorkScroll 15s linear infinite;
 }
 
 /* Pause the whole marquee while hovering any card, so it can be read. */
@@ -1725,6 +1725,7 @@ button {
 /* =========================================================
    Home How We Work Section
    ========================================================= */
+
 .how-we-work {
   position: relative;
   overflow: hidden;
